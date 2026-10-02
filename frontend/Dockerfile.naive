@@ -1,6 +1,6 @@
 FROM node:latest
-COPY . .
 WORKDIR /app
+COPY . .
 RUN npm install
-EXPOSE 3001
-CMD ["npm", "start","run","-w","frontend"]
+EXPOSE 5173
+CMD ["npm","run","dev","-w","frontend","--","--host"]
