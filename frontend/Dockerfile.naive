@@ -3,4 +3,5 @@ WORKDIR /app
 COPY . .
 RUN npm install
 EXPOSE 5173
+ARG API_KEY=fake-api-key
 CMD ["npm","run","dev","-w","frontend","--","--host"]

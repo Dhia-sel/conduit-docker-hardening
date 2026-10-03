@@ -3,4 +3,5 @@ WORKDIR /app
 COPY . .
 RUN npm install
 EXPOSE 3001
+ENV JWT_SECRET=fake-jwt-secret-for-demo
 CMD ["npm", "start","run","-w","backend"]
