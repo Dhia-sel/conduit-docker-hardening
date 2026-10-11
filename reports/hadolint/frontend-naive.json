@@ -1,0 +1,2 @@
+﻿[{"code":"DL3007","column":1,"file":"-","level":"warning","line":1,"message":"Using latest is prone to errors if the image will ever update. Pin the version explicitly to a release tag"},{"code":"DL3064","column":1,"file":"-","level":"warning","line":6,"message":"Potentially sensitive data should not be used in the `ARG` or `ENV` commands"}]
+

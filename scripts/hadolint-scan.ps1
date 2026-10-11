@@ -1,4 +1,4 @@
-param([string]$Variant = "naive")
+﻿param([string]$Variant = "naive")
 
 $null = New-Item -ItemType Directory -Force reports/hadolint
 
@@ -13,14 +13,19 @@ foreach ($svc in "frontend","backend") {
   Write-Host "== Hadolint : $dockerfile =="
 
   Get-Content $dockerfile -Raw |
-    docker run --rm -i hadolint/hadolint --format tty - |
+    docker run --rm -i hadolint/hadolint /bin/hadolint --format tty - |
     Tee-Object -FilePath "reports/hadolint/${svc}-${Variant}.txt"
 
   $json = Get-Content $dockerfile -Raw |
-    docker run --rm -i hadolint/hadolint --format json - |
+    docker run --rm -i hadolint/hadolint /bin/hadolint --format json - |
     Out-String
   $json | Set-Content -Encoding UTF8 "reports/hadolint/${svc}-${Variant}.json"
 
-  $count = @($json | ConvertFrom-Json).Count
-  Write-Host "-> $count alerte(s) pour $svc ($Variant)`n"
+  try {
+    $count = @($json | ConvertFrom-Json -ErrorAction Stop).Count
+    Write-Host "-> $count alerte(s) pour $svc ($Variant)`n"
+  } catch {
+    Write-Warning "Sortie Hadolint illisible pour $svc ($Variant) : voir reports/hadolint/${svc}-${Variant}.json"
+  }
+
 }
