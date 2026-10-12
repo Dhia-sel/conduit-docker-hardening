@@ -1,2 +1,2 @@
-﻿[{"code":"DL3066","column":1,"file":"-","level":"info","line":16,"message":"Non-numeric user-id may not be resolvable by host system"},{"code":"DL3066","column":1,"file":"-","level":"info","line":24,"message":"Non-numeric user-id may not be resolvable by host system"},{"code":"DL3025","column":1,"file":"-","level":"warning","line":26,"message":"Use arguments JSON notation for CMD and ENTRYPOINT arguments"}]
+﻿[]
 
