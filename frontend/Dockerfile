@@ -11,7 +11,10 @@ FROM nginxinc/nginx-unprivileged:1.28-alpine
 LABEL org.opencontainers.image.source="https://github.com/Dhia-sel/conduit-docker-hardening" \
       org.opencontainers.image.licenses="MIT"
 USER root
-RUN apk upgrade --no-cache
+RUN apk del nginx-module-geoip nginx-module-image-filter nginx-module-njs nginx-module-xslt curl \
+ && sed -i 's/^nginx=.*/nginx/' /etc/apk/world \
+ && apk upgrade --no-cache
+USER 101
 COPY --from=build /app/frontend/dist /usr/share/nginx/html
 COPY frontend/nginx.conf /etc/nginx/conf.d/default.conf
 
