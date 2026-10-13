@@ -3,18 +3,18 @@
   "Trivy": {
     "Version": "0.75.0"
   },
-  "ReportID": "01a131d6-d058-7bdd-81ea-36fb27bd78e8",
-  "CreatedAt": "2026-10-12T20:38:44.056782973Z",
-  "ArtifactID": "sha256:67bccd54937b97ee2fbacbb9910285621fba7359e2635ae9a156b1423b148333",
+  "ReportID": "01a13477-ffb6-7b49-b236-d667b40e3d2f",
+  "CreatedAt": "2026-10-13T08:54:01.910747761Z",
+  "ArtifactID": "sha256:e2afcb54219af4848a1f13084147dba9d049d4064343c0b25b0e8f2150716a20",
   "ArtifactName": "conduit-backend:hardened",
   "ArtifactType": "container_image",
   "Metadata": {
-    "Size": 256779776,
+    "Size": 265007104,
     "OS": {
       "Family": "debian",
       "Name": "12.15"
     },
-    "ImageID": "sha256:622ab6194229996cd8da361e15ae1910185611c6a669a4f3d56c30d684a808eb",
+    "ImageID": "sha256:e3d7d40972f0c2043957fbaa4c2dcb569b58b664720920f016f426f194e6d06f",
     "DiffIDs": [
       "sha256:e58989146fcec76699871403b9897b5c014af1ccd85f5a9300a215e7975525d7",
       "sha256:4990a62cab1587a2ed690c9d4f41675b9216d68120e99033d664b558662e90c8",
@@ -22,20 +22,21 @@
       "sha256:f6becc1249c39a0f6d687460220dcfcf9f2a46d01770a70fc0a8ed4c98a6fd49",
       "sha256:cae24708e29a74f04cc1ec51fc52e2d283c35f243ab21912e036095a2b50dbde",
       "sha256:35ab0b48a5a38e2adcb41909ee161cefa75365311f1c93f8f943959e11141a99",
-      "sha256:be99314fd93d962768d5d5cdc6caa1d766c44a555f48601106039fedd769d562",
-      "sha256:e29f147295f2e32ffc6fce483dd02371768fb1f7f4caed33f1578e30d071bc66",
-      "sha256:a7193bb05bec2ac6c87b69aa6c2b520b359aba41c0edb6a8b1f4b0350104b940"
+      "sha256:d845b09e03610f399704713ac818f258fedb462343f7f366e6182bdb6aead037",
+      "sha256:c0538acd545e8daca6b182cc8ab5b406f1685c621d3dfe33b247ed1c39bfb3d1",
+      "sha256:aeed3755418f2748c54a5b886167f70b47f2f0f4c5b19580eebf6d99faafd426",
+      "sha256:b946d76bf81d92f4308eba1ec0ac49b227ce44494c3ff5f0d3fc7400109c5dc2"
     ],
     "RepoTags": [
       "conduit-backend:hardened"
     ],
     "RepoDigests": [
-      "conduit-backend@sha256:622ab6194229996cd8da361e15ae1910185611c6a669a4f3d56c30d684a808eb"
+      "conduit-backend@sha256:e3d7d40972f0c2043957fbaa4c2dcb569b58b664720920f016f426f194e6d06f"
     ],
     "Reference": "conduit-backend:hardened",
     "ImageConfig": {
       "architecture": "amd64",
-      "created": "2026-10-12T20:31:23.379246404Z",
+      "created": "2026-10-13T08:26:45.126679478Z",
       "history": [
         {
           "created": "2026-10-05T00:00:00Z",
@@ -98,40 +99,45 @@
           "comment": "buildkit.dockerfile.v0"
         },
         {
-          "created": "2026-10-12T20:31:00Z",
+          "created": "2026-10-13T08:25:43Z",
           "created_by": "RUN /bin/sh -c rm -rf /usr/local/lib/node_modules/npm /usr/local/bin/npm /usr/local/bin/npx # buildkit",
           "comment": "buildkit.dockerfile.v0"
         },
         {
-          "created": "2026-10-12T20:31:23Z",
+          "created": "2026-10-13T08:26:44Z",
+          "created_by": "RUN /bin/sh -c apt-get update \u0026\u0026 apt-get upgrade -y \u0026\u0026 rm -rf /var/lib/apt/lists/* # buildkit",
+          "comment": "buildkit.dockerfile.v0"
+        },
+        {
+          "created": "2026-10-13T08:26:44Z",
           "created_by": "COPY /app/node_modules ./node_modules # buildkit",
           "comment": "buildkit.dockerfile.v0"
         },
         {
-          "created": "2026-10-12T20:31:23Z",
+          "created": "2026-10-13T08:26:45Z",
           "created_by": "COPY backend/ ./backend/ # buildkit",
           "comment": "buildkit.dockerfile.v0"
         },
         {
-          "created": "2026-10-12T20:31:23Z",
+          "created": "2026-10-13T08:26:45Z",
           "created_by": "USER 1000",
           "comment": "buildkit.dockerfile.v0",
           "empty_layer": true
         },
         {
-          "created": "2026-10-12T20:31:23Z",
+          "created": "2026-10-13T08:26:45Z",
           "created_by": "EXPOSE [3001/tcp]",
           "comment": "buildkit.dockerfile.v0",
           "empty_layer": true
         },
         {
-          "created": "2026-10-12T20:31:23Z",
+          "created": "2026-10-13T08:26:45Z",
           "created_by": "HEALTHCHECK \u0026{[\"CMD\" \"node\" \"-e\" \"require('http').get('http://127.0.0.1:3001/api/tags', r =\u003e process.exit(r.statusCode === 200 ? 0 : 1)).on('error', () =\u003e process.exit(1))\"] \"30s\" \"5s\" \"15s\" \"0s\" '\\x03'}",
           "comment": "buildkit.dockerfile.v0",
           "empty_layer": true
         },
         {
-          "created": "2026-10-12T20:31:23Z",
+          "created": "2026-10-13T08:26:45Z",
           "created_by": "CMD [\"node\" \"backend/index.js\"]",
           "comment": "buildkit.dockerfile.v0",
           "empty_layer": true
@@ -147,9 +153,10 @@
           "sha256:f6becc1249c39a0f6d687460220dcfcf9f2a46d01770a70fc0a8ed4c98a6fd49",
           "sha256:cae24708e29a74f04cc1ec51fc52e2d283c35f243ab21912e036095a2b50dbde",
           "sha256:35ab0b48a5a38e2adcb41909ee161cefa75365311f1c93f8f943959e11141a99",
-          "sha256:be99314fd93d962768d5d5cdc6caa1d766c44a555f48601106039fedd769d562",
-          "sha256:e29f147295f2e32ffc6fce483dd02371768fb1f7f4caed33f1578e30d071bc66",
-          "sha256:a7193bb05bec2ac6c87b69aa6c2b520b359aba41c0edb6a8b1f4b0350104b940"
+          "sha256:d845b09e03610f399704713ac818f258fedb462343f7f366e6182bdb6aead037",
+          "sha256:c0538acd545e8daca6b182cc8ab5b406f1685c621d3dfe33b247ed1c39bfb3d1",
+          "sha256:aeed3755418f2748c54a5b886167f70b47f2f0f4c5b19580eebf6d99faafd426",
+          "sha256:b946d76bf81d92f4308eba1ec0ac49b227ce44494c3ff5f0d3fc7400109c5dc2"
         ]
       },
       "config": {
@@ -219,18 +226,23 @@
       },
       {
         "Size": 5120,
-        "Digest": "sha256:be8c2bde1d70b988924f2472edfc3e5a3d5c17e43183023f88c7bcf045e18a01",
-        "DiffID": "sha256:be99314fd93d962768d5d5cdc6caa1d766c44a555f48601106039fedd769d562"
+        "Digest": "sha256:364a212f12097908dbd75d91cf0a833fbc1f18569993be905fb8553a1037849c",
+        "DiffID": "sha256:d845b09e03610f399704713ac818f258fedb462343f7f366e6182bdb6aead037"
       },
       {
-        "Size": 24369152,
-        "Digest": "sha256:f1ebb784920099793144954b52ba8b107b072395ea0f56c5db026fbd33511d12",
-        "DiffID": "sha256:e29f147295f2e32ffc6fce483dd02371768fb1f7f4caed33f1578e30d071bc66"
+        "Size": 8219136,
+        "Digest": "sha256:41d1726673161e9e8fad188770862b777de2ee329491d5ef06f1113da20b852e",
+        "DiffID": "sha256:c0538acd545e8daca6b182cc8ab5b406f1685c621d3dfe33b247ed1c39bfb3d1"
+      },
+      {
+        "Size": 24377344,
+        "Digest": "sha256:d19b9a83a67228a57a987e734da4a24ea8a50de4220ea8af720ac19ed9ff8e2a",
+        "DiffID": "sha256:aeed3755418f2748c54a5b886167f70b47f2f0f4c5b19580eebf6d99faafd426"
       },
       {
         "Size": 69632,
-        "Digest": "sha256:152b0a0f07c2b197fb95f6603b67b1a198c2ff8071801934dcb48af33fd95704",
-        "DiffID": "sha256:a7193bb05bec2ac6c87b69aa6c2b520b359aba41c0edb6a8b1f4b0350104b940"
+        "Digest": "sha256:79b1ab3cda74905c430c6f22be0b57eaff8c1c89268e2802e11c1a6943de9d59",
+        "DiffID": "sha256:b946d76bf81d92f4308eba1ec0ac49b227ce44494c3ff5f0d3fc7400109c5dc2"
       }
     ]
   },
@@ -5858,18 +5870,18 @@
           "AnalyzedBy": "dpkg"
         },
         {
-          "ID": "perl-base@5.36.0-7+deb12u3",
+          "ID": "perl-base@5.36.0-7+deb12u4",
           "Name": "perl-base",
           "Identifier": {
-            "PURL": "pkg:deb/debian/perl-base@5.36.0-7%2Bdeb12u3?arch=amd64\u0026distro=debian-12.15",
-            "UID": "4d96814618e564ec"
+            "PURL": "pkg:deb/debian/perl-base@5.36.0-7%2Bdeb12u4?arch=amd64\u0026distro=debian-12.15",
+            "UID": "9273e637669351aa"
           },
           "Version": "5.36.0",
-          "Release": "7+deb12u3",
+          "Release": "7+deb12u4",
           "Arch": "amd64",
           "SrcName": "perl",
           "SrcVersion": "5.36.0",
-          "SrcRelease": "7+deb12u3",
+          "SrcRelease": "7+deb12u4",
           "Licenses": [
             "GPL-1.0-or-later",
             "Artistic-2.0",
@@ -5902,8 +5914,8 @@
             "Class": "official"
           },
           "Layer": {
-            "Digest": "sha256:7fd1ebe418b5079d4aa36f416af9b143d127bc75b0155d71cb5fd559b5e04d39",
-            "DiffID": "sha256:e58989146fcec76699871403b9897b5c014af1ccd85f5a9300a215e7975525d7"
+            "Digest": "sha256:41d1726673161e9e8fad188770862b777de2ee329491d5ef06f1113da20b852e",
+            "DiffID": "sha256:c0538acd545e8daca6b182cc8ab5b406f1685c621d3dfe33b247ed1c39bfb3d1"
           },
           "InstalledFiles": [
             "/usr/bin/perl",
@@ -8141,808 +8153,6 @@
           ],
           "AnalyzedBy": "dpkg"
         }
-      ],
-      "Vulnerabilities": [
-        {
-          "VulnerabilityID": "CVE-2026-13221",
-          "VendorIDs": [
-            "DLA-4821-1"
-          ],
-          "PkgID": "perl-base@5.36.0-7+deb12u3",
-          "PkgName": "perl-base",
-          "PkgIdentifier": {
-            "PURL": "pkg:deb/debian/perl-base@5.36.0-7%2Bdeb12u3?arch=amd64\u0026distro=debian-12.15",
-            "UID": "4d96814618e564ec"
-          },
-          "InstalledVersion": "5.36.0-7+deb12u3",
-          "FixedVersion": "5.36.0-7+deb12u4",
-          "Status": "fixed",
-          "Layer": {
-            "Digest": "sha256:7fd1ebe418b5079d4aa36f416af9b143d127bc75b0155d71cb5fd559b5e04d39",
-            "DiffID": "sha256:e58989146fcec76699871403b9897b5c014af1ccd85f5a9300a215e7975525d7"
-          },
-          "SeveritySource": "nvd",
-          "PrimaryURL": "https://avd.aquasec.com/nvd/cve-2026-13221",
-          "DataSource": {
-            "ID": "debian",
-            "Name": "Debian Security Tracker",
-            "URL": "https://salsa.debian.org/security-tracker-team/security-tracker"
-          },
-          "Fingerprint": "sha256:d5f7774af0ba7915a47e831b21b91b093808369756439c696bfdc44624675ba0",
-          "Title": "perl: Perl: Incorrect regular expression processing via large regular expressions",
-          "Description": "Perl versions before 5.40.5-RC1, from 5.41.0 before 5.42.3-RC1, from 5.43.0 before 5.43.10 produce silently incorrect regular expression matches when an alternation of more than 65535 fixed string branches is compiled into a trie in Perl_study_chunk.\n\nWhen such branches are combined into a trie, the delta between the first branch and the shared tail is stored in a 16-bit field. A branch count above 65535 overflows the field, and the trie's match decision table is truncated with no warning or error.\n\nA pattern of this shape produces false positive matches (matching strings it should not) and false negative matches (failing to match strings it should). When such a pattern gates an access or filtering decision, the result is wrong.",
-          "Severity": "CRITICAL",
-          "CweIDs": [
-            "CWE-190"
-          ],
-          "VendorSeverity": {
-            "alma": 2,
-            "azure": 2,
-            "nvd": 4,
-            "oracle-oval": 2,
-            "photon": 4,
-            "redhat": 2,
-            "rocky": 2,
-            "ubuntu": 2
-          },
-          "CVSS": {
-            "nvd": {
-              "V3Vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:H/A:H",
-              "V3Score": 9.1
-            },
-            "redhat": {
-              "V3Vector": "CVSS:3.1/AV:N/AC:H/PR:L/UI:N/S:U/C:L/I:H/A:N",
-              "V3Score": 5.9
-            }
-          },
-          "References": [
-            "http://www.openwall.com/lists/oss-security/2026/07/13/5",
-            "https://access.redhat.com/errata/RHSA-2026:67155",
-            "https://access.redhat.com/security/cve/CVE-2026-13221",
-            "https://bugzilla.redhat.com/2499727",
-            "https://bugzilla.redhat.com/show_bug.cgi?id=2499727",
-            "https://creativecommons.org/licenses/by/4.0/",
-            "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2026-13221",
-            "https://errata.almalinux.org/9/ALSA-2026-67155.html",
-            "https://errata.rockylinux.org/RLSA-2026:67155",
-            "https://github.com/Perl/perl5/commit/03f74bbbd3a68350d926ee93d56ee4808c28c4c7.patch",
-            "https://github.com/Perl/perl5/issues/23388",
-            "https://linux.oracle.com/cve/CVE-2026-13221.html",
-            "https://linux.oracle.com/errata/ELSA-2026-67278-0.html",
-            "https://lists.security.metacpan.org/cve-announce/msg/41780104/",
-            "https://nvd.nist.gov/vuln/detail/CVE-2026-13221",
-            "https://ubuntu.com/security/notices/USN-8675-1",
-            "https://ubuntu.com/security/notices/USN-8675-2",
-            "https://ubuntu.com/security/notices/USN-8684-1",
-            "https://www.cve.org/CVERecord?id=CVE-2026-13221"
-          ],
-          "PublishedDate": "2026-07-13T17:16:48.923Z",
-          "LastModifiedDate": "2026-09-08T22:17:37.217Z"
-        },
-        {
-          "VulnerabilityID": "CVE-2026-42496",
-          "VendorIDs": [
-            "DLA-4821-1"
-          ],
-          "PkgID": "perl-base@5.36.0-7+deb12u3",
-          "PkgName": "perl-base",
-          "PkgIdentifier": {
-            "PURL": "pkg:deb/debian/perl-base@5.36.0-7%2Bdeb12u3?arch=amd64\u0026distro=debian-12.15",
-            "UID": "4d96814618e564ec"
-          },
-          "InstalledVersion": "5.36.0-7+deb12u3",
-          "FixedVersion": "5.36.0-7+deb12u4",
-          "Status": "fixed",
-          "Layer": {
-            "Digest": "sha256:7fd1ebe418b5079d4aa36f416af9b143d127bc75b0155d71cb5fd559b5e04d39",
-            "DiffID": "sha256:e58989146fcec76699871403b9897b5c014af1ccd85f5a9300a215e7975525d7"
-          },
-          "SeveritySource": "nvd",
-          "PrimaryURL": "https://avd.aquasec.com/nvd/cve-2026-42496",
-          "DataSource": {
-            "ID": "debian",
-            "Name": "Debian Security Tracker",
-            "URL": "https://salsa.debian.org/security-tracker-team/security-tracker"
-          },
-          "Fingerprint": "sha256:254405bf9e60c2e5955a0add19787d594c246548290bf0adc8ec3b2a3bc856bf",
-          "Title": "perl-archive-tar: perl-archive-tar: Path traversal via crafted symlinks allows arbitrary file access",
-          "Description": "Archive::Tar versions before 3.08 for Perl extract symlinks with attacker controlled targets outside the extraction directory.\n\n_make_special_file() passes the tar header's linkname to symlink() without validating it against absolute paths or .. segments. The secure-extract mode check that guards regular file extraction does not cover the symlink target.\n\nA subsequent open through the extracted name reads or writes the attacker chosen path.",
-          "Severity": "CRITICAL",
-          "CweIDs": [
-            "CWE-59",
-            "CWE-22"
-          ],
-          "VendorSeverity": {
-            "alma": 3,
-            "amazon": 3,
-            "azure": 3,
-            "nvd": 4,
-            "oracle-oval": 3,
-            "redhat": 3,
-            "rocky": 3,
-            "ubuntu": 2
-          },
-          "CVSS": {
-            "nvd": {
-              "V3Vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:N",
-              "V3Score": 9.1
-            },
-            "redhat": {
-              "V3Vector": "CVSS:3.1/AV:L/AC:L/PR:L/UI:R/S:C/C:H/I:H/A:H",
-              "V3Score": 8.2
-            }
-          },
-          "References": [
-            "https://access.redhat.com/errata/RHSA-2026:30851",
-            "https://access.redhat.com/errata/RHSA-2026:30852",
-            "https://access.redhat.com/errata/RHSA-2026:30856",
-            "https://access.redhat.com/errata/RHSA-2026:30857",
-            "https://access.redhat.com/security/cve/CVE-2026-42496",
-            "https://bugzilla.redhat.com/2481314",
-            "https://bugzilla.redhat.com/show_bug.cgi?id=2481314",
-            "https://creativecommons.org/licenses/by/4.0/",
-            "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2026-42496",
-            "https://errata.almalinux.org/9/ALSA-2026-30856.html",
-            "https://errata.rockylinux.org/RLSA-2026:30856",
-            "https://github.com/jib/archive-tar-new/commit/17c873492a05eddc0de18c1485e0b2cccd5a9158.patch",
-            "https://linux.oracle.com/cve/CVE-2026-42496.html",
-            "https://linux.oracle.com/errata/ELSA-2026-30857.html",
-            "https://lists.security.metacpan.org/cve-announce/msg/40396459/",
-            "https://metacpan.org/release/BINGOS/Archive-Tar-3.08/changes",
-            "https://nvd.nist.gov/vuln/detail/CVE-2026-42496",
-            "https://security.access.redhat.com/data/csaf/v2/vex/2026/cve-2026-42496.json",
-            "https://ubuntu.com/security/notices/USN-8467-1",
-            "https://www.cve.org/CVERecord?id=CVE-2026-42496",
-            "https://www.cve.org/CVERecord?id=CVE-2026-42497"
-          ],
-          "PublishedDate": "2026-05-26T02:16:40.13Z",
-          "LastModifiedDate": "2026-07-24T10:10:00.197Z"
-        },
-        {
-          "VulnerabilityID": "CVE-2026-8376",
-          "VendorIDs": [
-            "DLA-4821-1"
-          ],
-          "PkgID": "perl-base@5.36.0-7+deb12u3",
-          "PkgName": "perl-base",
-          "PkgIdentifier": {
-            "PURL": "pkg:deb/debian/perl-base@5.36.0-7%2Bdeb12u3?arch=amd64\u0026distro=debian-12.15",
-            "UID": "4d96814618e564ec"
-          },
-          "InstalledVersion": "5.36.0-7+deb12u3",
-          "FixedVersion": "5.36.0-7+deb12u4",
-          "Status": "fixed",
-          "Layer": {
-            "Digest": "sha256:7fd1ebe418b5079d4aa36f416af9b143d127bc75b0155d71cb5fd559b5e04d39",
-            "DiffID": "sha256:e58989146fcec76699871403b9897b5c014af1ccd85f5a9300a215e7975525d7"
-          },
-          "SeveritySource": "nvd",
-          "PrimaryURL": "https://avd.aquasec.com/nvd/cve-2026-8376",
-          "DataSource": {
-            "ID": "debian",
-            "Name": "Debian Security Tracker",
-            "URL": "https://salsa.debian.org/security-tracker-team/security-tracker"
-          },
-          "Fingerprint": "sha256:865ae2fe31d8bedf06d48ef06e8e12d91d137774338795c045feb52a0e64212b",
-          "Title": "perl: Perl: Heap buffer overflow when compiling regular expressions on 32-bit builds",
-          "Description": "Perl versions before 5.40.5-RC1, from 5.41.0 before 5.42.3-RC1, from 5.43.0 before 5.43.11 have a heap buffer overflow when compiling regular expressions with a repeated fixed string on 32-bit builds.\n\nPerl_study_chunk in regcomp_study.c checked the size of the joined substring buffer in characters rather than bytes. For a quantified fixed substring with a large minimum count, the byte length mincount * l could overflow SSize_t, producing an undersized SvGROW allocation; the subsequent copy writes past the end of the buffer.\n\nA caller that compiles an attacker-controlled regular expression on a 32-bit perl build triggers a heap buffer overflow at compile time.",
-          "Severity": "CRITICAL",
-          "CweIDs": [
-            "CWE-680"
-          ],
-          "VendorSeverity": {
-            "amazon": 2,
-            "azure": 2,
-            "nvd": 4,
-            "photon": 4,
-            "redhat": 2,
-            "ubuntu": 2
-          },
-          "CVSS": {
-            "nvd": {
-              "V3Vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H",
-              "V3Score": 9.8
-            },
-            "redhat": {
-              "V3Vector": "CVSS:3.1/AV:L/AC:H/PR:N/UI:N/S:U/C:N/I:L/A:H",
-              "V3Score": 5.7
-            }
-          },
-          "References": [
-            "http://www.openwall.com/lists/oss-security/2026/05/26/1",
-            "https://access.redhat.com/security/cve/CVE-2026-8376",
-            "https://github.com/Perl/perl5/commit/5e7f119eb2bb1181be908701f22bf7068e722f1c.patch",
-            "https://github.com/Perl/perl5/pull/24433",
-            "https://nvd.nist.gov/vuln/detail/CVE-2026-8376",
-            "https://ubuntu.com/security/notices/USN-8467-1",
-            "https://www.cve.org/CVERecord?id=CVE-2026-8376"
-          ],
-          "PublishedDate": "2026-05-26T00:16:57.15Z",
-          "LastModifiedDate": "2026-09-08T22:19:18.373Z"
-        },
-        {
-          "VulnerabilityID": "CVE-2026-42497",
-          "VendorIDs": [
-            "DLA-4821-1"
-          ],
-          "PkgID": "perl-base@5.36.0-7+deb12u3",
-          "PkgName": "perl-base",
-          "PkgIdentifier": {
-            "PURL": "pkg:deb/debian/perl-base@5.36.0-7%2Bdeb12u3?arch=amd64\u0026distro=debian-12.15",
-            "UID": "4d96814618e564ec"
-          },
-          "InstalledVersion": "5.36.0-7+deb12u3",
-          "FixedVersion": "5.36.0-7+deb12u4",
-          "Status": "fixed",
-          "Layer": {
-            "Digest": "sha256:7fd1ebe418b5079d4aa36f416af9b143d127bc75b0155d71cb5fd559b5e04d39",
-            "DiffID": "sha256:e58989146fcec76699871403b9897b5c014af1ccd85f5a9300a215e7975525d7"
-          },
-          "SeveritySource": "nvd",
-          "PrimaryURL": "https://avd.aquasec.com/nvd/cve-2026-42497",
-          "DataSource": {
-            "ID": "debian",
-            "Name": "Debian Security Tracker",
-            "URL": "https://salsa.debian.org/security-tracker-team/security-tracker"
-          },
-          "Fingerprint": "sha256:264e187e8be96fb1ddf14b722326e9e025a1c75346616db4132338e7f5c44e2a",
-          "Title": "perl-Archive-Tar: perl-Archive-Tar: Arbitrary file modification via crafted hardlinks during archive extraction",
-          "Description": "Archive::Tar versions before 3.08 for Perl extract hardlinks to attacker controlled paths outside the extraction directory.\n\n_make_special_file() passes the tar header's linkname to link() without validating it against absolute paths or .. segments, creating a hardlink that shares the victim file's inode.\n\nA subsequent write through the extracted name modifies the victim file, and the post-extraction chmod, chown, and utime block in _extract_file() (guarded only against symlinks via -l) applies the tar header's mode, owner, and timestamps to the shared inode during extraction alone.",
-          "Severity": "HIGH",
-          "CweIDs": [
-            "CWE-59",
-            "CWE-732"
-          ],
-          "VendorSeverity": {
-            "amazon": 3,
-            "azure": 2,
-            "nvd": 3,
-            "redhat": 2,
-            "ubuntu": 2
-          },
-          "CVSS": {
-            "nvd": {
-              "V3Vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:H/A:N",
-              "V3Score": 7.5
-            },
-            "redhat": {
-              "V3Vector": "CVSS:3.1/AV:L/AC:L/PR:L/UI:R/S:U/C:L/I:H/A:H",
-              "V3Score": 6.8
-            }
-          },
-          "References": [
-            "https://access.redhat.com/security/cve/CVE-2026-42497",
-            "https://github.com/jib/archive-tar-new/commit/17c873492a05eddc0de18c1485e0b2cccd5a9158.patch",
-            "https://lists.security.metacpan.org/cve-announce/msg/40396457/",
-            "https://metacpan.org/release/BINGOS/Archive-Tar-3.08/changes",
-            "https://nvd.nist.gov/vuln/detail/CVE-2026-42497",
-            "https://www.cve.org/CVERecord?id=CVE-2026-42496",
-            "https://www.cve.org/CVERecord?id=CVE-2026-42497"
-          ],
-          "PublishedDate": "2026-05-26T02:16:40.25Z",
-          "LastModifiedDate": "2026-07-24T11:10:00.17Z"
-        },
-        {
-          "VulnerabilityID": "CVE-2026-48962",
-          "VendorIDs": [
-            "DLA-4821-1"
-          ],
-          "PkgID": "perl-base@5.36.0-7+deb12u3",
-          "PkgName": "perl-base",
-          "PkgIdentifier": {
-            "PURL": "pkg:deb/debian/perl-base@5.36.0-7%2Bdeb12u3?arch=amd64\u0026distro=debian-12.15",
-            "UID": "4d96814618e564ec"
-          },
-          "InstalledVersion": "5.36.0-7+deb12u3",
-          "FixedVersion": "5.36.0-7+deb12u4",
-          "Status": "fixed",
-          "Layer": {
-            "Digest": "sha256:7fd1ebe418b5079d4aa36f416af9b143d127bc75b0155d71cb5fd559b5e04d39",
-            "DiffID": "sha256:e58989146fcec76699871403b9897b5c014af1ccd85f5a9300a215e7975525d7"
-          },
-          "PrimaryURL": "https://avd.aquasec.com/nvd/cve-2026-48962",
-          "DataSource": {
-            "ID": "debian",
-            "Name": "Debian Security Tracker",
-            "URL": "https://salsa.debian.org/security-tracker-team/security-tracker"
-          },
-          "Fingerprint": "sha256:660b21a571ec553f264686e05e28940e59a07ff4a02bc41d8555c243d458c1ce",
-          "Title": "perl-IO-Compress: perl-IO-Compress: Arbitrary code execution via attacker-controlled output glob",
-          "Description": "IO::Compress versions before 2.220 for Perl can execute arbitrary code in File::GlobMapper via an attacker-controlled output glob.\n\n_parseOutputGlob() wraps the caller-supplied output glob string in double quotes and stores it in the parser state; _getFiles() then runs the stored expression through eval STRING. A literal double quote in the output glob closes the dquote wrapper, and the characters that follow are evaluated as Perl.\n\nArbitrary Perl in the output glob executes at the calling process's privilege.",
-          "Severity": "HIGH",
-          "CweIDs": [
-            "CWE-95",
-            "CWE-94"
-          ],
-          "VendorSeverity": {
-            "alma": 3,
-            "amazon": 3,
-            "azure": 3,
-            "oracle-oval": 3,
-            "redhat": 3,
-            "rocky": 3,
-            "ubuntu": 2
-          },
-          "CVSS": {
-            "redhat": {
-              "V3Vector": "CVSS:3.1/AV:L/AC:L/PR:L/UI:N/S:U/C:H/I:H/A:H",
-              "V3Score": 7.8
-            }
-          },
-          "References": [
-            "http://www.openwall.com/lists/oss-security/2026/05/27/4",
-            "https://access.redhat.com/errata/RHSA-2026:29182",
-            "https://access.redhat.com/errata/RHSA-2026:29210",
-            "https://access.redhat.com/errata/RHSA-2026:29867",
-            "https://access.redhat.com/errata/RHSA-2026:29941",
-            "https://access.redhat.com/errata/RHSA-2026:30085",
-            "https://access.redhat.com/errata/RHSA-2026:30086",
-            "https://access.redhat.com/errata/RHSA-2026:30115",
-            "https://access.redhat.com/errata/RHSA-2026:30843",
-            "https://access.redhat.com/errata/RHSA-2026:30851",
-            "https://access.redhat.com/errata/RHSA-2026:30858",
-            "https://access.redhat.com/errata/RHSA-2026:30859",
-            "https://access.redhat.com/errata/RHSA-2026:30860",
-            "https://access.redhat.com/errata/RHSA-2026:50262",
-            "https://access.redhat.com/security/cve/CVE-2026-48962",
-            "https://bugzilla.redhat.com/2481767",
-            "https://bugzilla.redhat.com/show_bug.cgi?id=2481767",
-            "https://creativecommons.org/licenses/by/4.0/",
-            "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2026-48962",
-            "https://errata.almalinux.org/9/ALSA-2026-30859.html",
-            "https://errata.rockylinux.org/RLSA-2026:30859",
-            "https://github.com/pmqs/IO-Compress/commit/f2db247bf90d4cc7ee2710be384946081f3b4610.patch",
-            "https://linux.oracle.com/cve/CVE-2026-48962.html",
-            "https://linux.oracle.com/errata/ELSA-2026-30860.html",
-            "https://lists.security.metacpan.org/cve-announce/msg/40434385/",
-            "https://metacpan.org/release/PMQS/IO-Compress-2.220/changes",
-            "https://nvd.nist.gov/vuln/detail/CVE-2026-48962",
-            "https://security.access.redhat.com/data/csaf/v2/vex/2026/cve-2026-48962.json",
-            "https://ubuntu.com/security/notices/USN-8684-1",
-            "https://www.cve.org/CVERecord?id=CVE-2026-48962"
-          ],
-          "PublishedDate": "2026-05-27T04:16:31.333Z",
-          "LastModifiedDate": "2026-08-05T13:23:22.46Z"
-        },
-        {
-          "VulnerabilityID": "CVE-2026-57432",
-          "VendorIDs": [
-            "DLA-4821-1"
-          ],
-          "PkgID": "perl-base@5.36.0-7+deb12u3",
-          "PkgName": "perl-base",
-          "PkgIdentifier": {
-            "PURL": "pkg:deb/debian/perl-base@5.36.0-7%2Bdeb12u3?arch=amd64\u0026distro=debian-12.15",
-            "UID": "4d96814618e564ec"
-          },
-          "InstalledVersion": "5.36.0-7+deb12u3",
-          "FixedVersion": "5.36.0-7+deb12u4",
-          "Status": "fixed",
-          "Layer": {
-            "Digest": "sha256:7fd1ebe418b5079d4aa36f416af9b143d127bc75b0155d71cb5fd559b5e04d39",
-            "DiffID": "sha256:e58989146fcec76699871403b9897b5c014af1ccd85f5a9300a215e7975525d7"
-          },
-          "SeveritySource": "nvd",
-          "PrimaryURL": "https://avd.aquasec.com/nvd/cve-2026-57432",
-          "DataSource": {
-            "ID": "debian",
-            "Name": "Debian Security Tracker",
-            "URL": "https://salsa.debian.org/security-tracker-team/security-tracker"
-          },
-          "Fingerprint": "sha256:97afdd4419fa5efd2e0f582bc285b487876ce0f7e8a03dff28f164ca44445584",
-          "Title": "perl: Perl: Information disclosure via integer overflow in pack/unpack operations",
-          "Description": "Perl versions before 5.40.5-RC1, from 5.41.0 before 5.42.3-RC1, from 5.43.0 before 5.43.11 have an integer overflow in S_measure_struct leading to an out-of-bounds heap read in pack and unpack.\n\nS_measure_struct adds each item's size times its repeat count to a running total with no overflow check, so a large repeat count in a pack or unpack template wraps the signed SSize_t total negative. The @, X, and x position codes then guard their moves with a signed length comparison that passes when the length is negative, advancing the buffer pointer out of bounds.\n\nA template derived from untrusted input can read heap memory past the buffer and return it to the caller.",
-          "Severity": "HIGH",
-          "CweIDs": [
-            "CWE-125",
-            "CWE-190"
-          ],
-          "VendorSeverity": {
-            "azure": 3,
-            "nvd": 3,
-            "photon": 3,
-            "redhat": 2,
-            "ubuntu": 2
-          },
-          "CVSS": {
-            "nvd": {
-              "V3Vector": "CVSS:3.1/AV:L/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H",
-              "V3Score": 8.4
-            },
-            "redhat": {
-              "V3Vector": "CVSS:3.1/AV:L/AC:L/PR:L/UI:R/S:U/C:H/I:N/A:N",
-              "V3Score": 5
-            }
-          },
-          "References": [
-            "http://www.openwall.com/lists/oss-security/2026/07/13/6",
-            "https://access.redhat.com/security/cve/CVE-2026-57432",
-            "https://github.com/Perl/perl5/commit/40754edc72dd3e513d758153c0e2f0215897740e.patch",
-            "https://github.com/Perl/perl5/commit/5f7eb6bbbe0510964e3fb1d6bb691e5445913e55.patch",
-            "https://lists.security.metacpan.org/cve-announce/msg/41780102/",
-            "https://nvd.nist.gov/vuln/detail/CVE-2026-57432",
-            "https://ubuntu.com/security/notices/USN-8675-1",
-            "https://ubuntu.com/security/notices/USN-8675-2",
-            "https://ubuntu.com/security/notices/USN-8684-1",
-            "https://www.cve.org/CVERecord?id=CVE-2026-57432"
-          ],
-          "PublishedDate": "2026-07-13T17:17:55.67Z",
-          "LastModifiedDate": "2026-09-08T22:18:30.64Z"
-        },
-        {
-          "VulnerabilityID": "CVE-2026-57433",
-          "VendorIDs": [
-            "DLA-4821-1"
-          ],
-          "PkgID": "perl-base@5.36.0-7+deb12u3",
-          "PkgName": "perl-base",
-          "PkgIdentifier": {
-            "PURL": "pkg:deb/debian/perl-base@5.36.0-7%2Bdeb12u3?arch=amd64\u0026distro=debian-12.15",
-            "UID": "4d96814618e564ec"
-          },
-          "InstalledVersion": "5.36.0-7+deb12u3",
-          "FixedVersion": "5.36.0-7+deb12u4",
-          "Status": "fixed",
-          "Layer": {
-            "Digest": "sha256:7fd1ebe418b5079d4aa36f416af9b143d127bc75b0155d71cb5fd559b5e04d39",
-            "DiffID": "sha256:e58989146fcec76699871403b9897b5c014af1ccd85f5a9300a215e7975525d7"
-          },
-          "PrimaryURL": "https://avd.aquasec.com/nvd/cve-2026-57433",
-          "DataSource": {
-            "ID": "debian",
-            "Name": "Debian Security Tracker",
-            "URL": "https://salsa.debian.org/security-tracker-team/security-tracker"
-          },
-          "Fingerprint": "sha256:14464dc2769e8425de8061843c9421e1fc8e88bf1748769f4dde1b2faabdfe52",
-          "Title": "Storable: Storable: Denial of Service via signed integer overflow in deserialization",
-          "Description": "Storable versions before 3.41 for Perl have a signed integer overflow when deserializing a crafted SX_HOOK record.\n\nretrieve_hook_common reads a signed 32-bit item count from an SX_HOOK record and calls av_extend with that count plus one. A count of I32_MAX wraps the addition to a negative value.\n\nA crafted blob passed to thaw or retrieve triggers the overflow; av_extend receives the negative count and dies with a panic, terminating the deserialization.",
-          "Severity": "HIGH",
-          "CweIDs": [
-            "CWE-190"
-          ],
-          "VendorSeverity": {
-            "azure": 4,
-            "redhat": 3,
-            "ubuntu": 2
-          },
-          "CVSS": {
-            "redhat": {
-              "V3Vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H",
-              "V3Score": 7.5
-            }
-          },
-          "References": [
-            "http://www.openwall.com/lists/oss-security/2026/07/13/7",
-            "https://access.redhat.com/security/cve/CVE-2026-57433",
-            "https://github.com/Perl/perl5/commit/e4f681784bcdeaa91ff02a2fa4cdcae5c46779d7.patch",
-            "https://lists.security.metacpan.org/cve-announce/msg/41780100/",
-            "https://nvd.nist.gov/vuln/detail/CVE-2026-57433",
-            "https://ubuntu.com/security/notices/USN-8675-1",
-            "https://ubuntu.com/security/notices/USN-8675-2",
-            "https://ubuntu.com/security/notices/USN-8684-1",
-            "https://www.cve.org/CVERecord?id=CVE-2026-57433"
-          ],
-          "PublishedDate": "2026-07-13T17:17:55.783Z",
-          "LastModifiedDate": "2026-07-14T17:47:20.473Z"
-        },
-        {
-          "VulnerabilityID": "CVE-2025-15649",
-          "VendorIDs": [
-            "DLA-4821-1"
-          ],
-          "PkgID": "perl-base@5.36.0-7+deb12u3",
-          "PkgName": "perl-base",
-          "PkgIdentifier": {
-            "PURL": "pkg:deb/debian/perl-base@5.36.0-7%2Bdeb12u3?arch=amd64\u0026distro=debian-12.15",
-            "UID": "4d96814618e564ec"
-          },
-          "InstalledVersion": "5.36.0-7+deb12u3",
-          "FixedVersion": "5.36.0-7+deb12u4",
-          "Status": "fixed",
-          "Layer": {
-            "Digest": "sha256:7fd1ebe418b5079d4aa36f416af9b143d127bc75b0155d71cb5fd559b5e04d39",
-            "DiffID": "sha256:e58989146fcec76699871403b9897b5c014af1ccd85f5a9300a215e7975525d7"
-          },
-          "PrimaryURL": "https://avd.aquasec.com/nvd/cve-2025-15649",
-          "DataSource": {
-            "ID": "debian",
-            "Name": "Debian Security Tracker",
-            "URL": "https://salsa.debian.org/security-tracker-team/security-tracker"
-          },
-          "Fingerprint": "sha256:59e24a662e4606cee67d7a29a0d7af141b3674e4977646e4a2e243dbaddea9b7",
-          "Title": "perl-IO-Compress: perl-IO-Compress: Denial of Service via malformed DOS date in zip header",
-          "Description": "IO::Uncompress::Unzip versions before 2.215 for Perl propagate uncaught exception when parsing zip header with malformed DOS date.\n\n_dosToUnixTime() decodes the local-file-header last-modification date field and calls Time::Local::timelocal() without an eval guard. A header whose date field decodes to an out-of-range month, day, or hour causes timelocal() to die.\n\nThe exception propagates out of IO::Uncompress::Unzip-\u003enew($file) where callers expect undef plus $UnzipError.",
-          "Severity": "MEDIUM",
-          "CweIDs": [
-            "CWE-248"
-          ],
-          "VendorSeverity": {
-            "azure": 2,
-            "redhat": 2,
-            "ubuntu": 2
-          },
-          "CVSS": {
-            "redhat": {
-              "V3Vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:R/S:U/C:N/I:N/A:H",
-              "V3Score": 6.5
-            }
-          },
-          "References": [
-            "http://www.openwall.com/lists/oss-security/2026/05/27/1",
-            "https://access.redhat.com/security/cve/CVE-2025-15649",
-            "https://github.com/pmqs/IO-Compress/commit/fd28c1d2374eee9811f6d0c5bddc0957abdf1da8.patch",
-            "https://github.com/pmqs/IO-Compress/issues/65",
-            "https://lists.security.metacpan.org/cve-announce/msg/40434380/",
-            "https://metacpan.org/release/PMQS/IO-Compress-2.215/changes",
-            "https://nvd.nist.gov/vuln/detail/CVE-2025-15649",
-            "https://ubuntu.com/security/notices/USN-8684-1",
-            "https://www.cve.org/CVERecord?id=CVE-2025-15649"
-          ],
-          "PublishedDate": "2026-05-27T04:16:23.873Z",
-          "LastModifiedDate": "2026-07-24T12:10:00.21Z"
-        },
-        {
-          "VulnerabilityID": "CVE-2026-12087",
-          "VendorIDs": [
-            "DLA-4821-1"
-          ],
-          "PkgID": "perl-base@5.36.0-7+deb12u3",
-          "PkgName": "perl-base",
-          "PkgIdentifier": {
-            "PURL": "pkg:deb/debian/perl-base@5.36.0-7%2Bdeb12u3?arch=amd64\u0026distro=debian-12.15",
-            "UID": "4d96814618e564ec"
-          },
-          "InstalledVersion": "5.36.0-7+deb12u3",
-          "FixedVersion": "5.36.0-7+deb12u4",
-          "Status": "fixed",
-          "Layer": {
-            "Digest": "sha256:7fd1ebe418b5079d4aa36f416af9b143d127bc75b0155d71cb5fd559b5e04d39",
-            "DiffID": "sha256:e58989146fcec76699871403b9897b5c014af1ccd85f5a9300a215e7975525d7"
-          },
-          "PrimaryURL": "https://avd.aquasec.com/nvd/cve-2026-12087",
-          "DataSource": {
-            "ID": "debian",
-            "Name": "Debian Security Tracker",
-            "URL": "https://salsa.debian.org/security-tracker-team/security-tracker"
-          },
-          "Fingerprint": "sha256:2e935bb2f0c27f21f37d69179b417cac516437f2c4507191601ce3ffd12ed156",
-          "Title": "perl-Socket: perl-Socket: Information Disclosure due to Out-of-Bounds Read",
-          "Description": "Socket versions before 2.041 for Perl have an out-of-bounds heap read.\n\nIn Socket.xs, pack_ip_mreq_source() checks the length of its source argument before the argument is read, so the check tests the byte length carried over from the preceding multiaddr argument instead. Both addresses occupy a 4-byte field, so a valid multiaddr lets a source of any length pass the check, and the source is then copied into the 4-byte imr_sourceaddr field with a fixed-size copy. A source shorter than 4 bytes is not rejected, and the copy reads up to 3 bytes past the end of its buffer.\n\nCalling pack_ip_mreq_source() with a source value shorter than 4 bytes copies adjacent heap memory into the returned packed structure.",
-          "Severity": "MEDIUM",
-          "CweIDs": [
-            "CWE-125",
-            "CWE-805"
-          ],
-          "VendorSeverity": {
-            "amazon": 1,
-            "azure": 3,
-            "photon": 4,
-            "redhat": 2,
-            "ubuntu": 2
-          },
-          "CVSS": {
-            "redhat": {
-              "V3Vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:L/I:N/A:N",
-              "V3Score": 5.3
-            }
-          },
-          "References": [
-            "http://www.openwall.com/lists/oss-security/2026/06/15/10",
-            "https://access.redhat.com/security/cve/CVE-2026-12087",
-            "https://github.com/Perl/perl5/commit/de19a0b0ad1900fef976c5c1400bd8f11ec6c6cb.patch",
-            "https://lists.security.metacpan.org/cve-announce/msg/41020451/",
-            "https://metacpan.org/release/PEVANS/Socket-2.041/changes",
-            "https://nvd.nist.gov/vuln/detail/CVE-2026-12087",
-            "https://ubuntu.com/security/notices/USN-8675-1",
-            "https://ubuntu.com/security/notices/USN-8675-2",
-            "https://ubuntu.com/security/notices/USN-8684-1",
-            "https://www.cve.org/CVERecord?id=CVE-2026-12087"
-          ],
-          "PublishedDate": "2026-06-15T22:16:16.197Z",
-          "LastModifiedDate": "2026-06-17T10:14:37.383Z"
-        },
-        {
-          "VulnerabilityID": "CVE-2026-19487",
-          "VendorIDs": [
-            "DLA-4821-1"
-          ],
-          "PkgID": "perl-base@5.36.0-7+deb12u3",
-          "PkgName": "perl-base",
-          "PkgIdentifier": {
-            "PURL": "pkg:deb/debian/perl-base@5.36.0-7%2Bdeb12u3?arch=amd64\u0026distro=debian-12.15",
-            "UID": "4d96814618e564ec"
-          },
-          "InstalledVersion": "5.36.0-7+deb12u3",
-          "FixedVersion": "5.36.0-7+deb12u4",
-          "Status": "fixed",
-          "Layer": {
-            "Digest": "sha256:7fd1ebe418b5079d4aa36f416af9b143d127bc75b0155d71cb5fd559b5e04d39",
-            "DiffID": "sha256:e58989146fcec76699871403b9897b5c014af1ccd85f5a9300a215e7975525d7"
-          },
-          "PrimaryURL": "https://avd.aquasec.com/nvd/cve-2026-19487",
-          "DataSource": {
-            "ID": "debian",
-            "Name": "Debian Security Tracker",
-            "URL": "https://salsa.debian.org/security-tracker-team/security-tracker"
-          },
-          "Fingerprint": "sha256:d1b171f77df70b948baa52f7a74bd1c6532c58ce1a10d4d4c084de847e3a0f99",
-          "Title": "perl: Perl: Incorrect regular expression matching can lead to wrong access or filtering decisions.",
-          "Description": "Perl versions from 5.9.4 before 5.41.9 produce incorrect regular expression match results when a stale failure flag ends the Aho-Corasick prescan early in S_find_byclass.\n\nThe prescan walks the subject for positions where the full pattern could match, and the engine tries it from the leftmost one recorded. A failing transition sets the failed flag, and a later successful transition does not clear it, so the prescan reads the stale flag as a failure and stops before it can record a candidate that starts earlier. It takes a subject where one candidate is recorded and a later character then forces a fallback through a fail link that succeeds.\n\nExample:\n\n  \"ABCDE\" =~ m/ABCF|BCDE|C/;    # matches C at offset 2, not BCDE\n  \"ABCDE\" =~ m/ABCF|BCDE|C(G)/; # no match, BCDE missed\n\nAn alternation like this can miss input it should match, or match it on the wrong branch, so an access or filtering decision made from the result can be wrong.",
-          "Severity": "MEDIUM",
-          "CweIDs": [
-            "CWE-670"
-          ],
-          "VendorSeverity": {
-            "azure": 2,
-            "redhat": 2,
-            "ubuntu": 2
-          },
-          "CVSS": {
-            "redhat": {
-              "V3Vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:L/I:L/A:N",
-              "V3Score": 6.5
-            }
-          },
-          "References": [
-            "http://www.openwall.com/lists/oss-security/2026/08/13/8",
-            "https://access.redhat.com/security/cve/CVE-2026-19487",
-            "https://github.com/Perl/perl5/commit/1a21abacaf6f684928bae8baaa153733c8c238eb.patch",
-            "https://github.com/Perl/perl5/issues/22892",
-            "https://lists.security.metacpan.org/cve-announce/msg/42658992/",
-            "https://nvd.nist.gov/vuln/detail/CVE-2026-19487",
-            "https://ubuntu.com/security/notices/USN-8736-1",
-            "https://ubuntu.com/security/notices/USN-8736-2",
-            "https://www.cve.org/CVERecord?id=CVE-2026-19487"
-          ],
-          "PublishedDate": "2026-08-13T16:17:59.44Z",
-          "LastModifiedDate": "2026-08-28T15:42:20.06Z"
-        },
-        {
-          "VulnerabilityID": "CVE-2026-48959",
-          "VendorIDs": [
-            "DLA-4821-1"
-          ],
-          "PkgID": "perl-base@5.36.0-7+deb12u3",
-          "PkgName": "perl-base",
-          "PkgIdentifier": {
-            "PURL": "pkg:deb/debian/perl-base@5.36.0-7%2Bdeb12u3?arch=amd64\u0026distro=debian-12.15",
-            "UID": "4d96814618e564ec"
-          },
-          "InstalledVersion": "5.36.0-7+deb12u3",
-          "FixedVersion": "5.36.0-7+deb12u4",
-          "Status": "fixed",
-          "Layer": {
-            "Digest": "sha256:7fd1ebe418b5079d4aa36f416af9b143d127bc75b0155d71cb5fd559b5e04d39",
-            "DiffID": "sha256:e58989146fcec76699871403b9897b5c014af1ccd85f5a9300a215e7975525d7"
-          },
-          "PrimaryURL": "https://avd.aquasec.com/nvd/cve-2026-48959",
-          "DataSource": {
-            "ID": "debian",
-            "Name": "Debian Security Tracker",
-            "URL": "https://salsa.debian.org/security-tracker-team/security-tracker"
-          },
-          "Fingerprint": "sha256:8da9724f593a3687b689b429500536bff2dfbcd8c60bfdf8b2b4182ac848bae9",
-          "Title": "perl-IO-Compress: perl-IO-Compress: CPU exhaustion via per-byte read loop in fastForward",
-          "Description": "IO::Uncompress::Unzip versions before 2.220 for Perl allow CPU exhaustion via per-byte read loop in fastForward.\n\nfastForward() compares length $offset (the digit count of the offset, 1 to 19) against the chunk size $c instead of $offset itself, so $c shrinks from 16 KiB to 1-19 bytes per iteration.\n\nExtracting a named entry from an attacker supplied zip via IO::Uncompress::Unzip-\u003enew($zip, Name =\u003e $target) drives a per-byte read loop scaling with the entry's compressed size, up to the non-Zip64 4 GiB cap.",
-          "Severity": "MEDIUM",
-          "CweIDs": [
-            "CWE-407"
-          ],
-          "VendorSeverity": {
-            "amazon": 3,
-            "azure": 3,
-            "redhat": 2,
-            "ubuntu": 2
-          },
-          "CVSS": {
-            "redhat": {
-              "V3Vector": "CVSS:3.1/AV:L/AC:L/PR:L/UI:R/S:U/C:N/I:N/A:H",
-              "V3Score": 5
-            }
-          },
-          "References": [
-            "http://www.openwall.com/lists/oss-security/2026/05/27/2",
-            "https://access.redhat.com/security/cve/CVE-2026-48959",
-            "https://github.com/pmqs/IO-Compress/commit/68db44076f4c1a86a2ffe53a958eac6cabaf72e2.patch",
-            "https://lists.security.metacpan.org/cve-announce/msg/40434381/",
-            "https://metacpan.org/release/PMQS/IO-Compress-2.220/changes",
-            "https://nvd.nist.gov/vuln/detail/CVE-2026-48959",
-            "https://ubuntu.com/security/notices/USN-8684-1",
-            "https://www.cve.org/CVERecord?id=CVE-2026-48959"
-          ],
-          "PublishedDate": "2026-05-27T04:16:31.093Z",
-          "LastModifiedDate": "2026-07-24T12:10:00.21Z"
-        },
-        {
-          "VulnerabilityID": "CVE-2026-7010",
-          "VendorIDs": [
-            "DLA-4821-1"
-          ],
-          "PkgID": "perl-base@5.36.0-7+deb12u3",
-          "PkgName": "perl-base",
-          "PkgIdentifier": {
-            "PURL": "pkg:deb/debian/perl-base@5.36.0-7%2Bdeb12u3?arch=amd64\u0026distro=debian-12.15",
-            "UID": "4d96814618e564ec"
-          },
-          "InstalledVersion": "5.36.0-7+deb12u3",
-          "FixedVersion": "5.36.0-7+deb12u4",
-          "Status": "fixed",
-          "Layer": {
-            "Digest": "sha256:7fd1ebe418b5079d4aa36f416af9b143d127bc75b0155d71cb5fd559b5e04d39",
-            "DiffID": "sha256:e58989146fcec76699871403b9897b5c014af1ccd85f5a9300a215e7975525d7"
-          },
-          "PrimaryURL": "https://avd.aquasec.com/nvd/cve-2026-7010",
-          "DataSource": {
-            "ID": "debian",
-            "Name": "Debian Security Tracker",
-            "URL": "https://salsa.debian.org/security-tracker-team/security-tracker"
-          },
-          "Fingerprint": "sha256:982fdfb582c2b91f3d923e6edcba3eb9510bae9d6a58339a1842f7a327960a6d",
-          "Title": "HTTP::Tiny versions before 0.093 for Perl do not validate CRLF in HTTP ...",
-          "Description": "HTTP::Tiny versions before 0.093 for Perl do not validate CRLF in HTTP request lines or control field header values.\n\nThe unvalidated inputs are the method and URI in the request line, the URL host that becomes the `Host:` header, and HTTP/1.1 control data field values.\n\nAn attacker who controls one of these inputs, for example a user supplied URL passed to a webhook or URL fetch endpoint, can inject additional headers and smuggle requests to the upstream server.",
-          "Severity": "MEDIUM",
-          "CweIDs": [
-            "CWE-113"
-          ],
-          "VendorSeverity": {
-            "amazon": 2
-          },
-          "References": [
-            "http://www.openwall.com/lists/oss-security/2026/05/11/17",
-            "https://github.com/Perl-Toolchain-Gang/HTTP-Tiny/commit/d73c7651e82ace02693842df55928b6c3ae7c38d.patch",
-            "https://metacpan.org/release/HAARG/HTTP-Tiny-0.093-TRIAL/changes"
-          ],
-          "PublishedDate": "2026-05-11T22:22:14.75Z",
-          "LastModifiedDate": "2026-06-17T11:01:37.993Z"
-        },
-        {
-          "VulnerabilityID": "CVE-2026-7017",
-          "VendorIDs": [
-            "DLA-4821-1"
-          ],
-          "PkgID": "perl-base@5.36.0-7+deb12u3",
-          "PkgName": "perl-base",
-          "PkgIdentifier": {
-            "PURL": "pkg:deb/debian/perl-base@5.36.0-7%2Bdeb12u3?arch=amd64\u0026distro=debian-12.15",
-            "UID": "4d96814618e564ec"
-          },
-          "InstalledVersion": "5.36.0-7+deb12u3",
-          "FixedVersion": "5.36.0-7+deb12u4",
-          "Status": "fixed",
-          "Layer": {
-            "Digest": "sha256:7fd1ebe418b5079d4aa36f416af9b143d127bc75b0155d71cb5fd559b5e04d39",
-            "DiffID": "sha256:e58989146fcec76699871403b9897b5c014af1ccd85f5a9300a215e7975525d7"
-          },
-          "PrimaryURL": "https://avd.aquasec.com/nvd/cve-2026-7017",
-          "DataSource": {
-            "ID": "debian",
-            "Name": "Debian Security Tracker",
-            "URL": "https://salsa.debian.org/security-tracker-team/security-tracker"
-          },
-          "Fingerprint": "sha256:adb4028936472aad66395b90b74a051958c3470d3b2b6c51dc1e92986e18fef7",
-          "Title": "HTTP::Tiny versions before 0.095 for Perl forward credential headers t ...",
-          "Description": "HTTP::Tiny versions before 0.095 for Perl forward credential headers to cross-origin redirect targets.\n\nWhen the server returns a 3xx redirect, `_maybe_redirect` follows the `Location:` header and `_prepare_headers_and_cb` re-merges the caller's `headers` argument into the new request, without checking whether the redirect target shares an origin with the original URL. Caller-supplied `Authorization`, `Cookie` and `Proxy-Authorization` headers are therefore re-sent to whatever host the redirect names, across scheme, host or port boundaries, and including `https` to `http` downgrades that expose them in plaintext on the wire.\n\nThe HTTP::Tiny POD note that \"Authorization headers will not be included in a redirected request\" applied only to the URL-userinfo Basic-auth path, not to headers passed explicitly by the caller.",
-          "Severity": "MEDIUM",
-          "CweIDs": [
-            "CWE-522"
-          ],
-          "VendorSeverity": {
-            "ubuntu": 2
-          },
-          "References": [
-            "http://www.openwall.com/lists/oss-security/2026/07/07/13",
-            "https://github.com/Perl-Toolchain-Gang/HTTP-Tiny/commit/84984ef3930ddd4afcf5eb83b40d3cee200739c3.patch",
-            "https://github.com/Perl-Toolchain-Gang/HTTP-Tiny/commit/8f32ca89e21c3ad0422adc698fa6ad17a193f55f.patch",
-            "https://github.com/Perl-Toolchain-Gang/HTTP-Tiny/commit/e7a03aedf2395158f2b0d3bad2df943349227bb3.patch",
-            "https://github.com/Perl-Toolchain-Gang/HTTP-Tiny/pull/36",
-            "https://lists.security.metacpan.org/cve-announce/msg/41618211/",
-            "https://metacpan.org/release/HAARG/HTTP-Tiny-0.095-TRIAL/changes",
-            "https://ubuntu.com/security/notices/USN-8684-1",
-            "https://www.cve.org/CVERecord?id=CVE-2026-7017"
-          ],
-          "PublishedDate": "2026-07-07T19:16:55.53Z",
-          "LastModifiedDate": "2026-07-08T15:56:29.29Z"
-        }
       ]
     },
     {
@@ -8962,8 +8172,8 @@
             "MIT"
           ],
           "Layer": {
-            "Digest": "sha256:f1ebb784920099793144954b52ba8b107b072395ea0f56c5db026fbd33511d12",
-            "DiffID": "sha256:e29f147295f2e32ffc6fce483dd02371768fb1f7f4caed33f1578e30d071bc66"
+            "Digest": "sha256:d19b9a83a67228a57a987e734da4a24ea8a50de4220ea8af720ac19ed9ff8e2a",
+            "DiffID": "sha256:aeed3755418f2748c54a5b886167f70b47f2f0f4c5b19580eebf6d99faafd426"
           },
           "FilePath": "app/node_modules/@types/debug/package.json",
           "AnalyzedBy": "node-pkg"
@@ -8980,8 +8190,8 @@
             "MIT"
           ],
           "Layer": {
-            "Digest": "sha256:f1ebb784920099793144954b52ba8b107b072395ea0f56c5db026fbd33511d12",
-            "DiffID": "sha256:e29f147295f2e32ffc6fce483dd02371768fb1f7f4caed33f1578e30d071bc66"
+            "Digest": "sha256:d19b9a83a67228a57a987e734da4a24ea8a50de4220ea8af720ac19ed9ff8e2a",
+            "DiffID": "sha256:aeed3755418f2748c54a5b886167f70b47f2f0f4c5b19580eebf6d99faafd426"
           },
           "FilePath": "app/node_modules/@types/ms/package.json",
           "AnalyzedBy": "node-pkg"
@@ -8998,8 +8208,8 @@
             "MIT"
           ],
           "Layer": {
-            "Digest": "sha256:f1ebb784920099793144954b52ba8b107b072395ea0f56c5db026fbd33511d12",
-            "DiffID": "sha256:e29f147295f2e32ffc6fce483dd02371768fb1f7f4caed33f1578e30d071bc66"
+            "Digest": "sha256:d19b9a83a67228a57a987e734da4a24ea8a50de4220ea8af720ac19ed9ff8e2a",
+            "DiffID": "sha256:aeed3755418f2748c54a5b886167f70b47f2f0f4c5b19580eebf6d99faafd426"
           },
           "FilePath": "app/node_modules/@types/node/package.json",
           "AnalyzedBy": "node-pkg"
@@ -9016,8 +8226,8 @@
             "MIT"
           ],
           "Layer": {
-            "Digest": "sha256:f1ebb784920099793144954b52ba8b107b072395ea0f56c5db026fbd33511d12",
-            "DiffID": "sha256:e29f147295f2e32ffc6fce483dd02371768fb1f7f4caed33f1578e30d071bc66"
+            "Digest": "sha256:d19b9a83a67228a57a987e734da4a24ea8a50de4220ea8af720ac19ed9ff8e2a",
+            "DiffID": "sha256:aeed3755418f2748c54a5b886167f70b47f2f0f4c5b19580eebf6d99faafd426"
           },
           "FilePath": "app/node_modules/@types/validator/package.json",
           "AnalyzedBy": "node-pkg"
@@ -9034,8 +8244,8 @@
             "MIT"
           ],
           "Layer": {
-            "Digest": "sha256:f1ebb784920099793144954b52ba8b107b072395ea0f56c5db026fbd33511d12",
-            "DiffID": "sha256:e29f147295f2e32ffc6fce483dd02371768fb1f7f4caed33f1578e30d071bc66"
+            "Digest": "sha256:d19b9a83a67228a57a987e734da4a24ea8a50de4220ea8af720ac19ed9ff8e2a",
+            "DiffID": "sha256:aeed3755418f2748c54a5b886167f70b47f2f0f4c5b19580eebf6d99faafd426"
           },
           "FilePath": "app/node_modules/accepts/package.json",
           "AnalyzedBy": "node-pkg"
@@ -9049,8 +8259,8 @@
           },
           "Version": "1.0.0",
           "Layer": {
-            "Digest": "sha256:152b0a0f07c2b197fb95f6603b67b1a198c2ff8071801934dcb48af33fd95704",
-            "DiffID": "sha256:a7193bb05bec2ac6c87b69aa6c2b520b359aba41c0edb6a8b1f4b0350104b940"
+            "Digest": "sha256:79b1ab3cda74905c430c6f22be0b57eaff8c1c89268e2802e11c1a6943de9d59",
+            "DiffID": "sha256:b946d76bf81d92f4308eba1ec0ac49b227ce44494c3ff5f0d3fc7400109c5dc2"
           },
           "FilePath": "app/backend/package.json",
           "AnalyzedBy": "node-pkg"
@@ -9067,8 +8277,8 @@
             "MIT"
           ],
           "Layer": {
-            "Digest": "sha256:f1ebb784920099793144954b52ba8b107b072395ea0f56c5db026fbd33511d12",
-            "DiffID": "sha256:e29f147295f2e32ffc6fce483dd02371768fb1f7f4caed33f1578e30d071bc66"
+            "Digest": "sha256:d19b9a83a67228a57a987e734da4a24ea8a50de4220ea8af720ac19ed9ff8e2a",
+            "DiffID": "sha256:aeed3755418f2748c54a5b886167f70b47f2f0f4c5b19580eebf6d99faafd426"
           },
           "FilePath": "app/node_modules/bcrypt/package.json",
           "AnalyzedBy": "node-pkg"
@@ -9085,8 +8295,8 @@
             "MIT"
           ],
           "Layer": {
-            "Digest": "sha256:f1ebb784920099793144954b52ba8b107b072395ea0f56c5db026fbd33511d12",
-            "DiffID": "sha256:e29f147295f2e32ffc6fce483dd02371768fb1f7f4caed33f1578e30d071bc66"
+            "Digest": "sha256:d19b9a83a67228a57a987e734da4a24ea8a50de4220ea8af720ac19ed9ff8e2a",
+            "DiffID": "sha256:aeed3755418f2748c54a5b886167f70b47f2f0f4c5b19580eebf6d99faafd426"
           },
           "FilePath": "app/node_modules/body-parser/package.json",
           "AnalyzedBy": "node-pkg"
@@ -9103,8 +8313,8 @@
             "BSD-3-Clause"
           ],
           "Layer": {
-            "Digest": "sha256:f1ebb784920099793144954b52ba8b107b072395ea0f56c5db026fbd33511d12",
-            "DiffID": "sha256:e29f147295f2e32ffc6fce483dd02371768fb1f7f4caed33f1578e30d071bc66"
+            "Digest": "sha256:d19b9a83a67228a57a987e734da4a24ea8a50de4220ea8af720ac19ed9ff8e2a",
+            "DiffID": "sha256:aeed3755418f2748c54a5b886167f70b47f2f0f4c5b19580eebf6d99faafd426"
           },
           "FilePath": "app/node_modules/buffer-equal-constant-time/package.json",
           "AnalyzedBy": "node-pkg"
@@ -9121,8 +8331,8 @@
             "MIT"
           ],
           "Layer": {
-            "Digest": "sha256:f1ebb784920099793144954b52ba8b107b072395ea0f56c5db026fbd33511d12",
-            "DiffID": "sha256:e29f147295f2e32ffc6fce483dd02371768fb1f7f4caed33f1578e30d071bc66"
+            "Digest": "sha256:d19b9a83a67228a57a987e734da4a24ea8a50de4220ea8af720ac19ed9ff8e2a",
+            "DiffID": "sha256:aeed3755418f2748c54a5b886167f70b47f2f0f4c5b19580eebf6d99faafd426"
           },
           "FilePath": "app/node_modules/bytes/package.json",
           "AnalyzedBy": "node-pkg"
@@ -9139,8 +8349,8 @@
             "MIT"
           ],
           "Layer": {
-            "Digest": "sha256:f1ebb784920099793144954b52ba8b107b072395ea0f56c5db026fbd33511d12",
-            "DiffID": "sha256:e29f147295f2e32ffc6fce483dd02371768fb1f7f4caed33f1578e30d071bc66"
+            "Digest": "sha256:d19b9a83a67228a57a987e734da4a24ea8a50de4220ea8af720ac19ed9ff8e2a",
+            "DiffID": "sha256:aeed3755418f2748c54a5b886167f70b47f2f0f4c5b19580eebf6d99faafd426"
           },
           "FilePath": "app/node_modules/call-bind-apply-helpers/package.json",
           "AnalyzedBy": "node-pkg"
@@ -9157,8 +8367,8 @@
             "MIT"
           ],
           "Layer": {
-            "Digest": "sha256:f1ebb784920099793144954b52ba8b107b072395ea0f56c5db026fbd33511d12",
-            "DiffID": "sha256:e29f147295f2e32ffc6fce483dd02371768fb1f7f4caed33f1578e30d071bc66"
+            "Digest": "sha256:d19b9a83a67228a57a987e734da4a24ea8a50de4220ea8af720ac19ed9ff8e2a",
+            "DiffID": "sha256:aeed3755418f2748c54a5b886167f70b47f2f0f4c5b19580eebf6d99faafd426"
           },
           "FilePath": "app/node_modules/call-bound/package.json",
           "AnalyzedBy": "node-pkg"
@@ -9175,8 +8385,8 @@
             "MIT"
           ],
           "Layer": {
-            "Digest": "sha256:f1ebb784920099793144954b52ba8b107b072395ea0f56c5db026fbd33511d12",
-            "DiffID": "sha256:e29f147295f2e32ffc6fce483dd02371768fb1f7f4caed33f1578e30d071bc66"
+            "Digest": "sha256:d19b9a83a67228a57a987e734da4a24ea8a50de4220ea8af720ac19ed9ff8e2a",
+            "DiffID": "sha256:aeed3755418f2748c54a5b886167f70b47f2f0f4c5b19580eebf6d99faafd426"
           },
           "FilePath": "app/node_modules/content-disposition/package.json",
           "AnalyzedBy": "node-pkg"
@@ -9193,8 +8403,8 @@
             "MIT"
           ],
           "Layer": {
-            "Digest": "sha256:f1ebb784920099793144954b52ba8b107b072395ea0f56c5db026fbd33511d12",
-            "DiffID": "sha256:e29f147295f2e32ffc6fce483dd02371768fb1f7f4caed33f1578e30d071bc66"
+            "Digest": "sha256:d19b9a83a67228a57a987e734da4a24ea8a50de4220ea8af720ac19ed9ff8e2a",
+            "DiffID": "sha256:aeed3755418f2748c54a5b886167f70b47f2f0f4c5b19580eebf6d99faafd426"
           },
           "FilePath": "app/node_modules/content-type/package.json",
           "AnalyzedBy": "node-pkg"
@@ -9211,8 +8421,8 @@
             "MIT"
           ],
           "Layer": {
-            "Digest": "sha256:f1ebb784920099793144954b52ba8b107b072395ea0f56c5db026fbd33511d12",
-            "DiffID": "sha256:e29f147295f2e32ffc6fce483dd02371768fb1f7f4caed33f1578e30d071bc66"
+            "Digest": "sha256:d19b9a83a67228a57a987e734da4a24ea8a50de4220ea8af720ac19ed9ff8e2a",
+            "DiffID": "sha256:aeed3755418f2748c54a5b886167f70b47f2f0f4c5b19580eebf6d99faafd426"
           },
           "FilePath": "app/node_modules/cookie/package.json",
           "AnalyzedBy": "node-pkg"
@@ -9229,8 +8439,8 @@
             "MIT"
           ],
           "Layer": {
-            "Digest": "sha256:f1ebb784920099793144954b52ba8b107b072395ea0f56c5db026fbd33511d12",
-            "DiffID": "sha256:e29f147295f2e32ffc6fce483dd02371768fb1f7f4caed33f1578e30d071bc66"
+            "Digest": "sha256:d19b9a83a67228a57a987e734da4a24ea8a50de4220ea8af720ac19ed9ff8e2a",
+            "DiffID": "sha256:aeed3755418f2748c54a5b886167f70b47f2f0f4c5b19580eebf6d99faafd426"
           },
           "FilePath": "app/node_modules/cookie-signature/package.json",
           "AnalyzedBy": "node-pkg"
@@ -9265,8 +8475,8 @@
             "MIT"
           ],
           "Layer": {
-            "Digest": "sha256:f1ebb784920099793144954b52ba8b107b072395ea0f56c5db026fbd33511d12",
-            "DiffID": "sha256:e29f147295f2e32ffc6fce483dd02371768fb1f7f4caed33f1578e30d071bc66"
+            "Digest": "sha256:d19b9a83a67228a57a987e734da4a24ea8a50de4220ea8af720ac19ed9ff8e2a",
+            "DiffID": "sha256:aeed3755418f2748c54a5b886167f70b47f2f0f4c5b19580eebf6d99faafd426"
           },
           "FilePath": "app/node_modules/cors/package.json",
           "AnalyzedBy": "node-pkg"
@@ -9283,8 +8493,8 @@
             "MIT"
           ],
           "Layer": {
-            "Digest": "sha256:f1ebb784920099793144954b52ba8b107b072395ea0f56c5db026fbd33511d12",
-            "DiffID": "sha256:e29f147295f2e32ffc6fce483dd02371768fb1f7f4caed33f1578e30d071bc66"
+            "Digest": "sha256:d19b9a83a67228a57a987e734da4a24ea8a50de4220ea8af720ac19ed9ff8e2a",
+            "DiffID": "sha256:aeed3755418f2748c54a5b886167f70b47f2f0f4c5b19580eebf6d99faafd426"
           },
           "FilePath": "app/node_modules/debug/package.json",
           "AnalyzedBy": "node-pkg"
@@ -9301,8 +8511,8 @@
             "MIT"
           ],
           "Layer": {
-            "Digest": "sha256:f1ebb784920099793144954b52ba8b107b072395ea0f56c5db026fbd33511d12",
-            "DiffID": "sha256:e29f147295f2e32ffc6fce483dd02371768fb1f7f4caed33f1578e30d071bc66"
+            "Digest": "sha256:d19b9a83a67228a57a987e734da4a24ea8a50de4220ea8af720ac19ed9ff8e2a",
+            "DiffID": "sha256:aeed3755418f2748c54a5b886167f70b47f2f0f4c5b19580eebf6d99faafd426"
           },
           "FilePath": "app/node_modules/depd/package.json",
           "AnalyzedBy": "node-pkg"
@@ -9319,8 +8529,8 @@
             "BSD-2-Clause"
           ],
           "Layer": {
-            "Digest": "sha256:f1ebb784920099793144954b52ba8b107b072395ea0f56c5db026fbd33511d12",
-            "DiffID": "sha256:e29f147295f2e32ffc6fce483dd02371768fb1f7f4caed33f1578e30d071bc66"
+            "Digest": "sha256:d19b9a83a67228a57a987e734da4a24ea8a50de4220ea8af720ac19ed9ff8e2a",
+            "DiffID": "sha256:aeed3755418f2748c54a5b886167f70b47f2f0f4c5b19580eebf6d99faafd426"
           },
           "FilePath": "app/node_modules/dotenv/package.json",
           "AnalyzedBy": "node-pkg"
@@ -9337,8 +8547,8 @@
             "MIT"
           ],
           "Layer": {
-            "Digest": "sha256:f1ebb784920099793144954b52ba8b107b072395ea0f56c5db026fbd33511d12",
-            "DiffID": "sha256:e29f147295f2e32ffc6fce483dd02371768fb1f7f4caed33f1578e30d071bc66"
+            "Digest": "sha256:d19b9a83a67228a57a987e734da4a24ea8a50de4220ea8af720ac19ed9ff8e2a",
+            "DiffID": "sha256:aeed3755418f2748c54a5b886167f70b47f2f0f4c5b19580eebf6d99faafd426"
           },
           "FilePath": "app/node_modules/dottie/package.json",
           "AnalyzedBy": "node-pkg"
@@ -9355,8 +8565,8 @@
             "MIT"
           ],
           "Layer": {
-            "Digest": "sha256:f1ebb784920099793144954b52ba8b107b072395ea0f56c5db026fbd33511d12",
-            "DiffID": "sha256:e29f147295f2e32ffc6fce483dd02371768fb1f7f4caed33f1578e30d071bc66"
+            "Digest": "sha256:d19b9a83a67228a57a987e734da4a24ea8a50de4220ea8af720ac19ed9ff8e2a",
+            "DiffID": "sha256:aeed3755418f2748c54a5b886167f70b47f2f0f4c5b19580eebf6d99faafd426"
           },
           "FilePath": "app/node_modules/dunder-proto/package.json",
           "AnalyzedBy": "node-pkg"
@@ -9373,8 +8583,8 @@
             "Apache-2.0"
           ],
           "Layer": {
-            "Digest": "sha256:f1ebb784920099793144954b52ba8b107b072395ea0f56c5db026fbd33511d12",
-            "DiffID": "sha256:e29f147295f2e32ffc6fce483dd02371768fb1f7f4caed33f1578e30d071bc66"
+            "Digest": "sha256:d19b9a83a67228a57a987e734da4a24ea8a50de4220ea8af720ac19ed9ff8e2a",
+            "DiffID": "sha256:aeed3755418f2748c54a5b886167f70b47f2f0f4c5b19580eebf6d99faafd426"
           },
           "FilePath": "app/node_modules/ecdsa-sig-formatter/package.json",
           "AnalyzedBy": "node-pkg"
@@ -9391,8 +8601,8 @@
             "MIT"
           ],
           "Layer": {
-            "Digest": "sha256:f1ebb784920099793144954b52ba8b107b072395ea0f56c5db026fbd33511d12",
-            "DiffID": "sha256:e29f147295f2e32ffc6fce483dd02371768fb1f7f4caed33f1578e30d071bc66"
+            "Digest": "sha256:d19b9a83a67228a57a987e734da4a24ea8a50de4220ea8af720ac19ed9ff8e2a",
+            "DiffID": "sha256:aeed3755418f2748c54a5b886167f70b47f2f0f4c5b19580eebf6d99faafd426"
           },
           "FilePath": "app/node_modules/ee-first/package.json",
           "AnalyzedBy": "node-pkg"
@@ -9409,8 +8619,8 @@
             "MIT"
           ],
           "Layer": {
-            "Digest": "sha256:f1ebb784920099793144954b52ba8b107b072395ea0f56c5db026fbd33511d12",
-            "DiffID": "sha256:e29f147295f2e32ffc6fce483dd02371768fb1f7f4caed33f1578e30d071bc66"
+            "Digest": "sha256:d19b9a83a67228a57a987e734da4a24ea8a50de4220ea8af720ac19ed9ff8e2a",
+            "DiffID": "sha256:aeed3755418f2748c54a5b886167f70b47f2f0f4c5b19580eebf6d99faafd426"
           },
           "FilePath": "app/node_modules/encodeurl/package.json",
           "AnalyzedBy": "node-pkg"
@@ -9427,8 +8637,8 @@
             "MIT"
           ],
           "Layer": {
-            "Digest": "sha256:f1ebb784920099793144954b52ba8b107b072395ea0f56c5db026fbd33511d12",
-            "DiffID": "sha256:e29f147295f2e32ffc6fce483dd02371768fb1f7f4caed33f1578e30d071bc66"
+            "Digest": "sha256:d19b9a83a67228a57a987e734da4a24ea8a50de4220ea8af720ac19ed9ff8e2a",
+            "DiffID": "sha256:aeed3755418f2748c54a5b886167f70b47f2f0f4c5b19580eebf6d99faafd426"
           },
           "FilePath": "app/node_modules/es-define-property/package.json",
           "AnalyzedBy": "node-pkg"
@@ -9445,8 +8655,8 @@
             "MIT"
           ],
           "Layer": {
-            "Digest": "sha256:f1ebb784920099793144954b52ba8b107b072395ea0f56c5db026fbd33511d12",
-            "DiffID": "sha256:e29f147295f2e32ffc6fce483dd02371768fb1f7f4caed33f1578e30d071bc66"
+            "Digest": "sha256:d19b9a83a67228a57a987e734da4a24ea8a50de4220ea8af720ac19ed9ff8e2a",
+            "DiffID": "sha256:aeed3755418f2748c54a5b886167f70b47f2f0f4c5b19580eebf6d99faafd426"
           },
           "FilePath": "app/node_modules/es-errors/package.json",
           "AnalyzedBy": "node-pkg"
@@ -9463,8 +8673,8 @@
             "MIT"
           ],
           "Layer": {
-            "Digest": "sha256:f1ebb784920099793144954b52ba8b107b072395ea0f56c5db026fbd33511d12",
-            "DiffID": "sha256:e29f147295f2e32ffc6fce483dd02371768fb1f7f4caed33f1578e30d071bc66"
+            "Digest": "sha256:d19b9a83a67228a57a987e734da4a24ea8a50de4220ea8af720ac19ed9ff8e2a",
+            "DiffID": "sha256:aeed3755418f2748c54a5b886167f70b47f2f0f4c5b19580eebf6d99faafd426"
           },
           "FilePath": "app/node_modules/es-object-atoms/package.json",
           "AnalyzedBy": "node-pkg"
@@ -9481,8 +8691,8 @@
             "MIT"
           ],
           "Layer": {
-            "Digest": "sha256:f1ebb784920099793144954b52ba8b107b072395ea0f56c5db026fbd33511d12",
-            "DiffID": "sha256:e29f147295f2e32ffc6fce483dd02371768fb1f7f4caed33f1578e30d071bc66"
+            "Digest": "sha256:d19b9a83a67228a57a987e734da4a24ea8a50de4220ea8af720ac19ed9ff8e2a",
+            "DiffID": "sha256:aeed3755418f2748c54a5b886167f70b47f2f0f4c5b19580eebf6d99faafd426"
           },
           "FilePath": "app/node_modules/escape-html/package.json",
           "AnalyzedBy": "node-pkg"
@@ -9499,8 +8709,8 @@
             "MIT"
           ],
           "Layer": {
-            "Digest": "sha256:f1ebb784920099793144954b52ba8b107b072395ea0f56c5db026fbd33511d12",
-            "DiffID": "sha256:e29f147295f2e32ffc6fce483dd02371768fb1f7f4caed33f1578e30d071bc66"
+            "Digest": "sha256:d19b9a83a67228a57a987e734da4a24ea8a50de4220ea8af720ac19ed9ff8e2a",
+            "DiffID": "sha256:aeed3755418f2748c54a5b886167f70b47f2f0f4c5b19580eebf6d99faafd426"
           },
           "FilePath": "app/node_modules/etag/package.json",
           "AnalyzedBy": "node-pkg"
@@ -9517,8 +8727,8 @@
             "MIT"
           ],
           "Layer": {
-            "Digest": "sha256:f1ebb784920099793144954b52ba8b107b072395ea0f56c5db026fbd33511d12",
-            "DiffID": "sha256:e29f147295f2e32ffc6fce483dd02371768fb1f7f4caed33f1578e30d071bc66"
+            "Digest": "sha256:d19b9a83a67228a57a987e734da4a24ea8a50de4220ea8af720ac19ed9ff8e2a",
+            "DiffID": "sha256:aeed3755418f2748c54a5b886167f70b47f2f0f4c5b19580eebf6d99faafd426"
           },
           "FilePath": "app/node_modules/express/package.json",
           "AnalyzedBy": "node-pkg"
@@ -9535,8 +8745,8 @@
             "MIT"
           ],
           "Layer": {
-            "Digest": "sha256:f1ebb784920099793144954b52ba8b107b072395ea0f56c5db026fbd33511d12",
-            "DiffID": "sha256:e29f147295f2e32ffc6fce483dd02371768fb1f7f4caed33f1578e30d071bc66"
+            "Digest": "sha256:d19b9a83a67228a57a987e734da4a24ea8a50de4220ea8af720ac19ed9ff8e2a",
+            "DiffID": "sha256:aeed3755418f2748c54a5b886167f70b47f2f0f4c5b19580eebf6d99faafd426"
           },
           "FilePath": "app/node_modules/finalhandler/package.json",
           "AnalyzedBy": "node-pkg"
@@ -9553,8 +8763,8 @@
             "MIT"
           ],
           "Layer": {
-            "Digest": "sha256:f1ebb784920099793144954b52ba8b107b072395ea0f56c5db026fbd33511d12",
-            "DiffID": "sha256:e29f147295f2e32ffc6fce483dd02371768fb1f7f4caed33f1578e30d071bc66"
+            "Digest": "sha256:d19b9a83a67228a57a987e734da4a24ea8a50de4220ea8af720ac19ed9ff8e2a",
+            "DiffID": "sha256:aeed3755418f2748c54a5b886167f70b47f2f0f4c5b19580eebf6d99faafd426"
           },
           "FilePath": "app/node_modules/forwarded/package.json",
           "AnalyzedBy": "node-pkg"
@@ -9571,8 +8781,8 @@
             "MIT"
           ],
           "Layer": {
-            "Digest": "sha256:f1ebb784920099793144954b52ba8b107b072395ea0f56c5db026fbd33511d12",
-            "DiffID": "sha256:e29f147295f2e32ffc6fce483dd02371768fb1f7f4caed33f1578e30d071bc66"
+            "Digest": "sha256:d19b9a83a67228a57a987e734da4a24ea8a50de4220ea8af720ac19ed9ff8e2a",
+            "DiffID": "sha256:aeed3755418f2748c54a5b886167f70b47f2f0f4c5b19580eebf6d99faafd426"
           },
           "FilePath": "app/node_modules/fresh/package.json",
           "AnalyzedBy": "node-pkg"
@@ -9589,8 +8799,8 @@
             "MIT"
           ],
           "Layer": {
-            "Digest": "sha256:f1ebb784920099793144954b52ba8b107b072395ea0f56c5db026fbd33511d12",
-            "DiffID": "sha256:e29f147295f2e32ffc6fce483dd02371768fb1f7f4caed33f1578e30d071bc66"
+            "Digest": "sha256:d19b9a83a67228a57a987e734da4a24ea8a50de4220ea8af720ac19ed9ff8e2a",
+            "DiffID": "sha256:aeed3755418f2748c54a5b886167f70b47f2f0f4c5b19580eebf6d99faafd426"
           },
           "FilePath": "app/node_modules/function-bind/package.json",
           "AnalyzedBy": "node-pkg"
@@ -9607,8 +8817,8 @@
             "MIT"
           ],
           "Layer": {
-            "Digest": "sha256:f1ebb784920099793144954b52ba8b107b072395ea0f56c5db026fbd33511d12",
-            "DiffID": "sha256:e29f147295f2e32ffc6fce483dd02371768fb1f7f4caed33f1578e30d071bc66"
+            "Digest": "sha256:d19b9a83a67228a57a987e734da4a24ea8a50de4220ea8af720ac19ed9ff8e2a",
+            "DiffID": "sha256:aeed3755418f2748c54a5b886167f70b47f2f0f4c5b19580eebf6d99faafd426"
           },
           "FilePath": "app/node_modules/get-intrinsic/package.json",
           "AnalyzedBy": "node-pkg"
@@ -9625,8 +8835,8 @@
             "MIT"
           ],
           "Layer": {
-            "Digest": "sha256:f1ebb784920099793144954b52ba8b107b072395ea0f56c5db026fbd33511d12",
-            "DiffID": "sha256:e29f147295f2e32ffc6fce483dd02371768fb1f7f4caed33f1578e30d071bc66"
+            "Digest": "sha256:d19b9a83a67228a57a987e734da4a24ea8a50de4220ea8af720ac19ed9ff8e2a",
+            "DiffID": "sha256:aeed3755418f2748c54a5b886167f70b47f2f0f4c5b19580eebf6d99faafd426"
           },
           "FilePath": "app/node_modules/get-proto/package.json",
           "AnalyzedBy": "node-pkg"
@@ -9643,8 +8853,8 @@
             "MIT"
           ],
           "Layer": {
-            "Digest": "sha256:f1ebb784920099793144954b52ba8b107b072395ea0f56c5db026fbd33511d12",
-            "DiffID": "sha256:e29f147295f2e32ffc6fce483dd02371768fb1f7f4caed33f1578e30d071bc66"
+            "Digest": "sha256:d19b9a83a67228a57a987e734da4a24ea8a50de4220ea8af720ac19ed9ff8e2a",
+            "DiffID": "sha256:aeed3755418f2748c54a5b886167f70b47f2f0f4c5b19580eebf6d99faafd426"
           },
           "FilePath": "app/node_modules/gopd/package.json",
           "AnalyzedBy": "node-pkg"
@@ -9661,8 +8871,8 @@
             "MIT"
           ],
           "Layer": {
-            "Digest": "sha256:f1ebb784920099793144954b52ba8b107b072395ea0f56c5db026fbd33511d12",
-            "DiffID": "sha256:e29f147295f2e32ffc6fce483dd02371768fb1f7f4caed33f1578e30d071bc66"
+            "Digest": "sha256:d19b9a83a67228a57a987e734da4a24ea8a50de4220ea8af720ac19ed9ff8e2a",
+            "DiffID": "sha256:aeed3755418f2748c54a5b886167f70b47f2f0f4c5b19580eebf6d99faafd426"
           },
           "FilePath": "app/node_modules/has-symbols/package.json",
           "AnalyzedBy": "node-pkg"
@@ -9679,8 +8889,8 @@
             "MIT"
           ],
           "Layer": {
-            "Digest": "sha256:f1ebb784920099793144954b52ba8b107b072395ea0f56c5db026fbd33511d12",
-            "DiffID": "sha256:e29f147295f2e32ffc6fce483dd02371768fb1f7f4caed33f1578e30d071bc66"
+            "Digest": "sha256:d19b9a83a67228a57a987e734da4a24ea8a50de4220ea8af720ac19ed9ff8e2a",
+            "DiffID": "sha256:aeed3755418f2748c54a5b886167f70b47f2f0f4c5b19580eebf6d99faafd426"
           },
           "FilePath": "app/node_modules/hasown/package.json",
           "AnalyzedBy": "node-pkg"
@@ -9697,8 +8907,8 @@
             "MIT"
           ],
           "Layer": {
-            "Digest": "sha256:f1ebb784920099793144954b52ba8b107b072395ea0f56c5db026fbd33511d12",
-            "DiffID": "sha256:e29f147295f2e32ffc6fce483dd02371768fb1f7f4caed33f1578e30d071bc66"
+            "Digest": "sha256:d19b9a83a67228a57a987e734da4a24ea8a50de4220ea8af720ac19ed9ff8e2a",
+            "DiffID": "sha256:aeed3755418f2748c54a5b886167f70b47f2f0f4c5b19580eebf6d99faafd426"
           },
           "FilePath": "app/node_modules/http-errors/package.json",
           "AnalyzedBy": "node-pkg"
@@ -9715,8 +8925,8 @@
             "MIT"
           ],
           "Layer": {
-            "Digest": "sha256:f1ebb784920099793144954b52ba8b107b072395ea0f56c5db026fbd33511d12",
-            "DiffID": "sha256:e29f147295f2e32ffc6fce483dd02371768fb1f7f4caed33f1578e30d071bc66"
+            "Digest": "sha256:d19b9a83a67228a57a987e734da4a24ea8a50de4220ea8af720ac19ed9ff8e2a",
+            "DiffID": "sha256:aeed3755418f2748c54a5b886167f70b47f2f0f4c5b19580eebf6d99faafd426"
           },
           "FilePath": "app/node_modules/iconv-lite/package.json",
           "AnalyzedBy": "node-pkg"
@@ -9733,8 +8943,8 @@
             "MIT"
           ],
           "Layer": {
-            "Digest": "sha256:f1ebb784920099793144954b52ba8b107b072395ea0f56c5db026fbd33511d12",
-            "DiffID": "sha256:e29f147295f2e32ffc6fce483dd02371768fb1f7f4caed33f1578e30d071bc66"
+            "Digest": "sha256:d19b9a83a67228a57a987e734da4a24ea8a50de4220ea8af720ac19ed9ff8e2a",
+            "DiffID": "sha256:aeed3755418f2748c54a5b886167f70b47f2f0f4c5b19580eebf6d99faafd426"
           },
           "FilePath": "app/node_modules/inflection/package.json",
           "AnalyzedBy": "node-pkg"
@@ -9751,8 +8961,8 @@
             "ISC"
           ],
           "Layer": {
-            "Digest": "sha256:f1ebb784920099793144954b52ba8b107b072395ea0f56c5db026fbd33511d12",
-            "DiffID": "sha256:e29f147295f2e32ffc6fce483dd02371768fb1f7f4caed33f1578e30d071bc66"
+            "Digest": "sha256:d19b9a83a67228a57a987e734da4a24ea8a50de4220ea8af720ac19ed9ff8e2a",
+            "DiffID": "sha256:aeed3755418f2748c54a5b886167f70b47f2f0f4c5b19580eebf6d99faafd426"
           },
           "FilePath": "app/node_modules/inherits/package.json",
           "AnalyzedBy": "node-pkg"
@@ -9769,8 +8979,8 @@
             "MIT"
           ],
           "Layer": {
-            "Digest": "sha256:f1ebb784920099793144954b52ba8b107b072395ea0f56c5db026fbd33511d12",
-            "DiffID": "sha256:e29f147295f2e32ffc6fce483dd02371768fb1f7f4caed33f1578e30d071bc66"
+            "Digest": "sha256:d19b9a83a67228a57a987e734da4a24ea8a50de4220ea8af720ac19ed9ff8e2a",
+            "DiffID": "sha256:aeed3755418f2748c54a5b886167f70b47f2f0f4c5b19580eebf6d99faafd426"
           },
           "FilePath": "app/node_modules/ipaddr.js/package.json",
           "AnalyzedBy": "node-pkg"
@@ -9787,8 +8997,8 @@
             "MIT"
           ],
           "Layer": {
-            "Digest": "sha256:f1ebb784920099793144954b52ba8b107b072395ea0f56c5db026fbd33511d12",
-            "DiffID": "sha256:e29f147295f2e32ffc6fce483dd02371768fb1f7f4caed33f1578e30d071bc66"
+            "Digest": "sha256:d19b9a83a67228a57a987e734da4a24ea8a50de4220ea8af720ac19ed9ff8e2a",
+            "DiffID": "sha256:aeed3755418f2748c54a5b886167f70b47f2f0f4c5b19580eebf6d99faafd426"
           },
           "FilePath": "app/node_modules/is-promise/package.json",
           "AnalyzedBy": "node-pkg"
@@ -9805,8 +9015,8 @@
             "MIT"
           ],
           "Layer": {
-            "Digest": "sha256:f1ebb784920099793144954b52ba8b107b072395ea0f56c5db026fbd33511d12",
-            "DiffID": "sha256:e29f147295f2e32ffc6fce483dd02371768fb1f7f4caed33f1578e30d071bc66"
+            "Digest": "sha256:d19b9a83a67228a57a987e734da4a24ea8a50de4220ea8af720ac19ed9ff8e2a",
+            "DiffID": "sha256:aeed3755418f2748c54a5b886167f70b47f2f0f4c5b19580eebf6d99faafd426"
           },
           "FilePath": "app/node_modules/jsonwebtoken/package.json",
           "AnalyzedBy": "node-pkg"
@@ -9823,8 +9033,8 @@
             "MIT"
           ],
           "Layer": {
-            "Digest": "sha256:f1ebb784920099793144954b52ba8b107b072395ea0f56c5db026fbd33511d12",
-            "DiffID": "sha256:e29f147295f2e32ffc6fce483dd02371768fb1f7f4caed33f1578e30d071bc66"
+            "Digest": "sha256:d19b9a83a67228a57a987e734da4a24ea8a50de4220ea8af720ac19ed9ff8e2a",
+            "DiffID": "sha256:aeed3755418f2748c54a5b886167f70b47f2f0f4c5b19580eebf6d99faafd426"
           },
           "FilePath": "app/node_modules/jwa/package.json",
           "AnalyzedBy": "node-pkg"
@@ -9841,26 +9051,26 @@
             "MIT"
           ],
           "Layer": {
-            "Digest": "sha256:f1ebb784920099793144954b52ba8b107b072395ea0f56c5db026fbd33511d12",
-            "DiffID": "sha256:e29f147295f2e32ffc6fce483dd02371768fb1f7f4caed33f1578e30d071bc66"
+            "Digest": "sha256:d19b9a83a67228a57a987e734da4a24ea8a50de4220ea8af720ac19ed9ff8e2a",
+            "DiffID": "sha256:aeed3755418f2748c54a5b886167f70b47f2f0f4c5b19580eebf6d99faafd426"
           },
           "FilePath": "app/node_modules/jws/package.json",
           "AnalyzedBy": "node-pkg"
         },
         {
-          "ID": "lodash@4.17.23",
+          "ID": "lodash@4.18.1",
           "Name": "lodash",
           "Identifier": {
-            "PURL": "pkg:npm/lodash@4.17.23",
-            "UID": "d8410ac6d27c7b45"
+            "PURL": "pkg:npm/lodash@4.18.1",
+            "UID": "e57b823074852327"
           },
-          "Version": "4.17.23",
+          "Version": "4.18.1",
           "Licenses": [
             "MIT"
           ],
           "Layer": {
-            "Digest": "sha256:f1ebb784920099793144954b52ba8b107b072395ea0f56c5db026fbd33511d12",
-            "DiffID": "sha256:e29f147295f2e32ffc6fce483dd02371768fb1f7f4caed33f1578e30d071bc66"
+            "Digest": "sha256:d19b9a83a67228a57a987e734da4a24ea8a50de4220ea8af720ac19ed9ff8e2a",
+            "DiffID": "sha256:aeed3755418f2748c54a5b886167f70b47f2f0f4c5b19580eebf6d99faafd426"
           },
           "FilePath": "app/node_modules/lodash/package.json",
           "AnalyzedBy": "node-pkg"
@@ -9877,8 +9087,8 @@
             "MIT"
           ],
           "Layer": {
-            "Digest": "sha256:f1ebb784920099793144954b52ba8b107b072395ea0f56c5db026fbd33511d12",
-            "DiffID": "sha256:e29f147295f2e32ffc6fce483dd02371768fb1f7f4caed33f1578e30d071bc66"
+            "Digest": "sha256:d19b9a83a67228a57a987e734da4a24ea8a50de4220ea8af720ac19ed9ff8e2a",
+            "DiffID": "sha256:aeed3755418f2748c54a5b886167f70b47f2f0f4c5b19580eebf6d99faafd426"
           },
           "FilePath": "app/node_modules/lodash.includes/package.json",
           "AnalyzedBy": "node-pkg"
@@ -9895,8 +9105,8 @@
             "MIT"
           ],
           "Layer": {
-            "Digest": "sha256:f1ebb784920099793144954b52ba8b107b072395ea0f56c5db026fbd33511d12",
-            "DiffID": "sha256:e29f147295f2e32ffc6fce483dd02371768fb1f7f4caed33f1578e30d071bc66"
+            "Digest": "sha256:d19b9a83a67228a57a987e734da4a24ea8a50de4220ea8af720ac19ed9ff8e2a",
+            "DiffID": "sha256:aeed3755418f2748c54a5b886167f70b47f2f0f4c5b19580eebf6d99faafd426"
           },
           "FilePath": "app/node_modules/lodash.isboolean/package.json",
           "AnalyzedBy": "node-pkg"
@@ -9913,8 +9123,8 @@
             "MIT"
           ],
           "Layer": {
-            "Digest": "sha256:f1ebb784920099793144954b52ba8b107b072395ea0f56c5db026fbd33511d12",
-            "DiffID": "sha256:e29f147295f2e32ffc6fce483dd02371768fb1f7f4caed33f1578e30d071bc66"
+            "Digest": "sha256:d19b9a83a67228a57a987e734da4a24ea8a50de4220ea8af720ac19ed9ff8e2a",
+            "DiffID": "sha256:aeed3755418f2748c54a5b886167f70b47f2f0f4c5b19580eebf6d99faafd426"
           },
           "FilePath": "app/node_modules/lodash.isinteger/package.json",
           "AnalyzedBy": "node-pkg"
@@ -9931,8 +9141,8 @@
             "MIT"
           ],
           "Layer": {
-            "Digest": "sha256:f1ebb784920099793144954b52ba8b107b072395ea0f56c5db026fbd33511d12",
-            "DiffID": "sha256:e29f147295f2e32ffc6fce483dd02371768fb1f7f4caed33f1578e30d071bc66"
+            "Digest": "sha256:d19b9a83a67228a57a987e734da4a24ea8a50de4220ea8af720ac19ed9ff8e2a",
+            "DiffID": "sha256:aeed3755418f2748c54a5b886167f70b47f2f0f4c5b19580eebf6d99faafd426"
           },
           "FilePath": "app/node_modules/lodash.isnumber/package.json",
           "AnalyzedBy": "node-pkg"
@@ -9949,8 +9159,8 @@
             "MIT"
           ],
           "Layer": {
-            "Digest": "sha256:f1ebb784920099793144954b52ba8b107b072395ea0f56c5db026fbd33511d12",
-            "DiffID": "sha256:e29f147295f2e32ffc6fce483dd02371768fb1f7f4caed33f1578e30d071bc66"
+            "Digest": "sha256:d19b9a83a67228a57a987e734da4a24ea8a50de4220ea8af720ac19ed9ff8e2a",
+            "DiffID": "sha256:aeed3755418f2748c54a5b886167f70b47f2f0f4c5b19580eebf6d99faafd426"
           },
           "FilePath": "app/node_modules/lodash.isplainobject/package.json",
           "AnalyzedBy": "node-pkg"
@@ -9967,8 +9177,8 @@
             "MIT"
           ],
           "Layer": {
-            "Digest": "sha256:f1ebb784920099793144954b52ba8b107b072395ea0f56c5db026fbd33511d12",
-            "DiffID": "sha256:e29f147295f2e32ffc6fce483dd02371768fb1f7f4caed33f1578e30d071bc66"
+            "Digest": "sha256:d19b9a83a67228a57a987e734da4a24ea8a50de4220ea8af720ac19ed9ff8e2a",
+            "DiffID": "sha256:aeed3755418f2748c54a5b886167f70b47f2f0f4c5b19580eebf6d99faafd426"
           },
           "FilePath": "app/node_modules/lodash.isstring/package.json",
           "AnalyzedBy": "node-pkg"
@@ -9985,8 +9195,8 @@
             "MIT"
           ],
           "Layer": {
-            "Digest": "sha256:f1ebb784920099793144954b52ba8b107b072395ea0f56c5db026fbd33511d12",
-            "DiffID": "sha256:e29f147295f2e32ffc6fce483dd02371768fb1f7f4caed33f1578e30d071bc66"
+            "Digest": "sha256:d19b9a83a67228a57a987e734da4a24ea8a50de4220ea8af720ac19ed9ff8e2a",
+            "DiffID": "sha256:aeed3755418f2748c54a5b886167f70b47f2f0f4c5b19580eebf6d99faafd426"
           },
           "FilePath": "app/node_modules/lodash.once/package.json",
           "AnalyzedBy": "node-pkg"
@@ -10003,8 +9213,8 @@
             "MIT"
           ],
           "Layer": {
-            "Digest": "sha256:f1ebb784920099793144954b52ba8b107b072395ea0f56c5db026fbd33511d12",
-            "DiffID": "sha256:e29f147295f2e32ffc6fce483dd02371768fb1f7f4caed33f1578e30d071bc66"
+            "Digest": "sha256:d19b9a83a67228a57a987e734da4a24ea8a50de4220ea8af720ac19ed9ff8e2a",
+            "DiffID": "sha256:aeed3755418f2748c54a5b886167f70b47f2f0f4c5b19580eebf6d99faafd426"
           },
           "FilePath": "app/node_modules/math-intrinsics/package.json",
           "AnalyzedBy": "node-pkg"
@@ -10021,8 +9231,8 @@
             "MIT"
           ],
           "Layer": {
-            "Digest": "sha256:f1ebb784920099793144954b52ba8b107b072395ea0f56c5db026fbd33511d12",
-            "DiffID": "sha256:e29f147295f2e32ffc6fce483dd02371768fb1f7f4caed33f1578e30d071bc66"
+            "Digest": "sha256:d19b9a83a67228a57a987e734da4a24ea8a50de4220ea8af720ac19ed9ff8e2a",
+            "DiffID": "sha256:aeed3755418f2748c54a5b886167f70b47f2f0f4c5b19580eebf6d99faafd426"
           },
           "FilePath": "app/node_modules/media-typer/package.json",
           "AnalyzedBy": "node-pkg"
@@ -10039,8 +9249,8 @@
             "MIT"
           ],
           "Layer": {
-            "Digest": "sha256:f1ebb784920099793144954b52ba8b107b072395ea0f56c5db026fbd33511d12",
-            "DiffID": "sha256:e29f147295f2e32ffc6fce483dd02371768fb1f7f4caed33f1578e30d071bc66"
+            "Digest": "sha256:d19b9a83a67228a57a987e734da4a24ea8a50de4220ea8af720ac19ed9ff8e2a",
+            "DiffID": "sha256:aeed3755418f2748c54a5b886167f70b47f2f0f4c5b19580eebf6d99faafd426"
           },
           "FilePath": "app/node_modules/merge-descriptors/package.json",
           "AnalyzedBy": "node-pkg"
@@ -10057,8 +9267,8 @@
             "MIT"
           ],
           "Layer": {
-            "Digest": "sha256:f1ebb784920099793144954b52ba8b107b072395ea0f56c5db026fbd33511d12",
-            "DiffID": "sha256:e29f147295f2e32ffc6fce483dd02371768fb1f7f4caed33f1578e30d071bc66"
+            "Digest": "sha256:d19b9a83a67228a57a987e734da4a24ea8a50de4220ea8af720ac19ed9ff8e2a",
+            "DiffID": "sha256:aeed3755418f2748c54a5b886167f70b47f2f0f4c5b19580eebf6d99faafd426"
           },
           "FilePath": "app/node_modules/mime-db/package.json",
           "AnalyzedBy": "node-pkg"
@@ -10075,8 +9285,8 @@
             "MIT"
           ],
           "Layer": {
-            "Digest": "sha256:f1ebb784920099793144954b52ba8b107b072395ea0f56c5db026fbd33511d12",
-            "DiffID": "sha256:e29f147295f2e32ffc6fce483dd02371768fb1f7f4caed33f1578e30d071bc66"
+            "Digest": "sha256:d19b9a83a67228a57a987e734da4a24ea8a50de4220ea8af720ac19ed9ff8e2a",
+            "DiffID": "sha256:aeed3755418f2748c54a5b886167f70b47f2f0f4c5b19580eebf6d99faafd426"
           },
           "FilePath": "app/node_modules/mime-types/package.json",
           "AnalyzedBy": "node-pkg"
@@ -10093,8 +9303,8 @@
             "MIT"
           ],
           "Layer": {
-            "Digest": "sha256:f1ebb784920099793144954b52ba8b107b072395ea0f56c5db026fbd33511d12",
-            "DiffID": "sha256:e29f147295f2e32ffc6fce483dd02371768fb1f7f4caed33f1578e30d071bc66"
+            "Digest": "sha256:d19b9a83a67228a57a987e734da4a24ea8a50de4220ea8af720ac19ed9ff8e2a",
+            "DiffID": "sha256:aeed3755418f2748c54a5b886167f70b47f2f0f4c5b19580eebf6d99faafd426"
           },
           "FilePath": "app/node_modules/moment/package.json",
           "AnalyzedBy": "node-pkg"
@@ -10111,8 +9321,8 @@
             "MIT"
           ],
           "Layer": {
-            "Digest": "sha256:f1ebb784920099793144954b52ba8b107b072395ea0f56c5db026fbd33511d12",
-            "DiffID": "sha256:e29f147295f2e32ffc6fce483dd02371768fb1f7f4caed33f1578e30d071bc66"
+            "Digest": "sha256:d19b9a83a67228a57a987e734da4a24ea8a50de4220ea8af720ac19ed9ff8e2a",
+            "DiffID": "sha256:aeed3755418f2748c54a5b886167f70b47f2f0f4c5b19580eebf6d99faafd426"
           },
           "FilePath": "app/node_modules/moment-timezone/package.json",
           "AnalyzedBy": "node-pkg"
@@ -10129,8 +9339,8 @@
             "MIT"
           ],
           "Layer": {
-            "Digest": "sha256:f1ebb784920099793144954b52ba8b107b072395ea0f56c5db026fbd33511d12",
-            "DiffID": "sha256:e29f147295f2e32ffc6fce483dd02371768fb1f7f4caed33f1578e30d071bc66"
+            "Digest": "sha256:d19b9a83a67228a57a987e734da4a24ea8a50de4220ea8af720ac19ed9ff8e2a",
+            "DiffID": "sha256:aeed3755418f2748c54a5b886167f70b47f2f0f4c5b19580eebf6d99faafd426"
           },
           "FilePath": "app/node_modules/ms/package.json",
           "AnalyzedBy": "node-pkg"
@@ -10147,8 +9357,8 @@
             "MIT"
           ],
           "Layer": {
-            "Digest": "sha256:f1ebb784920099793144954b52ba8b107b072395ea0f56c5db026fbd33511d12",
-            "DiffID": "sha256:e29f147295f2e32ffc6fce483dd02371768fb1f7f4caed33f1578e30d071bc66"
+            "Digest": "sha256:d19b9a83a67228a57a987e734da4a24ea8a50de4220ea8af720ac19ed9ff8e2a",
+            "DiffID": "sha256:aeed3755418f2748c54a5b886167f70b47f2f0f4c5b19580eebf6d99faafd426"
           },
           "FilePath": "app/node_modules/negotiator/package.json",
           "AnalyzedBy": "node-pkg"
@@ -10165,8 +9375,8 @@
             "MIT"
           ],
           "Layer": {
-            "Digest": "sha256:f1ebb784920099793144954b52ba8b107b072395ea0f56c5db026fbd33511d12",
-            "DiffID": "sha256:e29f147295f2e32ffc6fce483dd02371768fb1f7f4caed33f1578e30d071bc66"
+            "Digest": "sha256:d19b9a83a67228a57a987e734da4a24ea8a50de4220ea8af720ac19ed9ff8e2a",
+            "DiffID": "sha256:aeed3755418f2748c54a5b886167f70b47f2f0f4c5b19580eebf6d99faafd426"
           },
           "FilePath": "app/node_modules/node-addon-api/package.json",
           "AnalyzedBy": "node-pkg"
@@ -10183,8 +9393,8 @@
             "MIT"
           ],
           "Layer": {
-            "Digest": "sha256:f1ebb784920099793144954b52ba8b107b072395ea0f56c5db026fbd33511d12",
-            "DiffID": "sha256:e29f147295f2e32ffc6fce483dd02371768fb1f7f4caed33f1578e30d071bc66"
+            "Digest": "sha256:d19b9a83a67228a57a987e734da4a24ea8a50de4220ea8af720ac19ed9ff8e2a",
+            "DiffID": "sha256:aeed3755418f2748c54a5b886167f70b47f2f0f4c5b19580eebf6d99faafd426"
           },
           "FilePath": "app/node_modules/node-gyp-build/package.json",
           "AnalyzedBy": "node-pkg"
@@ -10201,8 +9411,8 @@
             "MIT"
           ],
           "Layer": {
-            "Digest": "sha256:f1ebb784920099793144954b52ba8b107b072395ea0f56c5db026fbd33511d12",
-            "DiffID": "sha256:e29f147295f2e32ffc6fce483dd02371768fb1f7f4caed33f1578e30d071bc66"
+            "Digest": "sha256:d19b9a83a67228a57a987e734da4a24ea8a50de4220ea8af720ac19ed9ff8e2a",
+            "DiffID": "sha256:aeed3755418f2748c54a5b886167f70b47f2f0f4c5b19580eebf6d99faafd426"
           },
           "FilePath": "app/node_modules/object-assign/package.json",
           "AnalyzedBy": "node-pkg"
@@ -10219,8 +9429,8 @@
             "MIT"
           ],
           "Layer": {
-            "Digest": "sha256:f1ebb784920099793144954b52ba8b107b072395ea0f56c5db026fbd33511d12",
-            "DiffID": "sha256:e29f147295f2e32ffc6fce483dd02371768fb1f7f4caed33f1578e30d071bc66"
+            "Digest": "sha256:d19b9a83a67228a57a987e734da4a24ea8a50de4220ea8af720ac19ed9ff8e2a",
+            "DiffID": "sha256:aeed3755418f2748c54a5b886167f70b47f2f0f4c5b19580eebf6d99faafd426"
           },
           "FilePath": "app/node_modules/object-inspect/package.json",
           "AnalyzedBy": "node-pkg"
@@ -10237,8 +9447,8 @@
             "MIT"
           ],
           "Layer": {
-            "Digest": "sha256:f1ebb784920099793144954b52ba8b107b072395ea0f56c5db026fbd33511d12",
-            "DiffID": "sha256:e29f147295f2e32ffc6fce483dd02371768fb1f7f4caed33f1578e30d071bc66"
+            "Digest": "sha256:d19b9a83a67228a57a987e734da4a24ea8a50de4220ea8af720ac19ed9ff8e2a",
+            "DiffID": "sha256:aeed3755418f2748c54a5b886167f70b47f2f0f4c5b19580eebf6d99faafd426"
           },
           "FilePath": "app/node_modules/on-finished/package.json",
           "AnalyzedBy": "node-pkg"
@@ -10255,8 +9465,8 @@
             "ISC"
           ],
           "Layer": {
-            "Digest": "sha256:f1ebb784920099793144954b52ba8b107b072395ea0f56c5db026fbd33511d12",
-            "DiffID": "sha256:e29f147295f2e32ffc6fce483dd02371768fb1f7f4caed33f1578e30d071bc66"
+            "Digest": "sha256:d19b9a83a67228a57a987e734da4a24ea8a50de4220ea8af720ac19ed9ff8e2a",
+            "DiffID": "sha256:aeed3755418f2748c54a5b886167f70b47f2f0f4c5b19580eebf6d99faafd426"
           },
           "FilePath": "app/node_modules/once/package.json",
           "AnalyzedBy": "node-pkg"
@@ -10273,26 +9483,26 @@
             "MIT"
           ],
           "Layer": {
-            "Digest": "sha256:f1ebb784920099793144954b52ba8b107b072395ea0f56c5db026fbd33511d12",
-            "DiffID": "sha256:e29f147295f2e32ffc6fce483dd02371768fb1f7f4caed33f1578e30d071bc66"
+            "Digest": "sha256:d19b9a83a67228a57a987e734da4a24ea8a50de4220ea8af720ac19ed9ff8e2a",
+            "DiffID": "sha256:aeed3755418f2748c54a5b886167f70b47f2f0f4c5b19580eebf6d99faafd426"
           },
           "FilePath": "app/node_modules/parseurl/package.json",
           "AnalyzedBy": "node-pkg"
         },
         {
-          "ID": "path-to-regexp@8.3.0",
+          "ID": "path-to-regexp@8.4.2",
           "Name": "path-to-regexp",
           "Identifier": {
-            "PURL": "pkg:npm/path-to-regexp@8.3.0",
-            "UID": "ae12c850a7ac82b7"
+            "PURL": "pkg:npm/path-to-regexp@8.4.2",
+            "UID": "1cb5d34eab107638"
           },
-          "Version": "8.3.0",
+          "Version": "8.4.2",
           "Licenses": [
             "MIT"
           ],
           "Layer": {
-            "Digest": "sha256:f1ebb784920099793144954b52ba8b107b072395ea0f56c5db026fbd33511d12",
-            "DiffID": "sha256:e29f147295f2e32ffc6fce483dd02371768fb1f7f4caed33f1578e30d071bc66"
+            "Digest": "sha256:d19b9a83a67228a57a987e734da4a24ea8a50de4220ea8af720ac19ed9ff8e2a",
+            "DiffID": "sha256:aeed3755418f2748c54a5b886167f70b47f2f0f4c5b19580eebf6d99faafd426"
           },
           "FilePath": "app/node_modules/path-to-regexp/package.json",
           "AnalyzedBy": "node-pkg"
@@ -10309,8 +9519,8 @@
             "MIT"
           ],
           "Layer": {
-            "Digest": "sha256:f1ebb784920099793144954b52ba8b107b072395ea0f56c5db026fbd33511d12",
-            "DiffID": "sha256:e29f147295f2e32ffc6fce483dd02371768fb1f7f4caed33f1578e30d071bc66"
+            "Digest": "sha256:d19b9a83a67228a57a987e734da4a24ea8a50de4220ea8af720ac19ed9ff8e2a",
+            "DiffID": "sha256:aeed3755418f2748c54a5b886167f70b47f2f0f4c5b19580eebf6d99faafd426"
           },
           "FilePath": "app/node_modules/pg/package.json",
           "AnalyzedBy": "node-pkg"
@@ -10327,8 +9537,8 @@
             "MIT"
           ],
           "Layer": {
-            "Digest": "sha256:f1ebb784920099793144954b52ba8b107b072395ea0f56c5db026fbd33511d12",
-            "DiffID": "sha256:e29f147295f2e32ffc6fce483dd02371768fb1f7f4caed33f1578e30d071bc66"
+            "Digest": "sha256:d19b9a83a67228a57a987e734da4a24ea8a50de4220ea8af720ac19ed9ff8e2a",
+            "DiffID": "sha256:aeed3755418f2748c54a5b886167f70b47f2f0f4c5b19580eebf6d99faafd426"
           },
           "FilePath": "app/node_modules/pg-cloudflare/package.json",
           "AnalyzedBy": "node-pkg"
@@ -10345,8 +9555,8 @@
             "MIT"
           ],
           "Layer": {
-            "Digest": "sha256:f1ebb784920099793144954b52ba8b107b072395ea0f56c5db026fbd33511d12",
-            "DiffID": "sha256:e29f147295f2e32ffc6fce483dd02371768fb1f7f4caed33f1578e30d071bc66"
+            "Digest": "sha256:d19b9a83a67228a57a987e734da4a24ea8a50de4220ea8af720ac19ed9ff8e2a",
+            "DiffID": "sha256:aeed3755418f2748c54a5b886167f70b47f2f0f4c5b19580eebf6d99faafd426"
           },
           "FilePath": "app/node_modules/pg-connection-string/package.json",
           "AnalyzedBy": "node-pkg"
@@ -10363,8 +9573,8 @@
             "MIT"
           ],
           "Layer": {
-            "Digest": "sha256:f1ebb784920099793144954b52ba8b107b072395ea0f56c5db026fbd33511d12",
-            "DiffID": "sha256:e29f147295f2e32ffc6fce483dd02371768fb1f7f4caed33f1578e30d071bc66"
+            "Digest": "sha256:d19b9a83a67228a57a987e734da4a24ea8a50de4220ea8af720ac19ed9ff8e2a",
+            "DiffID": "sha256:aeed3755418f2748c54a5b886167f70b47f2f0f4c5b19580eebf6d99faafd426"
           },
           "FilePath": "app/node_modules/pg-hstore/package.json",
           "AnalyzedBy": "node-pkg"
@@ -10381,8 +9591,8 @@
             "ISC"
           ],
           "Layer": {
-            "Digest": "sha256:f1ebb784920099793144954b52ba8b107b072395ea0f56c5db026fbd33511d12",
-            "DiffID": "sha256:e29f147295f2e32ffc6fce483dd02371768fb1f7f4caed33f1578e30d071bc66"
+            "Digest": "sha256:d19b9a83a67228a57a987e734da4a24ea8a50de4220ea8af720ac19ed9ff8e2a",
+            "DiffID": "sha256:aeed3755418f2748c54a5b886167f70b47f2f0f4c5b19580eebf6d99faafd426"
           },
           "FilePath": "app/node_modules/pg-int8/package.json",
           "AnalyzedBy": "node-pkg"
@@ -10399,8 +9609,8 @@
             "MIT"
           ],
           "Layer": {
-            "Digest": "sha256:f1ebb784920099793144954b52ba8b107b072395ea0f56c5db026fbd33511d12",
-            "DiffID": "sha256:e29f147295f2e32ffc6fce483dd02371768fb1f7f4caed33f1578e30d071bc66"
+            "Digest": "sha256:d19b9a83a67228a57a987e734da4a24ea8a50de4220ea8af720ac19ed9ff8e2a",
+            "DiffID": "sha256:aeed3755418f2748c54a5b886167f70b47f2f0f4c5b19580eebf6d99faafd426"
           },
           "FilePath": "app/node_modules/pg-pool/package.json",
           "AnalyzedBy": "node-pkg"
@@ -10417,8 +9627,8 @@
             "MIT"
           ],
           "Layer": {
-            "Digest": "sha256:f1ebb784920099793144954b52ba8b107b072395ea0f56c5db026fbd33511d12",
-            "DiffID": "sha256:e29f147295f2e32ffc6fce483dd02371768fb1f7f4caed33f1578e30d071bc66"
+            "Digest": "sha256:d19b9a83a67228a57a987e734da4a24ea8a50de4220ea8af720ac19ed9ff8e2a",
+            "DiffID": "sha256:aeed3755418f2748c54a5b886167f70b47f2f0f4c5b19580eebf6d99faafd426"
           },
           "FilePath": "app/node_modules/pg-protocol/package.json",
           "AnalyzedBy": "node-pkg"
@@ -10435,8 +9645,8 @@
             "MIT"
           ],
           "Layer": {
-            "Digest": "sha256:f1ebb784920099793144954b52ba8b107b072395ea0f56c5db026fbd33511d12",
-            "DiffID": "sha256:e29f147295f2e32ffc6fce483dd02371768fb1f7f4caed33f1578e30d071bc66"
+            "Digest": "sha256:d19b9a83a67228a57a987e734da4a24ea8a50de4220ea8af720ac19ed9ff8e2a",
+            "DiffID": "sha256:aeed3755418f2748c54a5b886167f70b47f2f0f4c5b19580eebf6d99faafd426"
           },
           "FilePath": "app/node_modules/pg-types/package.json",
           "AnalyzedBy": "node-pkg"
@@ -10453,8 +9663,8 @@
             "MIT"
           ],
           "Layer": {
-            "Digest": "sha256:f1ebb784920099793144954b52ba8b107b072395ea0f56c5db026fbd33511d12",
-            "DiffID": "sha256:e29f147295f2e32ffc6fce483dd02371768fb1f7f4caed33f1578e30d071bc66"
+            "Digest": "sha256:d19b9a83a67228a57a987e734da4a24ea8a50de4220ea8af720ac19ed9ff8e2a",
+            "DiffID": "sha256:aeed3755418f2748c54a5b886167f70b47f2f0f4c5b19580eebf6d99faafd426"
           },
           "FilePath": "app/node_modules/pgpass/package.json",
           "AnalyzedBy": "node-pkg"
@@ -10471,8 +9681,8 @@
             "MIT"
           ],
           "Layer": {
-            "Digest": "sha256:f1ebb784920099793144954b52ba8b107b072395ea0f56c5db026fbd33511d12",
-            "DiffID": "sha256:e29f147295f2e32ffc6fce483dd02371768fb1f7f4caed33f1578e30d071bc66"
+            "Digest": "sha256:d19b9a83a67228a57a987e734da4a24ea8a50de4220ea8af720ac19ed9ff8e2a",
+            "DiffID": "sha256:aeed3755418f2748c54a5b886167f70b47f2f0f4c5b19580eebf6d99faafd426"
           },
           "FilePath": "app/node_modules/postgres-array/package.json",
           "AnalyzedBy": "node-pkg"
@@ -10489,8 +9699,8 @@
             "MIT"
           ],
           "Layer": {
-            "Digest": "sha256:f1ebb784920099793144954b52ba8b107b072395ea0f56c5db026fbd33511d12",
-            "DiffID": "sha256:e29f147295f2e32ffc6fce483dd02371768fb1f7f4caed33f1578e30d071bc66"
+            "Digest": "sha256:d19b9a83a67228a57a987e734da4a24ea8a50de4220ea8af720ac19ed9ff8e2a",
+            "DiffID": "sha256:aeed3755418f2748c54a5b886167f70b47f2f0f4c5b19580eebf6d99faafd426"
           },
           "FilePath": "app/node_modules/postgres-bytea/package.json",
           "AnalyzedBy": "node-pkg"
@@ -10507,8 +9717,8 @@
             "MIT"
           ],
           "Layer": {
-            "Digest": "sha256:f1ebb784920099793144954b52ba8b107b072395ea0f56c5db026fbd33511d12",
-            "DiffID": "sha256:e29f147295f2e32ffc6fce483dd02371768fb1f7f4caed33f1578e30d071bc66"
+            "Digest": "sha256:d19b9a83a67228a57a987e734da4a24ea8a50de4220ea8af720ac19ed9ff8e2a",
+            "DiffID": "sha256:aeed3755418f2748c54a5b886167f70b47f2f0f4c5b19580eebf6d99faafd426"
           },
           "FilePath": "app/node_modules/postgres-date/package.json",
           "AnalyzedBy": "node-pkg"
@@ -10525,26 +9735,26 @@
             "MIT"
           ],
           "Layer": {
-            "Digest": "sha256:f1ebb784920099793144954b52ba8b107b072395ea0f56c5db026fbd33511d12",
-            "DiffID": "sha256:e29f147295f2e32ffc6fce483dd02371768fb1f7f4caed33f1578e30d071bc66"
+            "Digest": "sha256:d19b9a83a67228a57a987e734da4a24ea8a50de4220ea8af720ac19ed9ff8e2a",
+            "DiffID": "sha256:aeed3755418f2748c54a5b886167f70b47f2f0f4c5b19580eebf6d99faafd426"
           },
           "FilePath": "app/node_modules/postgres-interval/package.json",
           "AnalyzedBy": "node-pkg"
         },
         {
-          "ID": "proxy-addr@2.0.7",
+          "ID": "proxy-addr@2.0.8",
           "Name": "proxy-addr",
           "Identifier": {
-            "PURL": "pkg:npm/proxy-addr@2.0.7",
-            "UID": "de768ad757b6600d"
+            "PURL": "pkg:npm/proxy-addr@2.0.8",
+            "UID": "29588fcf084e78d3"
           },
-          "Version": "2.0.7",
+          "Version": "2.0.8",
           "Licenses": [
             "MIT"
           ],
           "Layer": {
-            "Digest": "sha256:f1ebb784920099793144954b52ba8b107b072395ea0f56c5db026fbd33511d12",
-            "DiffID": "sha256:e29f147295f2e32ffc6fce483dd02371768fb1f7f4caed33f1578e30d071bc66"
+            "Digest": "sha256:d19b9a83a67228a57a987e734da4a24ea8a50de4220ea8af720ac19ed9ff8e2a",
+            "DiffID": "sha256:aeed3755418f2748c54a5b886167f70b47f2f0f4c5b19580eebf6d99faafd426"
           },
           "FilePath": "app/node_modules/proxy-addr/package.json",
           "AnalyzedBy": "node-pkg"
@@ -10561,8 +9771,8 @@
             "BSD-3-Clause"
           ],
           "Layer": {
-            "Digest": "sha256:f1ebb784920099793144954b52ba8b107b072395ea0f56c5db026fbd33511d12",
-            "DiffID": "sha256:e29f147295f2e32ffc6fce483dd02371768fb1f7f4caed33f1578e30d071bc66"
+            "Digest": "sha256:d19b9a83a67228a57a987e734da4a24ea8a50de4220ea8af720ac19ed9ff8e2a",
+            "DiffID": "sha256:aeed3755418f2748c54a5b886167f70b47f2f0f4c5b19580eebf6d99faafd426"
           },
           "FilePath": "app/node_modules/qs/package.json",
           "AnalyzedBy": "node-pkg"
@@ -10579,8 +9789,8 @@
             "MIT"
           ],
           "Layer": {
-            "Digest": "sha256:f1ebb784920099793144954b52ba8b107b072395ea0f56c5db026fbd33511d12",
-            "DiffID": "sha256:e29f147295f2e32ffc6fce483dd02371768fb1f7f4caed33f1578e30d071bc66"
+            "Digest": "sha256:d19b9a83a67228a57a987e734da4a24ea8a50de4220ea8af720ac19ed9ff8e2a",
+            "DiffID": "sha256:aeed3755418f2748c54a5b886167f70b47f2f0f4c5b19580eebf6d99faafd426"
           },
           "FilePath": "app/node_modules/range-parser/package.json",
           "AnalyzedBy": "node-pkg"
@@ -10597,8 +9807,8 @@
             "MIT"
           ],
           "Layer": {
-            "Digest": "sha256:f1ebb784920099793144954b52ba8b107b072395ea0f56c5db026fbd33511d12",
-            "DiffID": "sha256:e29f147295f2e32ffc6fce483dd02371768fb1f7f4caed33f1578e30d071bc66"
+            "Digest": "sha256:d19b9a83a67228a57a987e734da4a24ea8a50de4220ea8af720ac19ed9ff8e2a",
+            "DiffID": "sha256:aeed3755418f2748c54a5b886167f70b47f2f0f4c5b19580eebf6d99faafd426"
           },
           "FilePath": "app/node_modules/raw-body/package.json",
           "AnalyzedBy": "node-pkg"
@@ -10615,8 +9825,8 @@
             "MIT"
           ],
           "Layer": {
-            "Digest": "sha256:f1ebb784920099793144954b52ba8b107b072395ea0f56c5db026fbd33511d12",
-            "DiffID": "sha256:e29f147295f2e32ffc6fce483dd02371768fb1f7f4caed33f1578e30d071bc66"
+            "Digest": "sha256:d19b9a83a67228a57a987e734da4a24ea8a50de4220ea8af720ac19ed9ff8e2a",
+            "DiffID": "sha256:aeed3755418f2748c54a5b886167f70b47f2f0f4c5b19580eebf6d99faafd426"
           },
           "FilePath": "app/node_modules/retry-as-promised/package.json",
           "AnalyzedBy": "node-pkg"
@@ -10633,8 +9843,8 @@
             "MIT"
           ],
           "Layer": {
-            "Digest": "sha256:f1ebb784920099793144954b52ba8b107b072395ea0f56c5db026fbd33511d12",
-            "DiffID": "sha256:e29f147295f2e32ffc6fce483dd02371768fb1f7f4caed33f1578e30d071bc66"
+            "Digest": "sha256:d19b9a83a67228a57a987e734da4a24ea8a50de4220ea8af720ac19ed9ff8e2a",
+            "DiffID": "sha256:aeed3755418f2748c54a5b886167f70b47f2f0f4c5b19580eebf6d99faafd426"
           },
           "FilePath": "app/node_modules/router/package.json",
           "AnalyzedBy": "node-pkg"
@@ -10651,8 +9861,8 @@
             "MIT"
           ],
           "Layer": {
-            "Digest": "sha256:f1ebb784920099793144954b52ba8b107b072395ea0f56c5db026fbd33511d12",
-            "DiffID": "sha256:e29f147295f2e32ffc6fce483dd02371768fb1f7f4caed33f1578e30d071bc66"
+            "Digest": "sha256:d19b9a83a67228a57a987e734da4a24ea8a50de4220ea8af720ac19ed9ff8e2a",
+            "DiffID": "sha256:aeed3755418f2748c54a5b886167f70b47f2f0f4c5b19580eebf6d99faafd426"
           },
           "FilePath": "app/node_modules/safe-buffer/package.json",
           "AnalyzedBy": "node-pkg"
@@ -10669,8 +9879,8 @@
             "MIT"
           ],
           "Layer": {
-            "Digest": "sha256:f1ebb784920099793144954b52ba8b107b072395ea0f56c5db026fbd33511d12",
-            "DiffID": "sha256:e29f147295f2e32ffc6fce483dd02371768fb1f7f4caed33f1578e30d071bc66"
+            "Digest": "sha256:d19b9a83a67228a57a987e734da4a24ea8a50de4220ea8af720ac19ed9ff8e2a",
+            "DiffID": "sha256:aeed3755418f2748c54a5b886167f70b47f2f0f4c5b19580eebf6d99faafd426"
           },
           "FilePath": "app/node_modules/safer-buffer/package.json",
           "AnalyzedBy": "node-pkg"
@@ -10687,8 +9897,8 @@
             "ISC"
           ],
           "Layer": {
-            "Digest": "sha256:f1ebb784920099793144954b52ba8b107b072395ea0f56c5db026fbd33511d12",
-            "DiffID": "sha256:e29f147295f2e32ffc6fce483dd02371768fb1f7f4caed33f1578e30d071bc66"
+            "Digest": "sha256:d19b9a83a67228a57a987e734da4a24ea8a50de4220ea8af720ac19ed9ff8e2a",
+            "DiffID": "sha256:aeed3755418f2748c54a5b886167f70b47f2f0f4c5b19580eebf6d99faafd426"
           },
           "FilePath": "app/node_modules/semver/package.json",
           "AnalyzedBy": "node-pkg"
@@ -10705,8 +9915,8 @@
             "MIT"
           ],
           "Layer": {
-            "Digest": "sha256:f1ebb784920099793144954b52ba8b107b072395ea0f56c5db026fbd33511d12",
-            "DiffID": "sha256:e29f147295f2e32ffc6fce483dd02371768fb1f7f4caed33f1578e30d071bc66"
+            "Digest": "sha256:d19b9a83a67228a57a987e734da4a24ea8a50de4220ea8af720ac19ed9ff8e2a",
+            "DiffID": "sha256:aeed3755418f2748c54a5b886167f70b47f2f0f4c5b19580eebf6d99faafd426"
           },
           "FilePath": "app/node_modules/send/package.json",
           "AnalyzedBy": "node-pkg"
@@ -10723,8 +9933,8 @@
             "MIT"
           ],
           "Layer": {
-            "Digest": "sha256:f1ebb784920099793144954b52ba8b107b072395ea0f56c5db026fbd33511d12",
-            "DiffID": "sha256:e29f147295f2e32ffc6fce483dd02371768fb1f7f4caed33f1578e30d071bc66"
+            "Digest": "sha256:d19b9a83a67228a57a987e734da4a24ea8a50de4220ea8af720ac19ed9ff8e2a",
+            "DiffID": "sha256:aeed3755418f2748c54a5b886167f70b47f2f0f4c5b19580eebf6d99faafd426"
           },
           "FilePath": "app/node_modules/sequelize/package.json",
           "AnalyzedBy": "node-pkg"
@@ -10741,8 +9951,8 @@
             "MIT"
           ],
           "Layer": {
-            "Digest": "sha256:f1ebb784920099793144954b52ba8b107b072395ea0f56c5db026fbd33511d12",
-            "DiffID": "sha256:e29f147295f2e32ffc6fce483dd02371768fb1f7f4caed33f1578e30d071bc66"
+            "Digest": "sha256:d19b9a83a67228a57a987e734da4a24ea8a50de4220ea8af720ac19ed9ff8e2a",
+            "DiffID": "sha256:aeed3755418f2748c54a5b886167f70b47f2f0f4c5b19580eebf6d99faafd426"
           },
           "FilePath": "app/node_modules/sequelize-pool/package.json",
           "AnalyzedBy": "node-pkg"
@@ -10759,8 +9969,8 @@
             "MIT"
           ],
           "Layer": {
-            "Digest": "sha256:f1ebb784920099793144954b52ba8b107b072395ea0f56c5db026fbd33511d12",
-            "DiffID": "sha256:e29f147295f2e32ffc6fce483dd02371768fb1f7f4caed33f1578e30d071bc66"
+            "Digest": "sha256:d19b9a83a67228a57a987e734da4a24ea8a50de4220ea8af720ac19ed9ff8e2a",
+            "DiffID": "sha256:aeed3755418f2748c54a5b886167f70b47f2f0f4c5b19580eebf6d99faafd426"
           },
           "FilePath": "app/node_modules/serve-static/package.json",
           "AnalyzedBy": "node-pkg"
@@ -10777,8 +9987,8 @@
             "ISC"
           ],
           "Layer": {
-            "Digest": "sha256:f1ebb784920099793144954b52ba8b107b072395ea0f56c5db026fbd33511d12",
-            "DiffID": "sha256:e29f147295f2e32ffc6fce483dd02371768fb1f7f4caed33f1578e30d071bc66"
+            "Digest": "sha256:d19b9a83a67228a57a987e734da4a24ea8a50de4220ea8af720ac19ed9ff8e2a",
+            "DiffID": "sha256:aeed3755418f2748c54a5b886167f70b47f2f0f4c5b19580eebf6d99faafd426"
           },
           "FilePath": "app/node_modules/setprototypeof/package.json",
           "AnalyzedBy": "node-pkg"
@@ -10795,8 +10005,8 @@
             "MIT"
           ],
           "Layer": {
-            "Digest": "sha256:f1ebb784920099793144954b52ba8b107b072395ea0f56c5db026fbd33511d12",
-            "DiffID": "sha256:e29f147295f2e32ffc6fce483dd02371768fb1f7f4caed33f1578e30d071bc66"
+            "Digest": "sha256:d19b9a83a67228a57a987e734da4a24ea8a50de4220ea8af720ac19ed9ff8e2a",
+            "DiffID": "sha256:aeed3755418f2748c54a5b886167f70b47f2f0f4c5b19580eebf6d99faafd426"
           },
           "FilePath": "app/node_modules/side-channel/package.json",
           "AnalyzedBy": "node-pkg"
@@ -10813,8 +10023,8 @@
             "MIT"
           ],
           "Layer": {
-            "Digest": "sha256:f1ebb784920099793144954b52ba8b107b072395ea0f56c5db026fbd33511d12",
-            "DiffID": "sha256:e29f147295f2e32ffc6fce483dd02371768fb1f7f4caed33f1578e30d071bc66"
+            "Digest": "sha256:d19b9a83a67228a57a987e734da4a24ea8a50de4220ea8af720ac19ed9ff8e2a",
+            "DiffID": "sha256:aeed3755418f2748c54a5b886167f70b47f2f0f4c5b19580eebf6d99faafd426"
           },
           "FilePath": "app/node_modules/side-channel-list/package.json",
           "AnalyzedBy": "node-pkg"
@@ -10831,8 +10041,8 @@
             "MIT"
           ],
           "Layer": {
-            "Digest": "sha256:f1ebb784920099793144954b52ba8b107b072395ea0f56c5db026fbd33511d12",
-            "DiffID": "sha256:e29f147295f2e32ffc6fce483dd02371768fb1f7f4caed33f1578e30d071bc66"
+            "Digest": "sha256:d19b9a83a67228a57a987e734da4a24ea8a50de4220ea8af720ac19ed9ff8e2a",
+            "DiffID": "sha256:aeed3755418f2748c54a5b886167f70b47f2f0f4c5b19580eebf6d99faafd426"
           },
           "FilePath": "app/node_modules/side-channel-map/package.json",
           "AnalyzedBy": "node-pkg"
@@ -10849,8 +10059,8 @@
             "MIT"
           ],
           "Layer": {
-            "Digest": "sha256:f1ebb784920099793144954b52ba8b107b072395ea0f56c5db026fbd33511d12",
-            "DiffID": "sha256:e29f147295f2e32ffc6fce483dd02371768fb1f7f4caed33f1578e30d071bc66"
+            "Digest": "sha256:d19b9a83a67228a57a987e734da4a24ea8a50de4220ea8af720ac19ed9ff8e2a",
+            "DiffID": "sha256:aeed3755418f2748c54a5b886167f70b47f2f0f4c5b19580eebf6d99faafd426"
           },
           "FilePath": "app/node_modules/side-channel-weakmap/package.json",
           "AnalyzedBy": "node-pkg"
@@ -10867,8 +10077,8 @@
             "ISC"
           ],
           "Layer": {
-            "Digest": "sha256:f1ebb784920099793144954b52ba8b107b072395ea0f56c5db026fbd33511d12",
-            "DiffID": "sha256:e29f147295f2e32ffc6fce483dd02371768fb1f7f4caed33f1578e30d071bc66"
+            "Digest": "sha256:d19b9a83a67228a57a987e734da4a24ea8a50de4220ea8af720ac19ed9ff8e2a",
+            "DiffID": "sha256:aeed3755418f2748c54a5b886167f70b47f2f0f4c5b19580eebf6d99faafd426"
           },
           "FilePath": "app/node_modules/split2/package.json",
           "AnalyzedBy": "node-pkg"
@@ -10885,8 +10095,8 @@
             "MIT"
           ],
           "Layer": {
-            "Digest": "sha256:f1ebb784920099793144954b52ba8b107b072395ea0f56c5db026fbd33511d12",
-            "DiffID": "sha256:e29f147295f2e32ffc6fce483dd02371768fb1f7f4caed33f1578e30d071bc66"
+            "Digest": "sha256:d19b9a83a67228a57a987e734da4a24ea8a50de4220ea8af720ac19ed9ff8e2a",
+            "DiffID": "sha256:aeed3755418f2748c54a5b886167f70b47f2f0f4c5b19580eebf6d99faafd426"
           },
           "FilePath": "app/node_modules/statuses/package.json",
           "AnalyzedBy": "node-pkg"
@@ -10903,8 +10113,8 @@
             "MIT"
           ],
           "Layer": {
-            "Digest": "sha256:f1ebb784920099793144954b52ba8b107b072395ea0f56c5db026fbd33511d12",
-            "DiffID": "sha256:e29f147295f2e32ffc6fce483dd02371768fb1f7f4caed33f1578e30d071bc66"
+            "Digest": "sha256:d19b9a83a67228a57a987e734da4a24ea8a50de4220ea8af720ac19ed9ff8e2a",
+            "DiffID": "sha256:aeed3755418f2748c54a5b886167f70b47f2f0f4c5b19580eebf6d99faafd426"
           },
           "FilePath": "app/node_modules/toidentifier/package.json",
           "AnalyzedBy": "node-pkg"
@@ -10921,8 +10131,8 @@
             "MIT"
           ],
           "Layer": {
-            "Digest": "sha256:f1ebb784920099793144954b52ba8b107b072395ea0f56c5db026fbd33511d12",
-            "DiffID": "sha256:e29f147295f2e32ffc6fce483dd02371768fb1f7f4caed33f1578e30d071bc66"
+            "Digest": "sha256:d19b9a83a67228a57a987e734da4a24ea8a50de4220ea8af720ac19ed9ff8e2a",
+            "DiffID": "sha256:aeed3755418f2748c54a5b886167f70b47f2f0f4c5b19580eebf6d99faafd426"
           },
           "FilePath": "app/node_modules/toposort-class/package.json",
           "AnalyzedBy": "node-pkg"
@@ -10939,8 +10149,8 @@
             "MIT"
           ],
           "Layer": {
-            "Digest": "sha256:f1ebb784920099793144954b52ba8b107b072395ea0f56c5db026fbd33511d12",
-            "DiffID": "sha256:e29f147295f2e32ffc6fce483dd02371768fb1f7f4caed33f1578e30d071bc66"
+            "Digest": "sha256:d19b9a83a67228a57a987e734da4a24ea8a50de4220ea8af720ac19ed9ff8e2a",
+            "DiffID": "sha256:aeed3755418f2748c54a5b886167f70b47f2f0f4c5b19580eebf6d99faafd426"
           },
           "FilePath": "app/node_modules/type-is/package.json",
           "AnalyzedBy": "node-pkg"
@@ -10957,8 +10167,8 @@
             "MIT"
           ],
           "Layer": {
-            "Digest": "sha256:f1ebb784920099793144954b52ba8b107b072395ea0f56c5db026fbd33511d12",
-            "DiffID": "sha256:e29f147295f2e32ffc6fce483dd02371768fb1f7f4caed33f1578e30d071bc66"
+            "Digest": "sha256:d19b9a83a67228a57a987e734da4a24ea8a50de4220ea8af720ac19ed9ff8e2a",
+            "DiffID": "sha256:aeed3755418f2748c54a5b886167f70b47f2f0f4c5b19580eebf6d99faafd426"
           },
           "FilePath": "app/node_modules/underscore/package.json",
           "AnalyzedBy": "node-pkg"
@@ -10975,8 +10185,8 @@
             "MIT"
           ],
           "Layer": {
-            "Digest": "sha256:f1ebb784920099793144954b52ba8b107b072395ea0f56c5db026fbd33511d12",
-            "DiffID": "sha256:e29f147295f2e32ffc6fce483dd02371768fb1f7f4caed33f1578e30d071bc66"
+            "Digest": "sha256:d19b9a83a67228a57a987e734da4a24ea8a50de4220ea8af720ac19ed9ff8e2a",
+            "DiffID": "sha256:aeed3755418f2748c54a5b886167f70b47f2f0f4c5b19580eebf6d99faafd426"
           },
           "FilePath": "app/node_modules/undici-types/package.json",
           "AnalyzedBy": "node-pkg"
@@ -10993,8 +10203,8 @@
             "MIT"
           ],
           "Layer": {
-            "Digest": "sha256:f1ebb784920099793144954b52ba8b107b072395ea0f56c5db026fbd33511d12",
-            "DiffID": "sha256:e29f147295f2e32ffc6fce483dd02371768fb1f7f4caed33f1578e30d071bc66"
+            "Digest": "sha256:d19b9a83a67228a57a987e734da4a24ea8a50de4220ea8af720ac19ed9ff8e2a",
+            "DiffID": "sha256:aeed3755418f2748c54a5b886167f70b47f2f0f4c5b19580eebf6d99faafd426"
           },
           "FilePath": "app/node_modules/unpipe/package.json",
           "AnalyzedBy": "node-pkg"
@@ -11011,8 +10221,8 @@
             "MIT"
           ],
           "Layer": {
-            "Digest": "sha256:f1ebb784920099793144954b52ba8b107b072395ea0f56c5db026fbd33511d12",
-            "DiffID": "sha256:e29f147295f2e32ffc6fce483dd02371768fb1f7f4caed33f1578e30d071bc66"
+            "Digest": "sha256:d19b9a83a67228a57a987e734da4a24ea8a50de4220ea8af720ac19ed9ff8e2a",
+            "DiffID": "sha256:aeed3755418f2748c54a5b886167f70b47f2f0f4c5b19580eebf6d99faafd426"
           },
           "FilePath": "app/node_modules/uuid/package.json",
           "AnalyzedBy": "node-pkg"
@@ -11029,8 +10239,8 @@
             "MIT"
           ],
           "Layer": {
-            "Digest": "sha256:f1ebb784920099793144954b52ba8b107b072395ea0f56c5db026fbd33511d12",
-            "DiffID": "sha256:e29f147295f2e32ffc6fce483dd02371768fb1f7f4caed33f1578e30d071bc66"
+            "Digest": "sha256:d19b9a83a67228a57a987e734da4a24ea8a50de4220ea8af720ac19ed9ff8e2a",
+            "DiffID": "sha256:aeed3755418f2748c54a5b886167f70b47f2f0f4c5b19580eebf6d99faafd426"
           },
           "FilePath": "app/node_modules/validator/package.json",
           "AnalyzedBy": "node-pkg"
@@ -11047,8 +10257,8 @@
             "MIT"
           ],
           "Layer": {
-            "Digest": "sha256:f1ebb784920099793144954b52ba8b107b072395ea0f56c5db026fbd33511d12",
-            "DiffID": "sha256:e29f147295f2e32ffc6fce483dd02371768fb1f7f4caed33f1578e30d071bc66"
+            "Digest": "sha256:d19b9a83a67228a57a987e734da4a24ea8a50de4220ea8af720ac19ed9ff8e2a",
+            "DiffID": "sha256:aeed3755418f2748c54a5b886167f70b47f2f0f4c5b19580eebf6d99faafd426"
           },
           "FilePath": "app/node_modules/vary/package.json",
           "AnalyzedBy": "node-pkg"
@@ -11065,8 +10275,8 @@
             "MIT"
           ],
           "Layer": {
-            "Digest": "sha256:f1ebb784920099793144954b52ba8b107b072395ea0f56c5db026fbd33511d12",
-            "DiffID": "sha256:e29f147295f2e32ffc6fce483dd02371768fb1f7f4caed33f1578e30d071bc66"
+            "Digest": "sha256:d19b9a83a67228a57a987e734da4a24ea8a50de4220ea8af720ac19ed9ff8e2a",
+            "DiffID": "sha256:aeed3755418f2748c54a5b886167f70b47f2f0f4c5b19580eebf6d99faafd426"
           },
           "FilePath": "app/node_modules/wkx/package.json",
           "AnalyzedBy": "node-pkg"
@@ -11083,8 +10293,8 @@
             "ISC"
           ],
           "Layer": {
-            "Digest": "sha256:f1ebb784920099793144954b52ba8b107b072395ea0f56c5db026fbd33511d12",
-            "DiffID": "sha256:e29f147295f2e32ffc6fce483dd02371768fb1f7f4caed33f1578e30d071bc66"
+            "Digest": "sha256:d19b9a83a67228a57a987e734da4a24ea8a50de4220ea8af720ac19ed9ff8e2a",
+            "DiffID": "sha256:aeed3755418f2748c54a5b886167f70b47f2f0f4c5b19580eebf6d99faafd426"
           },
           "FilePath": "app/node_modules/wrappy/package.json",
           "AnalyzedBy": "node-pkg"
@@ -11101,8 +10311,8 @@
             "MIT"
           ],
           "Layer": {
-            "Digest": "sha256:f1ebb784920099793144954b52ba8b107b072395ea0f56c5db026fbd33511d12",
-            "DiffID": "sha256:e29f147295f2e32ffc6fce483dd02371768fb1f7f4caed33f1578e30d071bc66"
+            "Digest": "sha256:d19b9a83a67228a57a987e734da4a24ea8a50de4220ea8af720ac19ed9ff8e2a",
+            "DiffID": "sha256:aeed3755418f2748c54a5b886167f70b47f2f0f4c5b19580eebf6d99faafd426"
           },
           "FilePath": "app/node_modules/xtend/package.json",
           "AnalyzedBy": "node-pkg"
@@ -11143,8 +10353,8 @@
           "FixedVersion": "1.20.6, 2.3.0",
           "Status": "fixed",
           "Layer": {
-            "Digest": "sha256:f1ebb784920099793144954b52ba8b107b072395ea0f56c5db026fbd33511d12",
-            "DiffID": "sha256:e29f147295f2e32ffc6fce483dd02371768fb1f7f4caed33f1578e30d071bc66"
+            "Digest": "sha256:d19b9a83a67228a57a987e734da4a24ea8a50de4220ea8af720ac19ed9ff8e2a",
+            "DiffID": "sha256:aeed3755418f2748c54a5b886167f70b47f2f0f4c5b19580eebf6d99faafd426"
           },
           "SeveritySource": "ghsa",
           "PrimaryURL": "https://avd.aquasec.com/nvd/cve-2026-12590",
@@ -11153,7 +10363,7 @@
             "Name": "GitHub Security Advisory npm",
             "URL": "https://github.com/advisories?query=type%3Areviewed+ecosystem%3Anpm"
           },
-          "Fingerprint": "sha256:6b92bbc121cf65a42b36eed2d971ae2c101db6ad4299b670aa5c0804372ed5d1",
+          "Fingerprint": "sha256:abfc379cd69f1d36ea7c119106905fb58fec8fa8b1af0120dd6d83c3346af458",
           "Title": "body-parser: body-parser: Denial of Service via invalid limit option",
           "Description": "Impact: In body-parser versions prior to 1.20.6 (1.x line) and 2.3.0 (2.x line), when the parser is configured with an invalid limit option value such as an unparseable string or NaN, bytes.parse returns null and the request body size check is silently skipped. Applications that rely on limit as their primary safeguard against oversized request bodies will accept arbitrarily large payloads, leading to excessive memory and CPU usage and denial of service. Patches: This issue is fixed in body-parser 1.20.6 and 2.3.0. After the fix, invalid limit values throw a clear error at parser construction time instead of silently disabling enforcement, while null and undefined continue to fall back to the default limit of 100kb. Workarounds: Validate the limit value before passing it to body-parser. For example, parse the value at startup and reject any configuration where the result is null or a non-finite number.",
           "Severity": "LOW",
@@ -11198,231 +10408,6 @@
           "LastModifiedDate": "2026-07-10T02:45:02.8Z"
         },
         {
-          "VulnerabilityID": "CVE-2026-4800",
-          "VendorIDs": [
-            "GHSA-r5fr-rjxr-66jc"
-          ],
-          "PkgID": "lodash@4.17.23",
-          "PkgName": "lodash",
-          "PkgPath": "app/node_modules/lodash/package.json",
-          "PkgIdentifier": {
-            "PURL": "pkg:npm/lodash@4.17.23",
-            "UID": "d8410ac6d27c7b45"
-          },
-          "InstalledVersion": "4.17.23",
-          "FixedVersion": "4.18.0",
-          "Status": "fixed",
-          "Layer": {
-            "Digest": "sha256:f1ebb784920099793144954b52ba8b107b072395ea0f56c5db026fbd33511d12",
-            "DiffID": "sha256:e29f147295f2e32ffc6fce483dd02371768fb1f7f4caed33f1578e30d071bc66"
-          },
-          "SeveritySource": "ghsa",
-          "PrimaryURL": "https://avd.aquasec.com/nvd/cve-2026-4800",
-          "DataSource": {
-            "ID": "ghsa",
-            "Name": "GitHub Security Advisory npm",
-            "URL": "https://github.com/advisories?query=type%3Areviewed+ecosystem%3Anpm"
-          },
-          "Fingerprint": "sha256:25eeb6f675985120b58a6a5c298316756c5d66aa5917fdfa909cfb2b6cf1f712",
-          "Title": "lodash: lodash: Arbitrary code execution via untrusted input in template imports",
-          "Description": "Impact:\n\nThe fix for CVE-2021-23337 (https://github.com/advisories/GHSA-35jh-r3h4-6jhm) added validation for the variable option in _.template but did not apply the same validation to options.imports key names. Both paths flow into the same Function() constructor sink.\n\nWhen an application passes untrusted input as options.imports key names, an attacker can inject default-parameter expressions that execute arbitrary code at template compilation time.\n\nAdditionally, _.template uses assignInWith to merge imports, which enumerates inherited properties via for..in. If Object.prototype has been polluted by any other vector, the polluted keys are copied into the imports object and passed to Function().\n\nPatches:\n\nUsers should upgrade to version 4.18.0.\n\nWorkarounds:\n\nDo not pass untrusted input as key names in options.imports. Only use developer-controlled, static key names.",
-          "Severity": "HIGH",
-          "CweIDs": [
-            "CWE-94"
-          ],
-          "VendorSeverity": {
-            "alma": 3,
-            "ghsa": 3,
-            "nvd": 4,
-            "oracle-oval": 3,
-            "redhat": 3,
-            "rocky": 3,
-            "ubuntu": 2
-          },
-          "CVSS": {
-            "ghsa": {
-              "V3Vector": "CVSS:3.1/AV:N/AC:H/PR:N/UI:N/S:U/C:H/I:H/A:H",
-              "V3Score": 8.1
-            },
-            "nvd": {
-              "V3Vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H",
-              "V3Score": 9.8
-            },
-            "redhat": {
-              "V3Vector": "CVSS:3.1/AV:N/AC:H/PR:N/UI:N/S:U/C:H/I:H/A:H",
-              "V3Score": 8.1
-            }
-          },
-          "References": [
-            "https://access.redhat.com/errata/RHBA-2026:21387",
-            "https://access.redhat.com/errata/RHSA-2026:10131",
-            "https://access.redhat.com/errata/RHSA-2026:10175",
-            "https://access.redhat.com/errata/RHSA-2026:10710",
-            "https://access.redhat.com/errata/RHSA-2026:10713",
-            "https://access.redhat.com/errata/RHSA-2026:11454",
-            "https://access.redhat.com/errata/RHSA-2026:11469",
-            "https://access.redhat.com/errata/RHSA-2026:11470",
-            "https://access.redhat.com/errata/RHSA-2026:11471",
-            "https://access.redhat.com/errata/RHSA-2026:11493",
-            "https://access.redhat.com/errata/RHSA-2026:11494",
-            "https://access.redhat.com/errata/RHSA-2026:11495",
-            "https://access.redhat.com/errata/RHSA-2026:11516",
-            "https://access.redhat.com/errata/RHSA-2026:12277",
-            "https://access.redhat.com/errata/RHSA-2026:12279",
-            "https://access.redhat.com/errata/RHSA-2026:13545",
-            "https://access.redhat.com/errata/RHSA-2026:13553",
-            "https://access.redhat.com/errata/RHSA-2026:13571",
-            "https://access.redhat.com/errata/RHSA-2026:13826",
-            "https://access.redhat.com/errata/RHSA-2026:14870",
-            "https://access.redhat.com/errata/RHSA-2026:14871",
-            "https://access.redhat.com/errata/RHSA-2026:16874",
-            "https://access.redhat.com/errata/RHSA-2026:17448",
-            "https://access.redhat.com/errata/RHSA-2026:17468",
-            "https://access.redhat.com/errata/RHSA-2026:17469",
-            "https://access.redhat.com/errata/RHSA-2026:17547",
-            "https://access.redhat.com/errata/RHSA-2026:17549",
-            "https://access.redhat.com/errata/RHSA-2026:17550",
-            "https://access.redhat.com/errata/RHSA-2026:17598",
-            "https://access.redhat.com/errata/RHSA-2026:17789",
-            "https://access.redhat.com/errata/RHSA-2026:19008",
-            "https://access.redhat.com/errata/RHSA-2026:19167",
-            "https://access.redhat.com/errata/RHSA-2026:19409",
-            "https://access.redhat.com/errata/RHSA-2026:19410",
-            "https://access.redhat.com/errata/RHSA-2026:19712",
-            "https://access.redhat.com/errata/RHSA-2026:20041",
-            "https://access.redhat.com/errata/RHSA-2026:20042",
-            "https://access.redhat.com/errata/RHSA-2026:20943",
-            "https://access.redhat.com/errata/RHSA-2026:20946",
-            "https://access.redhat.com/errata/RHSA-2026:21658",
-            "https://access.redhat.com/errata/RHSA-2026:22619",
-            "https://access.redhat.com/errata/RHSA-2026:24331",
-            "https://access.redhat.com/errata/RHSA-2026:24762",
-            "https://access.redhat.com/errata/RHSA-2026:24977",
-            "https://access.redhat.com/errata/RHSA-2026:29795",
-            "https://access.redhat.com/errata/RHSA-2026:34100",
-            "https://access.redhat.com/errata/RHSA-2026:34342",
-            "https://access.redhat.com/errata/RHSA-2026:34608",
-            "https://access.redhat.com/errata/RHSA-2026:36621",
-            "https://access.redhat.com/errata/RHSA-2026:36651",
-            "https://access.redhat.com/errata/RHSA-2026:37186",
-            "https://access.redhat.com/errata/RHSA-2026:40118",
-            "https://access.redhat.com/errata/RHSA-2026:40795",
-            "https://access.redhat.com/errata/RHSA-2026:40945",
-            "https://access.redhat.com/errata/RHSA-2026:40984",
-            "https://access.redhat.com/errata/RHSA-2026:41928",
-            "https://access.redhat.com/errata/RHSA-2026:41941",
-            "https://access.redhat.com/errata/RHSA-2026:41944",
-            "https://access.redhat.com/errata/RHSA-2026:42078",
-            "https://access.redhat.com/errata/RHSA-2026:44235",
-            "https://access.redhat.com/errata/RHSA-2026:48699",
-            "https://access.redhat.com/errata/RHSA-2026:54188",
-            "https://access.redhat.com/errata/RHSA-2026:56789",
-            "https://access.redhat.com/errata/RHSA-2026:56854",
-            "https://access.redhat.com/errata/RHSA-2026:56912",
-            "https://access.redhat.com/errata/RHSA-2026:59833",
-            "https://access.redhat.com/errata/RHSA-2026:60023",
-            "https://access.redhat.com/errata/RHSA-2026:8483",
-            "https://access.redhat.com/errata/RHSA-2026:8484",
-            "https://access.redhat.com/errata/RHSA-2026:8490",
-            "https://access.redhat.com/errata/RHSA-2026:8491",
-            "https://access.redhat.com/errata/RHSA-2026:8493",
-            "https://access.redhat.com/errata/RHSA-2026:8498",
-            "https://access.redhat.com/errata/RHSA-2026:9385",
-            "https://access.redhat.com/errata/RHSA-2026:9742",
-            "https://access.redhat.com/security/cve/CVE-2026-4800",
-            "https://advisory.echohq.com/cve/CVE-2026-4800",
-            "https://bugzilla.redhat.com/2453496",
-            "https://bugzilla.redhat.com/show_bug.cgi?id=2431740",
-            "https://bugzilla.redhat.com/show_bug.cgi?id=2453496",
-            "https://cna.openjsf.org/security-advisories.html",
-            "https://creativecommons.org/licenses/by/4.0/",
-            "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2025-13465",
-            "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2026-4800",
-            "https://errata.almalinux.org/9/ALSA-2026-19167.html",
-            "https://errata.rockylinux.org/RLSA-2026:24331",
-            "https://github.com/advisories/GHSA-35jh-r3h4-6jhm",
-            "https://github.com/advisories/GHSA-r5fr-rjxr-66jc",
-            "https://github.com/lodash/lodash",
-            "https://github.com/lodash/lodash/commit/3469357cff396a26c363f8c1b5a91dde28ba4b1c",
-            "https://github.com/lodash/lodash/security/advisories/GHSA-r5fr-rjxr-66jc",
-            "https://linux.oracle.com/cve/CVE-2026-4800.html",
-            "https://linux.oracle.com/errata/ELSA-2026-24331.html",
-            "https://nvd.nist.gov/vuln/detail/CVE-2026-4800",
-            "https://security.access.redhat.com/data/csaf/v2/vex/2026/cve-2026-4800.json",
-            "https://ubuntu.com/security/notices/USN-8411-1",
-            "https://www.cve.org/CVERecord?id=CVE-2026-4800"
-          ],
-          "PublishedDate": "2026-03-31T20:16:29.66Z",
-          "LastModifiedDate": "2026-09-10T13:20:23.21Z"
-        },
-        {
-          "VulnerabilityID": "CVE-2026-2950",
-          "VendorIDs": [
-            "GHSA-f23m-r3pf-42rh"
-          ],
-          "PkgID": "lodash@4.17.23",
-          "PkgName": "lodash",
-          "PkgPath": "app/node_modules/lodash/package.json",
-          "PkgIdentifier": {
-            "PURL": "pkg:npm/lodash@4.17.23",
-            "UID": "d8410ac6d27c7b45"
-          },
-          "InstalledVersion": "4.17.23",
-          "FixedVersion": "4.18.0",
-          "Status": "fixed",
-          "Layer": {
-            "Digest": "sha256:f1ebb784920099793144954b52ba8b107b072395ea0f56c5db026fbd33511d12",
-            "DiffID": "sha256:e29f147295f2e32ffc6fce483dd02371768fb1f7f4caed33f1578e30d071bc66"
-          },
-          "SeveritySource": "ghsa",
-          "PrimaryURL": "https://avd.aquasec.com/nvd/cve-2026-2950",
-          "DataSource": {
-            "ID": "ghsa",
-            "Name": "GitHub Security Advisory npm",
-            "URL": "https://github.com/advisories?query=type%3Areviewed+ecosystem%3Anpm"
-          },
-          "Fingerprint": "sha256:76c4e7fdb2dd90a5931b5790569b229c6a9f7c3ba03ead3bda5a81dde4351a48",
-          "Title": "lodash: Lodash: Prototype pollution allows deletion of built-in prototype properties via array path bypass",
-          "Description": "Impact:\n\nLodash versions 4.17.23 and earlier are vulnerable to prototype pollution in the _.unset and _.omit functions. The fix for (CVE-2025-13465: https://github.com/lodash/lodash/security/advisories/GHSA-xxjr-mmjv-4gpg) only guards against string key members, so an attacker can bypass the check by passing array-wrapped path segments. This allows deletion of properties from built-in prototypes such as Object.prototype, Number.prototype, and String.prototype.\n\nThe issue permits deletion of prototype properties but does not allow overwriting their original behavior.\n\nPatches:\n\nThis issue is patched in 4.18.0.\n\nWorkarounds:\n\nNone. Upgrade to the patched version.",
-          "Severity": "MEDIUM",
-          "CweIDs": [
-            "CWE-1321"
-          ],
-          "VendorSeverity": {
-            "ghsa": 2,
-            "nvd": 2,
-            "redhat": 2,
-            "ubuntu": 2
-          },
-          "CVSS": {
-            "ghsa": {
-              "V3Vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:L/A:L",
-              "V3Score": 6.5
-            },
-            "nvd": {
-              "V3Vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:L/A:N",
-              "V3Score": 5.3
-            },
-            "redhat": {
-              "V3Vector": "CVSS:3.1/AV:N/AC:L/PR:L/UI:N/S:U/C:N/I:N/A:H",
-              "V3Score": 6.5
-            }
-          },
-          "References": [
-            "https://access.redhat.com/security/cve/CVE-2026-2950",
-            "https://advisory.echohq.com/cve/CVE-2026-2950",
-            "https://github.com/advisories/GHSA-f23m-r3pf-42rh",
-            "https://github.com/lodash/lodash",
-            "https://github.com/lodash/lodash/security/advisories/GHSA-f23m-r3pf-42rh",
-            "https://github.com/lodash/lodash/security/advisories/GHSA-xxjr-mmjv-4gpg",
-            "https://nvd.nist.gov/vuln/detail/CVE-2026-2950",
-            "https://ubuntu.com/security/notices/USN-8411-1",
-            "https://www.cve.org/CVERecord?id=CVE-2026-2950"
-          ],
-          "PublishedDate": "2026-03-31T20:16:26.207Z",
-          "LastModifiedDate": "2026-07-24T20:10:00.147Z"
-        },
-        {
           "VulnerabilityID": "CVE-2026-17495",
           "VendorIDs": [
             "GHSA-4p3w-j4w9-5jqw"
@@ -11438,8 +10423,8 @@
           "FixedVersion": "2.31.0",
           "Status": "fixed",
           "Layer": {
-            "Digest": "sha256:f1ebb784920099793144954b52ba8b107b072395ea0f56c5db026fbd33511d12",
-            "DiffID": "sha256:e29f147295f2e32ffc6fce483dd02371768fb1f7f4caed33f1578e30d071bc66"
+            "Digest": "sha256:d19b9a83a67228a57a987e734da4a24ea8a50de4220ea8af720ac19ed9ff8e2a",
+            "DiffID": "sha256:aeed3755418f2748c54a5b886167f70b47f2f0f4c5b19580eebf6d99faafd426"
           },
           "SeveritySource": "ghsa",
           "PrimaryURL": "https://avd.aquasec.com/nvd/cve-2026-17495",
@@ -11448,7 +10433,7 @@
             "Name": "GitHub Security Advisory npm",
             "URL": "https://github.com/advisories?query=type%3Areviewed+ecosystem%3Anpm"
           },
-          "Fingerprint": "sha256:4752b42870846a8560858b0e47d56b5a2d755f75e87fbc51aae7cdb1f0843fa7",
+          "Fingerprint": "sha256:e2fc520bcdafb389d6dbd39a7e910d4713fb0902119cc0840f0ce3028c879dea",
           "Title": "moment: Moment: Path Traversal via crafted non-string input to locale function",
           "Description": "moment is a JavaScript date library for parsing, validating, manipulating, and formatting dates. In versions 2.29.2 through 2.30.1, a specially crafted non-string object passed to moment.locale() can bypass the locale-name path-traversal guard. The guard assumes the input is a string, so an object whose match() method satisfies the check while its toString() returns a traversal path reaches an internal require() call with attacker-controlled path segments. This is an incomplete fix for CVE-2022-24785 and primarily affects npm (server-side) users that pass user-provided input directly to moment.locale(). The issue is fixed in moment 2.31.0, and users should upgrade to 2.31.0 or later. As a workaround, validate that any user-supplied input is a string before passing it to moment.locale().",
           "Severity": "MEDIUM",
@@ -11485,207 +10470,6 @@
           "LastModifiedDate": "2026-09-16T19:40:00.317Z"
         },
         {
-          "VulnerabilityID": "CVE-2026-4926",
-          "VendorIDs": [
-            "GHSA-j3q9-mxjg-w52f"
-          ],
-          "PkgID": "path-to-regexp@8.3.0",
-          "PkgName": "path-to-regexp",
-          "PkgPath": "app/node_modules/path-to-regexp/package.json",
-          "PkgIdentifier": {
-            "PURL": "pkg:npm/path-to-regexp@8.3.0",
-            "UID": "ae12c850a7ac82b7"
-          },
-          "InstalledVersion": "8.3.0",
-          "FixedVersion": "8.4.0",
-          "Status": "fixed",
-          "Layer": {
-            "Digest": "sha256:f1ebb784920099793144954b52ba8b107b072395ea0f56c5db026fbd33511d12",
-            "DiffID": "sha256:e29f147295f2e32ffc6fce483dd02371768fb1f7f4caed33f1578e30d071bc66"
-          },
-          "SeveritySource": "ghsa",
-          "PrimaryURL": "https://avd.aquasec.com/nvd/cve-2026-4926",
-          "DataSource": {
-            "ID": "ghsa",
-            "Name": "GitHub Security Advisory npm",
-            "URL": "https://github.com/advisories?query=type%3Areviewed+ecosystem%3Anpm"
-          },
-          "Fingerprint": "sha256:1dbcf3b49f900dde94ae94fdd711ad1c15cca71dff1574985ceeb4ea6e145096",
-          "Title": "path-to-regexp: path-to-regexp: Denial of Service via crafted regular expressions",
-          "Description": "Impact:\n\nA bad regular expression is generated any time you have multiple sequential optional groups (curly brace syntax), such as `{a}{b}{c}:z`. The generated regex grows exponentially with the number of groups, causing denial of service.\n\nPatches:\n\nFixed in version 8.4.0.\n\nWorkarounds:\n\nLimit the number of sequential optional groups in route patterns. Avoid passing user-controlled input as route patterns.",
-          "Severity": "HIGH",
-          "CweIDs": [
-            "CWE-400",
-            "CWE-1333"
-          ],
-          "VendorSeverity": {
-            "ghsa": 3,
-            "redhat": 3
-          },
-          "CVSS": {
-            "ghsa": {
-              "V3Vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H",
-              "V3Score": 7.5
-            },
-            "redhat": {
-              "V3Vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H",
-              "V3Score": 7.5
-            }
-          },
-          "References": [
-            "https://access.redhat.com/errata/RHSA-2026:10153",
-            "https://access.redhat.com/errata/RHSA-2026:10172",
-            "https://access.redhat.com/errata/RHSA-2026:10175",
-            "https://access.redhat.com/errata/RHSA-2026:13545",
-            "https://access.redhat.com/errata/RHSA-2026:13826",
-            "https://access.redhat.com/errata/RHSA-2026:17789",
-            "https://access.redhat.com/errata/RHSA-2026:19409",
-            "https://access.redhat.com/errata/RHSA-2026:19410",
-            "https://access.redhat.com/errata/RHSA-2026:24761",
-            "https://access.redhat.com/errata/RHSA-2026:24762",
-            "https://access.redhat.com/errata/RHSA-2026:24866",
-            "https://access.redhat.com/errata/RHSA-2026:36651",
-            "https://access.redhat.com/errata/RHSA-2026:40118",
-            "https://access.redhat.com/errata/RHSA-2026:40945",
-            "https://access.redhat.com/errata/RHSA-2026:50300",
-            "https://access.redhat.com/errata/RHSA-2026:65126",
-            "https://access.redhat.com/errata/RHSA-2026:9385",
-            "https://access.redhat.com/errata/RHSA-2026:9742",
-            "https://access.redhat.com/security/cve/CVE-2026-4926",
-            "https://bugzilla.redhat.com/show_bug.cgi?id=2451867",
-            "https://cna.openjsf.org/security-advisories.html",
-            "https://github.com/pillarjs/path-to-regexp",
-            "https://github.com/pillarjs/path-to-regexp/security/advisories/GHSA-j3q9-mxjg-w52f",
-            "https://nvd.nist.gov/vuln/detail/CVE-2026-4926",
-            "https://security.access.redhat.com/data/csaf/v2/vex/2026/cve-2026-4926.json",
-            "https://www.cve.org/CVERecord?id=CVE-2026-4926"
-          ],
-          "PublishedDate": "2026-03-26T19:17:08.387Z",
-          "LastModifiedDate": "2026-09-09T13:20:25.32Z"
-        },
-        {
-          "VulnerabilityID": "CVE-2026-4923",
-          "VendorIDs": [
-            "GHSA-27v5-c462-wpq7"
-          ],
-          "PkgID": "path-to-regexp@8.3.0",
-          "PkgName": "path-to-regexp",
-          "PkgPath": "app/node_modules/path-to-regexp/package.json",
-          "PkgIdentifier": {
-            "PURL": "pkg:npm/path-to-regexp@8.3.0",
-            "UID": "ae12c850a7ac82b7"
-          },
-          "InstalledVersion": "8.3.0",
-          "FixedVersion": "8.4.0",
-          "Status": "fixed",
-          "Layer": {
-            "Digest": "sha256:f1ebb784920099793144954b52ba8b107b072395ea0f56c5db026fbd33511d12",
-            "DiffID": "sha256:e29f147295f2e32ffc6fce483dd02371768fb1f7f4caed33f1578e30d071bc66"
-          },
-          "SeveritySource": "ghsa",
-          "PrimaryURL": "https://avd.aquasec.com/nvd/cve-2026-4923",
-          "DataSource": {
-            "ID": "ghsa",
-            "Name": "GitHub Security Advisory npm",
-            "URL": "https://github.com/advisories?query=type%3Areviewed+ecosystem%3Anpm"
-          },
-          "Fingerprint": "sha256:f15a4f268410ddda1e466a62853b00b5202e28eda7ad08863b2cdef7effd9c28",
-          "Title": "path-to-regexp: path-to-regexp: Denial of Service via specially crafted paths with multiple wildcards",
-          "Description": "Impact:\n\nWhen using multiple wildcards, combined with at least one parameter, a regular expression can be generated that is vulnerable to ReDoS. This backtracking vulnerability requires the second wildcard to be somewhere other than the end of the path.\n\nUnsafe examples:\n\n/*foo-*bar-:baz\n/*a-:b-*c-:d\n/x/*a-:b/*c/y\n\nSafe examples:\n\n/*foo-:bar\n/*foo-:bar-*baz\n\nPatches:\n\nUpgrade to version 8.4.0.\n\nWorkarounds:\n\nIf you are using multiple wildcard parameters, you can check the regex output with a tool such as https://makenowjust-labs.github.io/recheck/playground/ to confirm whether a path is vulnerable.",
-          "Severity": "MEDIUM",
-          "CweIDs": [
-            "CWE-1333"
-          ],
-          "VendorSeverity": {
-            "ghsa": 2,
-            "redhat": 2
-          },
-          "CVSS": {
-            "ghsa": {
-              "V3Vector": "CVSS:3.1/AV:N/AC:H/PR:N/UI:N/S:U/C:N/I:N/A:H",
-              "V3Score": 5.9
-            },
-            "redhat": {
-              "V3Vector": "CVSS:3.1/AV:N/AC:H/PR:N/UI:N/S:U/C:N/I:N/A:H",
-              "V3Score": 5.9
-            }
-          },
-          "References": [
-            "https://access.redhat.com/security/cve/CVE-2026-4923",
-            "https://cna.openjsf.org/security-advisories.html",
-            "https://github.com/pillarjs/path-to-regexp",
-            "https://github.com/pillarjs/path-to-regexp/security/advisories/GHSA-27v5-c462-wpq7",
-            "https://makenowjust-labs.github.io/recheck/playground",
-            "https://nvd.nist.gov/vuln/detail/CVE-2026-4923",
-            "https://www.cve.org/CVERecord?id=CVE-2026-4923"
-          ],
-          "PublishedDate": "2026-03-26T19:17:08.187Z",
-          "LastModifiedDate": "2026-06-17T10:57:27.74Z"
-        },
-        {
-          "VulnerabilityID": "CVE-2026-90711",
-          "VendorIDs": [
-            "GHSA-jqcg-44mw-7w3h"
-          ],
-          "PkgID": "proxy-addr@2.0.7",
-          "PkgName": "proxy-addr",
-          "PkgPath": "app/node_modules/proxy-addr/package.json",
-          "PkgIdentifier": {
-            "PURL": "pkg:npm/proxy-addr@2.0.7",
-            "UID": "de768ad757b6600d"
-          },
-          "InstalledVersion": "2.0.7",
-          "FixedVersion": "2.0.8",
-          "Status": "fixed",
-          "Layer": {
-            "Digest": "sha256:f1ebb784920099793144954b52ba8b107b072395ea0f56c5db026fbd33511d12",
-            "DiffID": "sha256:e29f147295f2e32ffc6fce483dd02371768fb1f7f4caed33f1578e30d071bc66"
-          },
-          "SeveritySource": "ghsa",
-          "PrimaryURL": "https://avd.aquasec.com/nvd/cve-2026-90711",
-          "DataSource": {
-            "ID": "ghsa",
-            "Name": "GitHub Security Advisory npm",
-            "URL": "https://github.com/advisories?query=type%3Areviewed+ecosystem%3Anpm"
-          },
-          "Fingerprint": "sha256:ca492e8e597ba0a93ccfecae59994f2deebefe5e9936afd7a0d349d8add826f6",
-          "Title": "proxy-addr: proxy-addr vulnerable to IP spoofing via IPv4-mapped IPv6 trust subnet",
-          "Description": "proxy-addr is a Node.js module that determines a request's client address behind trusted reverse proxies, and it backs Express req.ip and req.ips. In versions 1.1.0 through 2.0.7, a trust subnet written in IPv4-mapped IPv6 notation with an IPv4-sized prefix, such as ::ffff:10.0.0.0/8 instead of the correct ::ffff:10.0.0.0/104, is accepted without error but trusts every IPv4 address on the internet rather than the block it names. Because the socket peer then becomes trusted at hop 0, any unauthenticated client can supply an arbitrary X-Forwarded-For header and control the address the application reads, which defeats IP-based access control, rate limiting, geolocation, and audit logging. This is a fail-open regression introduced in version 1.1.0. The issue is fixed in proxy-addr 2.0.8, and users should upgrade to 2.0.8 or later. As a workaround, ensure any IPv4-mapped IPv6 trust subnet uses a prefix length of at least 97, or express the range in plain IPv4 notation.",
-          "Severity": "CRITICAL",
-          "CweIDs": [
-            "CWE-290",
-            "CWE-348",
-            "CWE-697"
-          ],
-          "VendorSeverity": {
-            "ghsa": 4,
-            "redhat": 3
-          },
-          "CVSS": {
-            "ghsa": {
-              "V3Vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:N",
-              "V3Score": 9.1
-            },
-            "redhat": {
-              "V3Vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:H/A:N",
-              "V3Score": 7.5
-            }
-          },
-          "References": [
-            "https://access.redhat.com/security/cve/CVE-2026-90711",
-            "https://advisory.echohq.com/cve/CVE-2026-90711",
-            "https://cna.openjsf.org/security-advisories.html",
-            "https://github.com/jshttp/proxy-addr",
-            "https://github.com/jshttp/proxy-addr/commit/780911d84d18e2c5fa008ed0c0d387631ec11965",
-            "https://github.com/jshttp/proxy-addr/releases/tag/v2.0.8",
-            "https://github.com/jshttp/proxy-addr/security/advisories/GHSA-jqcg-44mw-7w3h",
-            "https://nvd.nist.gov/vuln/detail/CVE-2026-90711",
-            "https://www.cve.org/CVERecord?id=CVE-2026-90711"
-          ],
-          "PublishedDate": "2026-09-15T07:16:33.683Z",
-          "LastModifiedDate": "2026-09-16T19:40:00.317Z"
-        },
-        {
           "VulnerabilityID": "CVE-2026-82417",
           "VendorIDs": [
             "GHSA-4mjr-xmp4-gh2g"
@@ -11701,8 +10485,8 @@
           "FixedVersion": "6.16.0",
           "Status": "fixed",
           "Layer": {
-            "Digest": "sha256:f1ebb784920099793144954b52ba8b107b072395ea0f56c5db026fbd33511d12",
-            "DiffID": "sha256:e29f147295f2e32ffc6fce483dd02371768fb1f7f4caed33f1578e30d071bc66"
+            "Digest": "sha256:d19b9a83a67228a57a987e734da4a24ea8a50de4220ea8af720ac19ed9ff8e2a",
+            "DiffID": "sha256:aeed3755418f2748c54a5b886167f70b47f2f0f4c5b19580eebf6d99faafd426"
           },
           "SeveritySource": "ghsa",
           "PrimaryURL": "https://avd.aquasec.com/nvd/cve-2026-82417",
@@ -11711,7 +10495,7 @@
             "Name": "GitHub Security Advisory npm",
             "URL": "https://github.com/advisories?query=type%3Areviewed+ecosystem%3Anpm"
           },
-          "Fingerprint": "sha256:3448629f08ffc7eb8c7ef72f295c1b6c526de7684ffd7d5c585a1c55a1fa6be8",
+          "Fingerprint": "sha256:78a5b27c445b08d0c8b3a60e135f2b4228eb9c1354b90eb34a1a6ec55572d0b0",
           "Title": "qs: qs: Denial of Service via improper validation in stringify function",
           "Description": "### Summary\n\n\n\n`qs.stringify` throws a `TypeError` when it serializes an object whose own `constructor` property has a truthy, non-callable `isBuffer` member. `utils.isBuffer` duck-types buffers by calling `obj.constructor.isBuffer(obj)` after checking only that the property is truthy, so a value such as `{ constructor: { isBuffer: \"x\" } }` makes the call throw `TypeError: obj.constructor.isBuffer is not a function`.\n\n\n\n### Details\n\n\n\n`lib/stringify.js:127` calls `utils.isBuffer` on every non-primitive value it serializes. `utils.isBuffer` (`lib/utils.js:332`) reads `obj.constructor.isBuffer` and invokes it without verifying that it is a function. `constructor` and `isBuffer` are ordinary property names, so any object carrying them as own properties reaches the unchecked call.\n\n\n\nSuch an object can be built from untrusted input. `qs.parse(\"x[constructor][isBuffer]=y\", { plainObjects: true })` or `{ allowPrototypes: true }` keeps the `constructor` key as an own property (the default parse options drop it), and `JSON.parse(\"{\\\"a\\\":{\\\"constructor\\\":{\\\"isBuffer\\\":\\\"x\\\"}}}\")` produces the same shape with no qs option involved. Express 4 with its default `query parser` setting and body-parser with `extended: true` both call `qs.parse` with `allowPrototypes: true`, so on those stacks `req.query` and `req.body` can carry the shape directly.\n\n\n\n#### PoC\n\n\n\n```js\n\n\n\nvar qs = require(\"qs\");\n\n\n\nqs.stringify(qs.parse(\"x[constructor][isBuffer]=y\", { plainObjects: true }));\n\n\n\nqs.stringify(JSON.parse(\"{\\\"a\\\":{\\\"constructor\\\":{\\\"isBuffer\\\":\\\"x\\\"}}}\"));\n\n\n\n// TypeError: obj.constructor.isBuffer is not a function\n\n\n\n//     at Object.isBuffer (lib/utils.js:332:78)\n\n\n\n//     at stringify (lib/stringify.js:127:45)\n\n\n\n```\n\n\n\n#### Fix\n\n\n\n`lib/utils.js`, applied in e83d321 on `main` and released as v6.16.0:\n\n\n\n```diff\n\n\n\n- return !!(obj.constructor \u0026\u0026 obj.constructor.isBuffer \u0026\u0026 obj.constructor.isBuffer(obj));\n\n\n\n+ return !!(obj.constructor \u0026\u0026 typeof obj.constructor.isBuffer === \"function\" \u0026\u0026 obj.constructor.isBuffer(obj));\n\n\n\n```\n\n\n\nReal `Buffer`, `safer-buffer`, and browserify `buffer` polyfill instances serialize exactly as before; only the throw is removed.\n\n\n\n### Affected versions\n\n\n\n`\u003e=2.2.5 \u003c6.16.0`, fixed in v6.16.0.\n\n\n\nThe unguarded duck-type was introduced in 3768a75 and first shipped in v2.2.5 (September 2014). v2.2.4 and earlier used `Buffer.isBuffer` and are not affected. Every release from v2.2.5 through v6.15.3 contains the unguarded call.\n\n\n\n### Impact\n\n\n\nAn unauthenticated request can make any code path that re-serializes attacker-influenced data with `qs.stringify` (for example, rebuilding a query string from `req.query` for a redirect or an upstream request, or serializing a parsed JSON body) throw synchronously. In a typical Node.js HTTP framework the throw is caught by the framework error boundary and the affected request returns a 500; the process survives and other requests are unaffected. Where the call runs outside an error boundary, such as an `async` Express 4 handler (where the throw becomes an unhandled promise rejection) or a background job, the process exits, so the impact in that case depends on the application error handling rather than on qs.",
           "Severity": "MEDIUM",
@@ -11763,8 +10547,8 @@
           "FixedVersion": "6.16.0",
           "Status": "fixed",
           "Layer": {
-            "Digest": "sha256:f1ebb784920099793144954b52ba8b107b072395ea0f56c5db026fbd33511d12",
-            "DiffID": "sha256:e29f147295f2e32ffc6fce483dd02371768fb1f7f4caed33f1578e30d071bc66"
+            "Digest": "sha256:d19b9a83a67228a57a987e734da4a24ea8a50de4220ea8af720ac19ed9ff8e2a",
+            "DiffID": "sha256:aeed3755418f2748c54a5b886167f70b47f2f0f4c5b19580eebf6d99faafd426"
           },
           "SeveritySource": "ghsa",
           "PrimaryURL": "https://avd.aquasec.com/nvd/cve-2026-82562",
@@ -11773,7 +10557,7 @@
             "Name": "GitHub Security Advisory npm",
             "URL": "https://github.com/advisories?query=type%3Areviewed+ecosystem%3Anpm"
           },
-          "Fingerprint": "sha256:d8017b114645b56a1cca4a758bab306256e2c7d9adbbfa53aa803df962fa4a05",
+          "Fingerprint": "sha256:cda5456002246bdf13e323f8121328ee1587f919730f297e30a36ecf450a4db6",
           "Title": "qs: qs: Denial of Service via array limit bypass in query string parsing",
           "Description": "### Summary\n\n\n\nWhen `qs.parse` is called with `comma: true` and `throwOnLimitExceeded: true`, a comma-separated value under a bracket-push key (`a[]=1,2,3,4`) is split into an array without being compared against `arrayLimit`, while the same value under a flat key (`a=1,2,3,4`), an indexed key (`a[0]=`), a nested key (`a[b]=`), or a dotted key (`a.b=` with `allowDots`) throws the documented `RangeError`. A single parameter such as `a[]=1,2,2,...` therefore produces an inner array of arbitrary length even though the caller opted into the hard limit. This is the `[]=` key form that the fix for CVE-2026-2391 (qs 6.14.2) did not cover.\n\n\n\n### Details\n\n\n\nIn `lib/parse.js`, a comma-separated value under a `[]=` key is split and then wrapped as a single nested element (`val = [val]`, so that each `a[]=x,y` group counts as one element of the outer array). The `arrayLimit` check that 6.14.2 added for comma values runs after that wrap, so for `[]=` parts it only ever saw the wrapper of length 1. 6.15.3 added a pre-split comma count so that an oversized value throws before it is allocated, but gated it on an `isFlatArrayValue` flag that `parseValues` set to `false` for any part containing `[]=`, and did not pass it for object-valued input, so the gap remained.\n\n\n\n#### PoC\n\n\n\n```js\n\n\n\nvar qs = require('qs');\n\n\n\nvar options = { comma: true, arrayLimit: 3, throwOnLimitExceeded: true };\n\n\n\nqs.parse('a=1,2,3,4', options);   // RangeError: Array limit exceeded. Only 3 elements allowed in an array.\n\n\n\nqs.parse('a[]=1,2,3,4', options); // { a: [ [ '1', '2', '3', '4' ] ] }  (no throw)\n\n\n\nqs.parse('a[]=' + '1,'.repeat(1000000) + '1', { comma: true, arrayLimit: 20, throwOnLimitExceeded: true });\n\n\n\n// no throw; a 1,000,001-element inner array is allocated\n\n\n\n```\n\n\n\n#### Fix\n\n\n\n`lib/parse.js`, applied in 8859c37 on `main` and released as v6.16.0: the `isFlatArrayValue` gate is removed, so every comma-split value is counted against `arrayLimit` before splitting regardless of key form. An in-limit group under `a[]=` still counts as one element of the outer array, and the default (`throwOnLimitExceeded: false`) path is unchanged.\n\n\n\n### Affected versions\n\n\n\n`\u003e=6.14.2 \u003c6.16.0`, fixed in v6.16.0.\n\n\n\nv6.14.2 introduced `arrayLimit` enforcement for comma values (the fix for CVE-2026-2391) but only for values not under a `[]=` key, and every release from v6.14.2 through v6.15.3 has the same gap. v6.14.0 and v6.14.1, where `throwOnLimitExceeded` exists but does not apply to any comma form, are covered by CVE-2026-2391 rather than this record. Earlier lines (6.7.x through 6.13.x) have `comma` but no `throwOnLimitExceeded`, so there is no hard cap on any comma path to bypass; releases before 6.7.0 have no `comma` option.\n\n\n\n### Impact\n\n\n\nAn unauthenticated attacker who can reach an application that parses untrusted query strings or urlencoded bodies with both `comma: true` and `throwOnLimitExceeded: true` (both non-default) can bypass the configured limit with a single `a[]=` parameter and force the parser to allocate an array proportional to the request size. The cost is strictly linear in the attacker-supplied bytes (about 0.1 microseconds and 6 to 7 retained bytes per input byte; the same out-of-memory threshold as the documented default `throwOnLimitExceeded: false` path), so a transport-layer request or body size limit bounds it completely (and node's default maximum HTTP header size of 16 KB already bounds the request line, so multi-megabyte payloads need a body parser). The impact is that an opt-in hard limit fails open on one key spelling, not unbounded allocation from a small input.",
           "Severity": "MEDIUM",
@@ -11825,8 +10609,8 @@
           "FixedVersion": "6.15.2",
           "Status": "fixed",
           "Layer": {
-            "Digest": "sha256:f1ebb784920099793144954b52ba8b107b072395ea0f56c5db026fbd33511d12",
-            "DiffID": "sha256:e29f147295f2e32ffc6fce483dd02371768fb1f7f4caed33f1578e30d071bc66"
+            "Digest": "sha256:d19b9a83a67228a57a987e734da4a24ea8a50de4220ea8af720ac19ed9ff8e2a",
+            "DiffID": "sha256:aeed3755418f2748c54a5b886167f70b47f2f0f4c5b19580eebf6d99faafd426"
           },
           "SeveritySource": "ghsa",
           "PrimaryURL": "https://avd.aquasec.com/nvd/cve-2026-8723",
@@ -11835,7 +10619,7 @@
             "Name": "GitHub Security Advisory npm",
             "URL": "https://github.com/advisories?query=type%3Areviewed+ecosystem%3Anpm"
           },
-          "Fingerprint": "sha256:1238f5013845a691d58287eb61aa5461c4f832da831d8006d5e10c066bd72d19",
+          "Fingerprint": "sha256:fff4601dbf2a96a0d2b969f018908426412bd61a1860f51666c37b918283572c",
           "Title": "qs: qs: Denial of Service due to improper handling of null/undefined array elements",
           "Description": "### Summary\n\n\n\n`qs.stringify` throws `TypeError` when called with `arrayFormat: 'comma'` and `encodeValuesOnly: true` on an array containing `null` or `undefined`. The throw is synchronous and not handled by any of qs's null-related options (`skipNulls`, `strictNullHandling`).\n\n\n\n### Details\n\n\n\nIn the comma + `encodeValuesOnly` branch, `lib/stringify.js:145` mapped the array through the raw encoder before joining:\n\n\n\n```js\n\n\n\nobj = utils.maybeMap(obj, encoder);\n\n\n\n```\n\n\n\n`utils.encode` (`lib/utils.js:195`) reads `str.length` with no null guard, so a `null` or `undefined` element throws `TypeError`. `skipNulls` and `strictNullHandling` are both checked in the per-element loop below this line and never get a chance to run.\n\n\n\nSame class of bug as the filter-array path fixed in 0c180a4. The vulnerable shape of the comma + `encodeValuesOnly` branch was introduced in 4c4b23d (\"encode comma values more consistently\", PR #463, 2023-01-19), first released in v6.11.1.\n\n\n\n#### PoC\n\n\n\n```js\n\n\n\nconst qs = require('qs');\n\n\n\nqs.stringify({ a: [null, 'b'] },      { arrayFormat: 'comma', encodeValuesOnly: true });\n\n\n\nqs.stringify({ a: [undefined, 'b'] }, { arrayFormat: 'comma', encodeValuesOnly: true });\n\n\n\nqs.stringify({ a: [null] },           { arrayFormat: 'comma', encodeValuesOnly: true });\n\n\n\n// TypeError: Cannot read properties of null (reading 'length')\n\n\n\n//     at encode (lib/utils.js:195:13)\n\n\n\n//     at Object.maybeMap (lib/utils.js:322:37)\n\n\n\n//     at stringify (lib/stringify.js:145:25)\n\n\n\n```\n\n\n\n#### Fix\n\n\n\n`lib/stringify.js:145`, applied in 21f80b3 on `main` and released as v6.15.2:\n\n\n\n```diff\n\n\n\n- obj = utils.maybeMap(obj, encoder);\n\n\n\n+ obj = utils.maybeMap(obj, function (v) {\n\n\n\n+     return v == null ? v : encoder(v);\n\n\n\n+ });\n\n\n\n```\n\n\n\n`null` and `undefined` now pass through `maybeMap` unchanged and reach the `join(',')` step as-is. For `{ a: [null, 'b'] }` this produces `a=,b`, matching the non-`encodeValuesOnly` comma path (which already joins before encoding and produces `a=%2Cb` for the same input). Single-element `[null]` arrays still collapse via the existing `obj.join(',') || null` and remain subject to `skipNulls` / `strictNullHandling` in the main loop.\n\n\n\n### Affected versions\n\n\n\n`\u003e=6.11.1 \u003c6.15.2` — fixed in v6.15.2.\n\n\n\nThe vulnerable code shape was introduced in 4c4b23d and first shipped in v6.11.1. Earlier versions — including all of 6.7.x, 6.8.x, 6.9.x, 6.10.x, and 6.11.0 — implemented the comma + `encodeValuesOnly` path differently (joining before encoding) and are not affected. Empirically verified across released versions.\n\n\n\n### Impact\n\n\n\nApplication code that calls `qs.stringify` with both `arrayFormat: 'comma'` and `encodeValuesOnly: true` (both non-default) on input that may contain a `null` or `undefined` array element will throw synchronously instead of producing a query string. In a typical Node.js HTTP framework (Express, Fastify, Koa, hapi) the sync throw is caught by the framework's error boundary and the affected request returns a 500; the worker process does not exit and subsequent requests are unaffected. The \"kills the worker process\" framing applies only to call sites outside a request-handler error boundary (background jobs, startup paths, stream pipelines) or to deployments with framework error handling explicitly disabled.\n\n\n\nThe vulnerable input is a `null` or `undefined` entry inside an array; this is reachable from JSON request bodies or from application code constructing arrays from user input, but not from standard HTML form submissions (which produce strings or omitted fields, not literal `null`).",
           "Severity": "MEDIUM",
@@ -11887,8 +10671,8 @@
           "FixedVersion": "11.1.1, 12.0.1, 13.0.1",
           "Status": "fixed",
           "Layer": {
-            "Digest": "sha256:f1ebb784920099793144954b52ba8b107b072395ea0f56c5db026fbd33511d12",
-            "DiffID": "sha256:e29f147295f2e32ffc6fce483dd02371768fb1f7f4caed33f1578e30d071bc66"
+            "Digest": "sha256:d19b9a83a67228a57a987e734da4a24ea8a50de4220ea8af720ac19ed9ff8e2a",
+            "DiffID": "sha256:aeed3755418f2748c54a5b886167f70b47f2f0f4c5b19580eebf6d99faafd426"
           },
           "SeveritySource": "ghsa",
           "PrimaryURL": "https://avd.aquasec.com/nvd/cve-2026-41907",
@@ -11897,7 +10681,7 @@
             "Name": "GitHub Security Advisory npm",
             "URL": "https://github.com/advisories?query=type%3Areviewed+ecosystem%3Anpm"
           },
-          "Fingerprint": "sha256:7e47b0ddae5c4631a82455b3025ee5edd5581ea5f1cf85add4c3d52a51124400",
+          "Fingerprint": "sha256:24d0e1557b2cde4cdd7096c1c451584eb27663cac20ba2ab4db06d0d912fd88a",
           "Title": "uuid: uuid: Out-of-bounds write vulnerability impacts data integrity and confidentiality",
           "Description": "uuid is for the creation of RFC9562 (formerly RFC4122) UUIDs. Prior to 14.0.0, v3, v5, and v6 accept external output buffers but do not reject out-of-range writes (small buf or large offset). This allows silent partial writes into caller-provided buffers. This vulnerability is fixed in 14.0.0.",
           "Severity": "MEDIUM",

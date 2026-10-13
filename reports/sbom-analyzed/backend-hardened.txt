@@ -1,0 +1,17 @@
+﻿== backend-hardened ==
+Composants :  | noms uniques : 0 | sans version : 1
+
+Par ecosysteme (deb, apk, npm...) :
+
+Count Name 
+----- ---- 
+    1 autre
+
+Par type :
+
+Count Name
+----- ----
+    1
+
+Composants surveilles presents :
+Aucun.

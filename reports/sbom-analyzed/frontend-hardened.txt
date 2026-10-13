@@ -1,0 +1,22 @@
+﻿== frontend-hardened ==
+Composants : 23 | noms uniques : 23 | sans version : 0
+
+Par ecosysteme (deb, apk, npm...) :
+
+Count Name 
+----- ---- 
+   22 apk  
+    1 autre
+
+Par type :
+
+Count Name            
+----- ----            
+   22 library         
+    1 operating-system
+
+Composants surveilles presents :
+  apk-tools 3.0.8-r0
+  busybox 1.37.0-r30
+  libssl3 3.5.9-r0
+  nginx 1.28.3-r7

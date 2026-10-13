@@ -1,85 +1,12 @@
 ﻿== frontend-hardened ==
-Total : 226 | CRITICAL 3 | HIGH 65 | MEDIUM 105 | LOW 51
-Corrigeables : 226 (dont CRITICAL/HIGH : 68) | fichier -fixable : 226
+Total : 0 | CRITICAL 0 | HIGH 0 | MEDIUM 0 | LOW 0
+Corrigeables : 0 (dont CRITICAL/HIGH : 0) | fichier -fixable : 0
 
 Par cible :
 
-Count Name                                     
------ ----                                     
-  226 conduit-frontend:hardened (alpine 3.23.3)
 
 A traiter en priorite (CRITICAL/HIGH avec correctif) :
-
-Severity Target                                    Package      Installed Fixed     CVE            
--------- ------                                    -------      --------- -----     ---            
-CRITICAL conduit-frontend:hardened (alpine 3.23.3) libcrypto3   3.5.5-r0  3.5.6-r0  CVE-2026-31789 
-CRITICAL conduit-frontend:hardened (alpine 3.23.3) libssl3      3.5.5-r0  3.5.6-r0  CVE-2026-31789 
-CRITICAL conduit-frontend:hardened (alpine 3.23.3) nginx        1.28.2-r1 1.28.3-r1 CVE-2026-42945 
-HIGH     conduit-frontend:hardened (alpine 3.23.3) c-ares       1.34.6-r0 1.34.8-r0 CVE-2026-33630 
-HIGH     conduit-frontend:hardened (alpine 3.23.3) curl         8.17.0-r1 8.22.0-r0 CVE-2026-9547  
-HIGH     conduit-frontend:hardened (alpine 3.23.3) curl         8.17.0-r1 8.22.0-r0 CVE-2026-8927  
-HIGH     conduit-frontend:hardened (alpine 3.23.3) curl         8.17.0-r1 8.22.0-r0 CVE-2026-12064 
-HIGH     conduit-frontend:hardened (alpine 3.23.3) curl         8.17.0-r1 8.22.0-r0 CVE-2026-11352 
-HIGH     conduit-frontend:hardened (alpine 3.23.3) curl         8.17.0-r1 8.22.0-r0 CVE-2026-11586 
-HIGH     conduit-frontend:hardened (alpine 3.23.3) curl         8.17.0-r1 8.20.0-r0 CVE-2026-6276  
-HIGH     conduit-frontend:hardened (alpine 3.23.3) curl         8.17.0-r1 8.20.0-r0 CVE-2026-5773  
-HIGH     conduit-frontend:hardened (alpine 3.23.3) curl         8.17.0-r1 8.22.0-r0 CVE-2026-8286  
-HIGH     conduit-frontend:hardened (alpine 3.23.3) curl         8.17.0-r1 8.22.0-r0 CVE-2026-8925  
-HIGH     conduit-frontend:hardened (alpine 3.23.3) curl         8.17.0-r1 8.22.0-r0 CVE-2026-8458  
-HIGH     conduit-frontend:hardened (alpine 3.23.3) libcrypto3   3.5.5-r0  3.5.6-r0  CVE-2026-28389 
-HIGH     conduit-frontend:hardened (alpine 3.23.3) libcrypto3   3.5.5-r0  3.5.6-r0  CVE-2026-28390 
-HIGH     conduit-frontend:hardened (alpine 3.23.3) libcrypto3   3.5.5-r0  3.5.7-r0  CVE-2026-45447 
-HIGH     conduit-frontend:hardened (alpine 3.23.3) libcrypto3   3.5.5-r0  3.5.6-r0  CVE-2026-28388 
-HIGH     conduit-frontend:hardened (alpine 3.23.3) libcrypto3   3.5.5-r0  3.5.8-r0  CVE-2026-14456 
-HIGH     conduit-frontend:hardened (alpine 3.23.3) libcrypto3   3.5.5-r0  3.5.6-r0  CVE-2026-28387 
-HIGH     conduit-frontend:hardened (alpine 3.23.3) libcurl      8.17.0-r1 8.22.0-r0 CVE-2026-11352 
-HIGH     conduit-frontend:hardened (alpine 3.23.3) libcurl      8.17.0-r1 8.22.0-r0 CVE-2026-8927  
-HIGH     conduit-frontend:hardened (alpine 3.23.3) libcurl      8.17.0-r1 8.22.0-r0 CVE-2026-8458  
-HIGH     conduit-frontend:hardened (alpine 3.23.3) libcurl      8.17.0-r1 8.22.0-r0 CVE-2026-8286  
-HIGH     conduit-frontend:hardened (alpine 3.23.3) libcurl      8.17.0-r1 8.22.0-r0 CVE-2026-9547  
-HIGH     conduit-frontend:hardened (alpine 3.23.3) libcurl      8.17.0-r1 8.22.0-r0 CVE-2026-8925  
-HIGH     conduit-frontend:hardened (alpine 3.23.3) libcurl      8.17.0-r1 8.22.0-r0 CVE-2026-12064 
-HIGH     conduit-frontend:hardened (alpine 3.23.3) libcurl      8.17.0-r1 8.22.0-r0 CVE-2026-11586 
-HIGH     conduit-frontend:hardened (alpine 3.23.3) libcurl      8.17.0-r1 8.20.0-r0 CVE-2026-6276  
-HIGH     conduit-frontend:hardened (alpine 3.23.3) libcurl      8.17.0-r1 8.20.0-r0 CVE-2026-5773  
-HIGH     conduit-frontend:hardened (alpine 3.23.3) libexpat     2.7.4-r0  2.8.4-r0  CVE-2026-76956 
-HIGH     conduit-frontend:hardened (alpine 3.23.3) libexpat     2.7.4-r0  2.8.4-r0  CVE-2026-76957 
-HIGH     conduit-frontend:hardened (alpine 3.23.3) libexpat     2.7.4-r0  2.8.5-r0  CVE-2026-93990 
-HIGH     conduit-frontend:hardened (alpine 3.23.3) libexpat     2.7.4-r0  2.8.4-r0  CVE-2026-76641 
-HIGH     conduit-frontend:hardened (alpine 3.23.3) libexpat     2.7.4-r0  2.8.1-r0  CVE-2026-45186 
-HIGH     conduit-frontend:hardened (alpine 3.23.3) libexpat     2.7.4-r0  2.8.4-r0  CVE-2026-66046 
-HIGH     conduit-frontend:hardened (alpine 3.23.3) libpng       1.6.54-r0 1.6.55-r0 CVE-2026-25646 
-HIGH     conduit-frontend:hardened (alpine 3.23.3) libssl3      3.5.5-r0  3.5.6-r0  CVE-2026-28389 
-HIGH     conduit-frontend:hardened (alpine 3.23.3) libssl3      3.5.5-r0  3.5.6-r0  CVE-2026-28388 
-HIGH     conduit-frontend:hardened (alpine 3.23.3) libssl3      3.5.5-r0  3.5.8-r0  CVE-2026-14456 
-HIGH     conduit-frontend:hardened (alpine 3.23.3) libssl3      3.5.5-r0  3.5.7-r0  CVE-2026-45447 
-HIGH     conduit-frontend:hardened (alpine 3.23.3) libssl3      3.5.5-r0  3.5.6-r0  CVE-2026-28387 
-HIGH     conduit-frontend:hardened (alpine 3.23.3) libssl3      3.5.5-r0  3.5.6-r0  CVE-2026-28390 
-HIGH     conduit-frontend:hardened (alpine 3.23.3) libuuid      2.41.2-r0 2.41.6-r0 CVE-2026-53612 
-HIGH     conduit-frontend:hardened (alpine 3.23.3) libuuid      2.41.2-r0 2.41.6-r1 CVE-2026-78408 
-HIGH     conduit-frontend:hardened (alpine 3.23.3) libuuid      2.41.2-r0 2.41.6-r0 CVE-2026-78410 
-HIGH     conduit-frontend:hardened (alpine 3.23.3) libuuid      2.41.2-r0 2.41.6-r0 CVE-2026-53613 
-HIGH     conduit-frontend:hardened (alpine 3.23.3) libuuid      2.41.2-r0 2.41.6-r0 CVE-2026-53614 
-HIGH     conduit-frontend:hardened (alpine 3.23.3) libuuid      2.41.2-r0 2.41.6-r0 CVE-2026-76642 
-HIGH     conduit-frontend:hardened (alpine 3.23.3) libxml2      2.13.9-r0 2.13.9-r1 CVE-2026-6732  
-HIGH     conduit-frontend:hardened (alpine 3.23.3) musl         1.2.5-r21 1.2.5-r23 CVE-2026-40200 
-HIGH     conduit-frontend:hardened (alpine 3.23.3) musl-utils   1.2.5-r21 1.2.5-r23 CVE-2026-40200 
-HIGH     conduit-frontend:hardened (alpine 3.23.3) nghttp2-libs 1.68.0-r0 1.68.1    CVE-2026-27135 
-HIGH     conduit-frontend:hardened (alpine 3.23.3) nginx        1.28.2-r1 1.28.3-r6 CVE-2026-60005 
-HIGH     conduit-frontend:hardened (alpine 3.23.3) nginx        1.28.2-r1 1.28.3-r2 CVE-2026-9256  
-HIGH     conduit-frontend:hardened (alpine 3.23.3) nginx        1.28.2-r1 1.28.3-r0 CVE-2026-27654 
-HIGH     conduit-frontend:hardened (alpine 3.23.3) nginx        1.28.2-r1 1.28.3-r0 CVE-2026-27651 
-HIGH     conduit-frontend:hardened (alpine 3.23.3) nginx        1.28.2-r1 1.28.3-r6 CVE-2026-42533 
-HIGH     conduit-frontend:hardened (alpine 3.23.3) nginx        1.28.2-r1 1.28.3-r4 CVE-2026-42055 
-HIGH     conduit-frontend:hardened (alpine 3.23.3) nginx        1.28.2-r1 1.28.3-r1 CVE-2026-42946 
-HIGH     conduit-frontend:hardened (alpine 3.23.3) nginx        1.28.2-r1 1.28.3-r0 CVE-2026-32647 
-HIGH     conduit-frontend:hardened (alpine 3.23.3) nginx        1.28.2-r1 1.28.3-r3 CVE-2026-49975 
-HIGH     conduit-frontend:hardened (alpine 3.23.3) pcre2        10.47-r0  10.48-r0  CVE-2026-86145 
-HIGH     conduit-frontend:hardened (alpine 3.23.3) pcre2        10.47-r0  10.48-r0  CVE-2026-89161 
-HIGH     conduit-frontend:hardened (alpine 3.23.3) pcre2        10.47-r0  10.48-r0  CVE-2026-89157 
-HIGH     conduit-frontend:hardened (alpine 3.23.3) pcre2        10.47-r0  10.49-r0  CVE-2026-103111
-HIGH     conduit-frontend:hardened (alpine 3.23.3) tiff         4.7.1-r0  4.7.2-r0  CVE-2026-4775  
-HIGH     conduit-frontend:hardened (alpine 3.23.3) zlib         1.3.1-r2  1.3.2-r0  CVE-2026-22184
+Aucune.
 
 A documenter (CRITICAL/HIGH sans correctif) :
 Aucune.

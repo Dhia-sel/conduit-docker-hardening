@@ -1,0 +1,36 @@
+﻿== backend-naive ==
+Composants : 913 | noms uniques : 865 | sans version : 0
+
+Par ecosysteme (deb, apk, npm...) :
+
+Count Name   
+----- ----   
+  455 deb    
+  454 npm    
+    2 pypi   
+    1 autre  
+    1 generic
+
+Par type :
+
+Count Name            
+----- ----            
+  911 library         
+    1 operating-system
+    1 application
+
+Composants surveilles presents :
+  apt 3.0.3
+  bash 5.2.37-2+b10
+  curl 8.14.1-2+deb13u5
+  dpkg 1.22.22
+  g++ 4:14.2.0-1
+  gcc 4:14.2.0-1
+  git 1:2.47.3-0+deb13u1
+  make 4.4.1-2
+  node 26.10.0
+  npm 11.19.1
+  openssl 3.5.7-1~deb13u2
+  perl-base 5.40.1-6+deb13u1
+  python3 3.13.5-1
+  wget 1.25.0-2
