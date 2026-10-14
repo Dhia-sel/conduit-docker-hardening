@@ -1,1 +1,13 @@
-﻿
+﻿[33mWARN[0m - reports/sbom/backend-naive.cdx.json - main - outil reseau present : curl 8.14.1-2+deb13u5
+[31mFAIL[0m - reports/sbom/backend-naive.cdx.json - main - composant interdit dans l'image finale : curl 8.14.1-2+deb13u5
+[31mFAIL[0m - reports/sbom/backend-naive.cdx.json - main - composant interdit dans l'image finale : g++ 4:14.2.0-1
+[31mFAIL[0m - reports/sbom/backend-naive.cdx.json - main - composant interdit dans l'image finale : gcc 4:14.2.0-1
+[31mFAIL[0m - reports/sbom/backend-naive.cdx.json - main - composant interdit dans l'image finale : git 1:2.47.3-0+deb13u1
+[31mFAIL[0m - reports/sbom/backend-naive.cdx.json - main - composant interdit dans l'image finale : make 4.4.1-2
+[31mFAIL[0m - reports/sbom/backend-naive.cdx.json - main - composant interdit dans l'image finale : npm 11.19.1
+[31mFAIL[0m - reports/sbom/backend-naive.cdx.json - main - composant interdit dans l'image finale : python3 3.13.5-1
+[31mFAIL[0m - reports/sbom/backend-naive.cdx.json - main - composant interdit dans l'image finale : wget 1.25.0-2
+[31mFAIL[0m - reports/sbom/backend-naive.cdx.json - main - trop de paquets pour le backend : 911 (maximum 250)
+
+[31m10 tests, 0 passed, 1 warning, 9 failures, 0 exceptions[0m
+

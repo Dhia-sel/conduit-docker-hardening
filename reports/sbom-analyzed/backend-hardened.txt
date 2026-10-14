@@ -1,17 +1,26 @@
 ﻿== backend-hardened ==
-Composants :  | noms uniques : 0 | sans version : 1
+Composants : 210 | noms uniques : 210 | sans version : 0
 
 Par ecosysteme (deb, apk, npm...) :
 
-Count Name 
------ ---- 
-    1 autre
+Count Name   
+----- ----   
+  120 npm    
+   88 deb    
+    1 autre  
+    1 generic
 
 Par type :
 
-Count Name
------ ----
-    1
+Count Name            
+----- ----            
+  208 library         
+    1 operating-system
+    1 application
 
 Composants surveilles presents :
-Aucun.
+  apt 2.6.1
+  bash 5.2.15-2+b13
+  dpkg 1.21.23
+  node 22.23.3
+  perl-base 5.36.0-7+deb12u4

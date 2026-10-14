@@ -3,8 +3,8 @@
   "Trivy": {
     "Version": "0.75.0"
   },
-  "ReportID": "01a13477-ffb6-7b49-b236-d667b40e3d2f",
-  "CreatedAt": "2026-10-13T08:54:01.910747761Z",
+  "ReportID": "01a13c9b-8c14-74b7-aa8c-46c0356bae7c",
+  "CreatedAt": "2026-10-14T22:49:49.332317136Z",
   "ArtifactID": "sha256:e2afcb54219af4848a1f13084147dba9d049d4064343c0b25b0e8f2150716a20",
   "ArtifactName": "conduit-backend:hardened",
   "ArtifactType": "container_image",
