@@ -1,0 +1,42 @@
+name: conduit-naive
+services:
+  db:
+    image: postgres:latest             
+    container_name: conduit-naive-db
+    environment:
+      POSTGRES_USER: postgres          
+      POSTGRES_PASSWORD: postgres       
+      POSTGRES_DB: database_production
+    ports:
+      - "5432:5432"                   
+    healthcheck:                     
+      test: ["CMD-SHELL", "pg_isready -U postgres -d database_production"]
+      interval: 5s
+      timeout: 3s
+      retries: 10
+
+  backend:
+    image: conduit-backend:naive        
+    container_name: conduit-naive-backend
+    environment:
+      NODE_ENV: production
+      PORT: "3001"
+      JWT_KEY: secret                   
+      PROD_DB_PASSWORD: postgres
+      PROD_DB_NAME: database_production
+      PROD_DB_HOSTNAME: db
+      PROD_DB_DIALECT: postgres
+    ports:
+      - "3001:3001"                    
+    depends_on:
+      db:
+        condition: service_healthy
+
+  frontend:
+    image: conduit-frontend:naive      
+    container_name: conduit-naive-frontend
+    ports:
+      - "3000:3000"                    
+    depends_on:
+      - backend
+
