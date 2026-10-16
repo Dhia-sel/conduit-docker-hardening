@@ -1,0 +1,96 @@
+name: conduit-hardened
+
+services:
+  db:
+    image: postgres:16-alpine          
+    container_name: conduit-hardened-db
+    environment:
+      POSTGRES_USER: ${DB_USER:?definir DB_USER dans .env}
+      POSTGRES_PASSWORD: ${DB_PASSWORD:?definir DB_PASSWORD dans .env}
+      POSTGRES_DB: ${DB_NAME:?definir DB_NAME dans .env}
+    volumes:
+      - db_data:/var/lib/postgresql/data
+    networks:
+      - back                            
+    healthcheck:                      
+      test: ["CMD-SHELL", "pg_isready -U $${POSTGRES_USER} -d $${POSTGRES_DB}"]
+      interval: 5s
+      timeout: 3s
+      retries: 10
+    read_only: true
+    tmpfs:
+      - /tmp
+      - /run/postgresql
+    cap_drop:
+      - ALL
+    cap_add:                           
+      - CHOWN
+      - DAC_OVERRIDE
+      - FOWNER
+      - SETGID
+      - SETUID
+    security_opt:
+      - no-new-privileges:true
+    pids_limit: 100
+    mem_limit: 512m
+    cpus: 1.0
+    restart: unless-stopped
+
+  backend:                              
+    image: conduit-backend:hardened    
+    container_name: conduit-hardened-backend
+    environment:
+      NODE_ENV: production
+      JWT_KEY: ${JWT_KEY:?definir JWT_KEY dans .env}
+      PROD_DB_USERNAME: ${DB_USER:?definir DB_USER dans .env}
+      PROD_DB_PASSWORD: ${DB_PASSWORD:?definir DB_PASSWORD dans .env}
+      PROD_DB_NAME: ${DB_NAME:?definir DB_NAME dans .env}
+      PROD_DB_HOSTNAME: db
+      PROD_DB_DIALECT: postgres
+    networks:
+      - front
+      - back
+    depends_on:
+      db:
+        condition: service_healthy
+    read_only: true
+    tmpfs:
+      - /tmp
+    cap_drop:
+      - ALL
+    security_opt:
+      - no-new-privileges:true
+    pids_limit: 200
+    mem_limit: 512m
+    cpus: 1.0
+    restart: unless-stopped
+
+  frontend:
+    image: conduit-frontend:hardened    
+    container_name: conduit-hardened-frontend
+    ports:
+      - "127.0.0.1:8080:8080"           
+    networks:
+      - front
+    depends_on:
+      backend:
+        condition: service_healthy
+    read_only: true
+    tmpfs:
+      - /tmp
+    cap_drop:
+      - ALL
+    security_opt:
+      - no-new-privileges:true
+    pids_limit: 100
+    mem_limit: 128m
+    cpus: 0.5
+    restart: unless-stopped
+
+networks:
+  front: {}                            
+  back:
+    internal: true                     
+
+volumes:
+  db_data: {}

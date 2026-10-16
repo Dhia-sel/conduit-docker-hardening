@@ -21,7 +21,8 @@ services:
     environment:
       NODE_ENV: production
       PORT: "3001"
-      JWT_KEY: secret                   
+      JWT_KEY: secret                 
+      PROD_DB_USERNAME: postgres
       PROD_DB_PASSWORD: postgres
       PROD_DB_NAME: database_production
       PROD_DB_HOSTNAME: db
