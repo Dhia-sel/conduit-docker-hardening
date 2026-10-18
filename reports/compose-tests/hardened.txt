@@ -1,0 +1,23 @@
+﻿
+Id  Type        Test                                                            Observed    Status
+--  ----        ----                                                            --------    ------
+F1  Fonctionnel API /api/tags repond 200                                        OK          OK    
+F2  Fonctionnel Frontend repond 200                                             OK          OK    
+F3  Fonctionnel Base de donnees healthy                                         OK          OK    
+F4  Fonctionnel Les 3 conteneurs tournent                                       OK          OK    
+F5  Fonctionnel Inscription d'un utilisateur (ecriture en base)                 OK          OK    
+F6  Fonctionnel Connexion de cet utilisateur (JWT)                              OK          OK    
+S1  Securite    Port PostgreSQL 5432 joignable depuis l'hote                    EN SECURITE OK    
+S2  Securite    Port API 3001 joignable depuis l'hote                           EN SECURITE OK    
+S3  Securite    Connexion a la base depuis l'hote avec postgres/postgres        EN SECURITE OK    
+S4  Securite    Backend execute en root                                         EN SECURITE OK    
+S5  Securite    Ecriture possible dans le systeme de fichiers du backend        EN SECURITE OK    
+S6  Securite    Capabilities Linux actives dans le backend                      EN SECURITE OK    
+S7  Securite    Secret ecrit en clair dans les variables ENV de l'image backend EN SECURITE OK    
+S8  Securite    Serveur de dev Vite expose (/@vite/client)                      EN SECURITE OK    
+S9  Securite    Base de donnees sur un reseau non isole (non internal)          EN SECURITE OK    
+S10 Securite    Aucune limite de memoire sur le backend                         EN SECURITE OK    
+S11 Securite    no-new-privileges absent sur le backend                         EN SECURITE OK    
+
+
+

@@ -55,6 +55,7 @@ if ($Stack -eq "naive") {
   $imgBack  = "conduit-backend:hardened"
 }
 $db = "$project-db"; $be = "$project-backend"; $fe = "$project-frontend"
+Write-Host "Test de la pile $Stack : conteneurs $db, $be, $fe"
 
 $running = "$(docker inspect --format '{{.State.Running}}' $be 2>$null)".Trim()
 if ($running -ne "true") {
@@ -62,7 +63,6 @@ if ($running -ne "true") {
   return
 }
 
-# ---------- Outils ----------
 $results = New-Object System.Collections.ArrayList
 
 function Add-Func($id, $test, $ok) {
@@ -72,7 +72,7 @@ function Add-Func($id, $test, $ok) {
 
 # $exposed = $true quand la faiblesse est presente
 function Add-Sec($id, $test, $exposed) {
-  $obs = if ($exposed) { "EXPOSE" } else { "PROTEGE" }
+  $obs = if ($exposed) { "EXPOSE" } else { "EN SECURITE"}
   if ($Stack -eq "hardened") { $status = if ($exposed) { "ECHEC" } else { "OK" } } else { $status = "reference" }
   [void]$script:results.Add([pscustomobject]@{ Id = $id; Type = "Securite"; Test = $test; Observed = $obs; Status = $status })
 }
@@ -88,7 +88,6 @@ function Test-Port($port) {
 function Get-Code($url) { "$(& curl.exe -s -m 5 -o NUL -w '%{http_code}' $url 2>$null)".Trim() }
 function Get-Body($url) { "$(& curl.exe -s -m 5 $url 2>$null)" }
 
-# ---------- Tests fonctionnels ----------
 Add-Func "F1" "API /api/tags repond 200" ((Get-Code "$apiBase/tags") -eq "200")
 Add-Func "F2" "Frontend repond 200" ((Get-Code $webCheck) -eq "200")
 
@@ -151,7 +150,6 @@ Add-Sec "S10" "Aucune limite de memoire sur le backend" ($mem -eq "0")
 $so = "$(docker inspect --format '{{.HostConfig.SecurityOpt}}' $be 2>$null)"
 Add-Sec "S11" "no-new-privileges absent sur le backend" ($so -notmatch "no-new-privileges")
 
-# ---------- Resultats ----------
 $results | Format-Table Id, Type, Test, Observed, Status -AutoSize -Wrap
 $results | Export-Csv (Join-Path $outDir "$Stack.csv") -NoTypeInformation -Encoding UTF8
 $results | Format-Table Id, Type, Test, Observed, Status -AutoSize -Wrap | Out-String -Width 200 | Set-Content (Join-Path $outDir "$Stack.txt") -Encoding UTF8
