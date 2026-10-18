@@ -150,9 +150,9 @@ Add-Sec "S10" "Aucune limite de memoire sur le backend" ($mem -eq "0")
 $so = "$(docker inspect --format '{{.HostConfig.SecurityOpt}}' $be 2>$null)"
 Add-Sec "S11" "no-new-privileges absent sur le backend" ($so -notmatch "no-new-privileges")
 
-$results | Format-Table Id, Type, Test, Observed, Status -AutoSize -Wrap
+$results | Format-Table Id, Observed, Status, Test -AutoSize -Wrap
 $results | Export-Csv (Join-Path $outDir "$Stack.csv") -NoTypeInformation -Encoding UTF8
-$results | Format-Table Id, Type, Test, Observed, Status -AutoSize -Wrap | Out-String -Width 200 | Set-Content (Join-Path $outDir "$Stack.txt") -Encoding UTF8
+$results | Format-Table Id, Observed, Status, Test -AutoSize -Wrap | Out-String -Width 200 | Set-Content (Join-Path $outDir "$Stack.txt") -Encoding UTF8
 
 $funcFail = @($results | Where-Object { $_.Type -eq "Fonctionnel" -and $_.Status -eq "ECHEC" }).Count
 $secExposed = @($results | Where-Object { $_.Type -eq "Securite" -and $_.Observed -eq "EXPOSE" }).Count
