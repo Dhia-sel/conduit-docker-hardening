@@ -113,7 +113,7 @@ docker build -f backend/Dockerfile --target runtime -t conduit-backend:hardened 
 docker build -f frontend/Dockerfile -t conduit-frontend:hardened .
 ```
 
-> [A COMPLETER : vérifier ces quatre commandes (chemins des Dockerfiles, `--target`, contexte) avec `git ls-files "*Dockerfile*"`.]
+Les images `:hardened` sont celles utilisées par la pile durcie ; les images `:naive` servent de référence avant/après.
 
 ### 5.2 Pile naïve
 
@@ -209,8 +209,7 @@ Trois stages sur `node:22.23.3-bookworm-slim` :
 
 Scripts : `trivy-analyze.ps1` (rapports dans `reports/trivy-analyzed`), `sbom-analyze.ps1` (`reports/sbom-analyzed`), `conftest-sbom.ps1` (`reports/conftest`).
 
-> [A COMPLETER : date de la base de vulnérabilités Trivy utilisée, et version de Conftest (l'image a été lancée en `:latest`).]
-
+Scans réalisés avec Trivy 0.75.0, base de vulnérabilités du 14/10/2026 (figée via --skip-db-update) ; règles évaluées avec Conftest v0.71.1.
 ### 7.2 Résultats détaillés
 
 | Mesure | Naïve | Frontend durci | Backend durci |
